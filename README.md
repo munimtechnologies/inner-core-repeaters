@@ -20,10 +20,17 @@ tables in [`results/fdscan-v1/`](results/fdscan-v1/) and [`results/yka-v1/`](res
   1990-2026, and 131 events from 2025-2026 have a PKIKP beam SNR of 5 or more. Its automatic
   statics census independently finds the 2014-2019 timing offsets (0.11-0.20 s) that Wang
   et al. corrected by hand, with none before 2014 or after 2019.
-* **Next (queued, pre-registered before any measurement):** ILAR families measured at
-  YKA, which is the first test that can put 2025-2026 events against their pre-2008
-  partners ([`findings/2026-11-17-yka-stageb-prereg.md`](findings/2026-11-17-yka-stageb-prereg.md),
-  `yka_b.py`).
+* **Next (queued, pre-registered before any measurement):**
+  * ILAR families measured at YKA, which is the first test that can put 2025-2026 events
+    against their pre-2008 partners
+    ([`findings/2026-11-17-yka-stageb-prereg.md`](findings/2026-11-17-yka-stageb-prereg.md),
+    `yka_b.py`);
+  * a **hardware control**. Every one of those pairs crosses YKA's 2013-2014 change of
+    electronics (same Geotech S-13 sensors, new pre-amp and digitiser). The two systems
+    recorded side by side for nine months, so the same earthquakes can be compared on both
+    to measure what the change alone does to the similarity metric
+    ([`findings/2026-11-17-yka-hardware-prereg.md`](findings/2026-11-17-yka-hardware-prereg.md),
+    `ykagen.py`).
 
 **The M03-24 patch test**
 ([`findings/2026-11-17-m0324-results.md`](findings/2026-11-17-m0324-results.md), tables in
@@ -117,6 +124,9 @@ uses were analysed:
 * [`findings/2026-11-17-yka-stageb-prereg.md`](findings/2026-11-17-yka-stageb-prereg.md):
   YKA stage B on the merged ILAR families, with the new-event vote F1-Y (written after
   YKA stage A and before any stage-B YKA measurement).
+* [`findings/2026-11-17-yka-hardware-prereg.md`](findings/2026-11-17-yka-hardware-prereg.md):
+  the YKA hardware control on the 2013-2014 overlap of the legacy and current systems
+  (written before any overlap waveform or stage-B measurement).
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -230,7 +240,7 @@ Its first run (2026-11-17) and the comparison with the ILAR v1 pairs are in
 [`results/wang-v1/`](results/wang-v1/). The pair-by-pair tables quote only the published
 ILAR grades they compare against. The publisher's tables are not redistributed.
 
-## The second array: Yellowknife (`yka.py`, `yka_b.py`)
+## The second array: Yellowknife (`yka.py`, `yka_b.py`, `ykagen.py`)
 
 YKA sits about 133-142° from the SSI, where PKIKP has no outer-core companion phase, so
 repeaters are taken from ILAR's outer-core detection. Then:
@@ -248,6 +258,15 @@ repeaters are taken from ILAR's outer-core detection. Then:
   fdscan-v1, merged where they share an event. It lowers the YKA catalogue to M4.3 so
   ILAR's small pre-2008 partners are included, and grades the new-event vote F1-Y of
   pre-registration 8. It fetches `yka.py` and its helpers at a pinned commit.
+* **`ykagen.py`** (v0.9.1) is the hardware control.
+  * **Which events:** every M ≥ 4.7 event 128.5-145.5° from YKA between 2013-06-27 and
+    2014-04-01, when the legacy (CNSN digitiser, 20 sps) and current (YKA pre-amp and
+    Guralp digitiser, 40 sps) systems both recorded from Geotech S-13 sensors on the same
+    piers.
+  * **How:** each system is processed separately with `yka.py`'s unchanged steps, and the
+    two beams of the same earthquake are compared exactly as a stage-B pair.
+  * **What it reports:** the hardware-only floor of D, the survival of the cc ≥ 0.90
+    gate, polarity, and the timing offset between the systems (pre-registration 9).
 
 ```
 pip install -r requirements.txt openpyxl
@@ -263,7 +282,8 @@ python yka.py --data-dir ./data --out-dir ./out_yka                       # stag
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
 python yka_b.py --data-dir ./data --out-dir ./out_ykab --tables-dir .     # stage B, merged families
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b
+python ykagen.py --data-dir ./data_gen --out-dir ./out_ykagen             # hardware control
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen
 ```
 
 ## Data access notes (2026-11-17)
@@ -278,6 +298,10 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   been offline since July 2026. This code uses USGS ComCat for events and asks dataselect
   directly.
 * ILAR SHZ response metadata change on 2018-09-25 (new digitiser chain, same sensor).
+* YKA SHZ station metadata (EarthScope, 2026-11-17): the legacy YKB*/YKR* channels
+  (1989-01-25 to 2014-04-02, 20 sps) and the current YKAB*/YKAR* channels (from
+  2013-06-26, 40 sps) both use Geotech S-13 sensors at the same coordinates. The
+  electronics differ (CNSN digitiser vs the YKA pre-amp and a Guralp digitiser).
 * ObsPy cannot re-write DW.COL records stored in the DWWSSN encoding, so `cola.py` measures
   them in memory without caching them.
 
@@ -312,6 +336,8 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   limited by ILAR's PKIKP SNR; YKA strong and complete, and its statics census finds the
   2014-2019 clock offsets on its own). Added `yka_b.py` and pre-registration 8 (ILAR
   families measured at YKA) before any stage-B measurement.
+* v0.9.1, 2026-11-17: added the YKA hardware control (`ykagen.py`, `test_ykagen.py`) and
+  pre-registration 9, before any overlap-window waveform or stage-B measurement.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
