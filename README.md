@@ -23,12 +23,15 @@ Two things are still missing:
    given by eye, and the code is "available on request".
 2. **A test on earthquakes that no published analysis has seen.** The backtracking
    model predicts that 2025-2026 events should resemble, through the inner core, their
-   repeating partners from about 2001-2002, and not those from 2004-2008.
+   repeating partners from about 2001-2002, and not those from 2004-2008. The USGS
+   catalogue lists 226 South Sandwich Islands earthquakes of magnitude 4.7 or more in
+   2025-2026 (to 13 November 2026).
 
-This repository supplies both. The pre-registration, written before any data were
-analysed, is in [`findings/2026-11-17-prereg.md`](findings/2026-11-17-prereg.md).
+This repository supplies both. The pre-registrations, written before any data were
+analysed, are in [`findings/2026-11-17-prereg.md`](findings/2026-11-17-prereg.md) (ILAR)
+and [`findings/2026-11-17-yka-prereg.md`](findings/2026-11-17-yka-prereg.md) (YKA).
 
-## What the pipeline does (`run.py`)
+## What the ILAR pipeline does (`run.py`)
 
 1. Gets SSI earthquakes from the USGS ComCat FDSN event service.
 2. Downloads ILAR (network IM, IL01-IL19 SHZ) records around PKIKP from EarthScope FDSN.
@@ -43,21 +46,46 @@ analysed, is in [`findings/2026-11-17-prereg.md`](findings/2026-11-17-prereg.md)
    the turn date and rate ratio (P5). It writes CSV tables, `predictions.json`,
    `report.md` and plots.
 
+## The second array: Yellowknife (`yka.py`)
+
+YKA sits about 133-142° from the SSI, where PKIKP has no outer-core companion phase, so
+repeaters are taken from ILAR's outer-core detection. Then:
+
+* **Stage A** downloads YKA records for every catalogue event and makes beams.
+  * Legacy YKB/YKR elements, 1989-2014, come from the Canadian National Seismograph
+    Network (NRCan) FDSN service.
+  * Current YKAB/YKAR elements, from 2013, come from EarthScope.
+  * It writes archive coverage by year, a census of per-element static (clock) offsets,
+    and quick-look plots with ak135 phases marked.
+* **Stage B** (`--ilar-multiplets multiplets.csv`) aligns each pair on the direct PKIKP
+  pulse and measures the similarity of the PKIKP coda (+1 to +6 s). It then grades the
+  same predictions on YKA alone, and compares ILAR and YKA pair by pair.
+
 ```
 pip install -r requirements.txt
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
-python -m unittest -v test_xcorr test_model test_cluster_phases
+python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
+python yka.py --data-dir ./data --out-dir ./out_yka \
+    --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka
 ```
 
 ## Status
 
-v0.1.0, 2026-11-17: the code and the pre-registration are published. The first run on
-the full catalogue is queued. Results will go in `findings/` whatever they show,
-including null or negative results.
+* v0.1.0, 2026-11-17: ILAR code and pre-registration published; the first full ILAR run
+  is queued.
+* v0.2.0, 2026-11-17: the YKA second array (`yka.py`, `test_yka.py`) and its
+  pre-registration were added before any YKA data were downloaded. The YKA stage A run
+  is queued.
+
+Results go in `findings/` whatever they show, including null or negative results.
 
 ## Data credits
 
-* Seismic data: the Eielson array ILAR (FDSN network code IM), served through the
-  EarthScope Consortium FDSN web services.
+* Seismic data:
+  * the Eielson array ILAR (FDSN network code IM), through the EarthScope Consortium
+    FDSN web services;
+  * the Yellowknife array YKA (network CN), from the Canadian National Seismograph
+    Network (Natural Resources Canada) and EarthScope.
 * Earthquake catalogue: the USGS ComCat.
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
