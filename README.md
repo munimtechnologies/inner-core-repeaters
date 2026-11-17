@@ -12,10 +12,15 @@ In 2024, Wang, Vidale and colleagues reported in *Nature* (doi:10.1038/s41586-02
 that waveforms of repeating South Sandwich Islands earthquakes, after passing through
 the inner core to arrays in Alaska (ILAR) and Canada (YKA), changed and then changed
 back. They read this as the inner core reversing its rotation relative to the mantle
-around 2008.5 and then moving back along the same path about 2-3 times more slowly. A
-2025 follow-up (Vidale et al., *Nature Geoscience*) extended the data to 2024. A 2026
-paper (Zhang & Wen, *JGR Solid Earth*) argues that episodic changes of the inner-core
-surface explain the same records without any rotation.
+around 2008.5 and then moving back along the same path about 2-3 times more slowly.
+
+Later work:
+
+* Vidale et al. 2025 (*Nature Geoscience*) extended the data to 2024.
+* Wu, Song & Yang 2026 (*GRL*, doi:10.1029/2025GL119295) used single events at COLA
+  through 2024 and found a multidecadal oscillation with no sudden reversal.
+* Zhang & Wen 2026 (*JGR Solid Earth*) argue that episodic changes of the inner-core
+  surface explain the same records without any rotation.
 
 Two things are still missing:
 
@@ -27,9 +32,14 @@ Two things are still missing:
    catalogue lists 226 South Sandwich Islands earthquakes of magnitude 4.7 or more in
    2025-2026 (to 13 November 2026).
 
-This repository supplies both. The pre-registrations, written before any data were
-analysed, are in [`findings/2026-11-17-prereg.md`](findings/2026-11-17-prereg.md) (ILAR)
-and [`findings/2026-11-17-yka-prereg.md`](findings/2026-11-17-yka-prereg.md) (YKA).
+This repository supplies both. Each pre-registration was written before the data it
+uses were analysed:
+
+* [`findings/2026-11-17-prereg.md`](findings/2026-11-17-prereg.md): ILAR waveform test.
+* [`findings/2026-11-17-yka-prereg.md`](findings/2026-11-17-yka-prereg.md): YKA second
+  array.
+* [`findings/2026-11-17-bcdf-prereg.md`](findings/2026-11-17-bcdf-prereg.md): single-event
+  BC−DF travel times at ILAR, which need no repeaters.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -45,6 +55,33 @@ and [`findings/2026-11-17-yka-prereg.md`](findings/2026-11-17-yka-prereg.md) (YK
 6. Grades the pre-registered predictions P1-P4 (`model.py`) and an exploratory fit of
    the turn date and rate ratio (P5). It writes CSV tables, `predictions.json`,
    `report.md` and plots.
+
+## Single-event BC−DF times (`bcdf.py`)
+
+This reads the beams cached by `run.py`, with no new downloads. For each event it picks
+the PKIKP onset and correlates the PKIKP pulse with PKPbc to get the BC−DF time and its
+ak135 residual.
+
+A spatial gradient (latitude, longitude, depth) is fitted together with one of two time
+terms:
+
+* a monotone rotation, L;
+* Wang et al.'s backtracking, Bk.
+
+Both are fitted on events before 2025. Each then predicts the 2025-2026 events, and the
+pre-registered rule decides whether either prediction wins, or says the data are not
+decisive.
+
+## The published repeater list (`wang_table.py`)
+
+This script:
+
+1. Downloads Supplementary Table 1 of Wang et al. 2024 (xlsx) and writes every sheet to
+   CSV.
+2. Finds each of their 121 events in USGS ComCat.
+3. Flags which events fall inside this pipeline's magnitude cuts.
+4. Lists every ComCat event since February 2023 near each of their 42 locations. These
+   are candidates for new, out-of-sample members of the published multiplets.
 
 ## The second array: Yellowknife (`yka.py`)
 
@@ -62,12 +99,14 @@ repeaters are taken from ILAR's outer-core detection. Then:
   same predictions on YKA alone, and compares ILAR and YKA pair by pair.
 
 ```
-pip install -r requirements.txt
+pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
+python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
+python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table
 ```
 
 ## Status
@@ -77,6 +116,9 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka
 * v0.2.0, 2026-11-17: the YKA second array (`yka.py`, `test_yka.py`) and its
   pre-registration were added before any YKA data were downloaded. The YKA stage A run
   is queued.
+* v0.3.0, 2026-11-17: added single-event BC−DF travel times (`bcdf.py`) with their
+  pre-registration, and the published-repeater cross-match (`wang_table.py`). Both were
+  written before any ILAR waveform had been downloaded.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
@@ -89,3 +131,5 @@ Results go in `findings/` whatever they show, including null or negative results
     Network (Natural Resources Canada) and EarthScope.
 * Earthquake catalogue: the USGS ComCat.
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
+* Event list: Supplementary Table 1 of Wang et al. 2024 (*Nature*), fetched from the
+  publisher at run time and not redistributed here.
