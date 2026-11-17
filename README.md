@@ -8,17 +8,36 @@ working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY
 
 ## Results so far (2026-11-17)
 
-The first full run (ILAR, 1998-2026) is graded in
-[`findings/2026-11-17-ilar-results.md`](findings/2026-11-17-ilar-results.md); raw tables are
-in [`results/ilar-v1/`](results/ilar-v1/).
+**Latest: the M03-24 patch test**
+([`findings/2026-11-17-m0324-results.md`](findings/2026-11-17-m0324-results.md), tables in
+[`results/m0324-v1/`](results/m0324-v1/)).
+
+* The objective pipeline re-found Zhang & Wen's multiplet M03-24 exactly: all 6 published
+  events land in one multiplet, plus 2014-12-09, 2022-10-15 and 2025-12-13. Calibration
+  holds.
+* Before 2025 the patch looks like backtracking. The 2003 event's PKIKP resembles
+  2020-2024 and not 2008-2014. The objective D also agrees with Wang et al.'s by-eye ILAR
+  grades for this family (Spearman 0.67, 15 pairs).
+* The pre-registered 2025-2026 tests were **untestable**. Of 46 new events near the patch,
+  only one has a PKIKP signal above the pre-set gate.
+* That one event, 2025-12-13, **goes against the backtracking forecast** (exploratory,
+  one event). Its PKIKP matches the 2011 event (D 0.033), not the 2003 event (D 0.167).
+  A pre-registered check (element bootstrap, other windows, and the YKA array in Canada)
+  was filed before being run:
+  [`findings/2026-11-17-m0324-check-prereg.md`](findings/2026-11-17-m0324-check-prereg.md).
+* College, Alaska single-station BC−DF (`cola.py`) kept only 27 of 2,166 events (one from
+  2025). Not decisive; that lane is paused (same findings file, section 2).
+
+**Earlier: the first full ILAR run**
+([`findings/2026-11-17-ilar-results.md`](findings/2026-11-17-ilar-results.md), tables in
+[`results/ilar-v1/`](results/ilar-v1/)).
 
 * 1,559 South Sandwich Islands earthquakes were beamed at ILAR. The pipeline found 75
   repeating multiplets and measured 874 pairs, 136 of which passed the quality cuts.
 * **Calibration (P4) holds.** **In-sample replication (P1) narrowly fails** the
   pre-registered bar: ρ_B = 0.19 (p = 0.03) against ρ_M = 0.07, but 88% of multiplet
   bootstraps favour backtracking where 90% was required.
-* **The 2025-2026 tests (P2, P3) were untestable at M ≥ 5.0.** The decisive M ≥ 4.3 tests
-  (`m0324.py`, `fdscan.py`) are queued.
+* **The 2025-2026 tests (P2, P3) were untestable at M ≥ 5.0.**
 * On this path PKIKP arrives about 4 s before ak135, the known SSI-Alaska anomaly. The
   BC−DF code was corrected for it before it ever ran
   ([amendment](findings/2026-11-17-bcdf-amendment.md)).
@@ -75,6 +94,9 @@ uses were analysed:
 * [`findings/2026-11-17-fdscan-prereg.md`](findings/2026-11-17-fdscan-prereg.md): the
   forecast-date scan, which runs the same best-match test on every South Sandwich patch
   where it can tell the two models apart.
+* [`findings/2026-11-17-m0324-check-prereg.md`](findings/2026-11-17-m0324-check-prereg.md):
+  robustness and second-array check of the 2025-12-13 M03-24 anomaly (written after the
+  anomaly was seen, before the checks ran).
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -96,7 +118,7 @@ instrument epoch, SNR, leave-one-multiplet-out, results without the 2021 sequenc
 within-multiplet sign test, and a bootstrap of the turn date. It was written after the
 ILAR results were read and is labelled as such.
 
-## The M03-24 patch test (`m0324.py`)
+## The M03-24 patch test (`m0324.py`) and its follow-up check (`m0324_check.py`)
 
 Zhang & Wen's multiplet M03-24 has six events: 2003-03-21, 2008-02-17, 2011-02-20,
 2020-07-11, 2022-03-07 and 2024-03-21, centred near 59.04°S, 25.69°W. The same patch has
@@ -114,6 +136,17 @@ two features no published study has used together:
   or the latest pre-turn partner?
 * Z2: an out-of-sample rank test.
 * Z3: calibration.
+
+`m0324_check.py` takes the nine-event family and does the following:
+
+* recomputes its D matrix from the cached ILAR beams;
+* resamples ILAR's elements (bootstrap and leave-one-out);
+* tries three other PKIKP windows;
+* measures the same nine events at YKA with the published `yka.py` (fetched at a pinned
+  commit).
+
+Inputs `z004_events.csv`, `z004_edges.csv` and `z004_published_D.csv` are copied from the
+icr-m0324-v1 output.
 
 ## The forecast-date scan (`fdscan.py`)
 
@@ -146,7 +179,8 @@ get the BC−DF time and its ak135 residual.
 * `cola.py` uses the single broadband station at College, Alaska. Its record runs
   from 1982 (DW.COL short-period, then IU.COL and IU.COLA broadband), the same span as
   Wu et al. 2026. It adds 2025-2026, a second band (0.6-1.6 Hz), and a cross-check on
-  the second COLA sensor (location 10).
+  the second COLA sensor (location 10). Its first run kept only 27 usable events, and one
+  of its own synthetic unit tests fails (see the M03-24 results, section 2).
 
 A spatial gradient (latitude, longitude, depth) is fitted together with one time term:
 
@@ -173,8 +207,8 @@ This script:
 
 Its first run (2026-11-17) and the comparison with the ILAR v1 pairs are in
 [`findings/2026-11-17-wang-crossmatch.md`](findings/2026-11-17-wang-crossmatch.md) and
-[`results/wang-v1/`](results/wang-v1/). The pair-by-pair table quotes only the 17 published
-ILAR grades it compares against. The publisher's tables are not redistributed.
+[`results/wang-v1/`](results/wang-v1/). The pair-by-pair tables quote only the published
+ILAR grades they compare against. The publisher's tables are not redistributed.
 
 ## The second array: Yellowknife (`yka.py`)
 
@@ -196,6 +230,7 @@ pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
 python ilar_diag.py --pairs ./out/pairs.csv --out-dir ./out_diag            # after run.py
 python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
+python m0324_check.py --data-dir ./data_m0324 --out-dir ./out_m0324_check  # after m0324.py
 python fdscan.py --data-dir ./data_fd --out-dir ./out_fd
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
@@ -203,7 +238,7 @@ python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check
 ```
 
 ## Data access notes (2026-11-17)
@@ -216,6 +251,8 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   been offline since July 2026. This code uses USGS ComCat for events and asks dataselect
   directly.
 * ILAR SHZ response metadata change on 2018-09-25 (new digitiser chain, same sensor).
+* ObsPy cannot re-write DW.COL records stored in the DWWSSN encoding, so `cola.py` measures
+  them in memory without caching them.
 
 ## Status
 
@@ -242,6 +279,8 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.7.1, 2026-11-17: cross-match with Wang et al. 2024 and an objective check of their
   ILAR grades (exploratory), plus a new 2026-11-03 member of their multiplet J (an
   anecdote below the SNR cut).
+* v0.8.0, 2026-11-17: **M03-24 and COLA results** graded and published with raw tables.
+  Added `m0324_check.py` and pre-registration 7 for the 2025-12-13 anomaly, before it ran.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
@@ -255,7 +294,7 @@ Results go in `findings/` whatever they show, including null or negative results
     Network (Natural Resources Canada) and EarthScope.
 * Earthquake catalogue: the USGS ComCat.
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
-* Event list and the 17 quoted ILAR grades: Supplementary Tables 1-2 of Wang et al. 2024
+* Event list and the quoted ILAR grades: Supplementary Tables 1-2 of Wang et al. 2024
   (*Nature*), fetched from the publisher at run time and not redistributed here.
 * M03-24 membership: Zhang & Wen 2026, from the file names of their CC BY 4.0 Zenodo
   dataset (doi:10.5281/zenodo.19625711). Event locations: USGS ComCat.

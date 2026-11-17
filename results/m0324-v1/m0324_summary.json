@@ -1,0 +1,261 @@
+{
+ "version": "0.5.0",
+ "args": {
+  "data_dir": "/data",
+  "out_dir": "/out",
+  "end": "2026-11-17T00:00:00",
+  "start": "1991-01-01",
+  "radius_km": 35.0,
+  "min_mag": 4.3,
+  "detect_thr": 0.9,
+  "pair_thr": 0.93,
+  "min_snr_group": 3.0,
+  "min_snr_ref": 5.0,
+  "min_snr_df": 3.0,
+  "max_lag_s": 8.0,
+  "max_station_level": 40,
+  "time_budget_min": 150.0
+ },
+ "started": "2026-11-17T18:46:53Z",
+ "centroid": [
+  -59.0365,
+  -25.6939
+ ],
+ "phase_check": [
+  {
+   "dist": 148.0,
+   "bc_minus_df": 3.1282666969634647,
+   "ab_minus_df": 5.877019672779852
+  },
+  {
+   "dist": 150.0,
+   "bc_minus_df": 4.948319476622828,
+   "ab_minus_df": 10.767507810592406
+  },
+  {
+   "dist": 152.0,
+   "bc_minus_df": 6.552726105753891,
+   "ab_minus_df": 15.999528051522702
+  }
+ ],
+ "catalog_fetched": true,
+ "coverage_by_year": {
+  "2025": {
+   "tried": 23,
+   "ok": 23
+  },
+  "2026": {
+   "tried": 9,
+   "ok": 8
+  },
+  "2024": {
+   "tried": 15,
+   "ok": 14
+  },
+  "2001": {
+   "tried": 5,
+   "ok": 5
+  },
+  "2005": {
+   "tried": 3,
+   "ok": 3
+  },
+  "2007": {
+   "tried": 4,
+   "ok": 4
+  },
+  "2003": {
+   "tried": 10,
+   "ok": 9
+  },
+  "2008": {
+   "tried": 7,
+   "ok": 7
+  },
+  "1998": {
+   "tried": 5,
+   "ok": 2
+  },
+  "1999": {
+   "tried": 4,
+   "ok": 0
+  },
+  "2006": {
+   "tried": 6,
+   "ok": 5
+  },
+  "2002": {
+   "tried": 1,
+   "ok": 1
+  },
+  "2000": {
+   "tried": 2,
+   "ok": 1
+  },
+  "2021": {
+   "tried": 73,
+   "ok": 62
+  },
+  "2016": {
+   "tried": 9,
+   "ok": 9
+  },
+  "2022": {
+   "tried": 44,
+   "ok": 44
+  },
+  "1994": {
+   "tried": 1,
+   "ok": 0
+  },
+  "1997": {
+   "tried": 6,
+   "ok": 0
+  },
+  "2010": {
+   "tried": 9,
+   "ok": 9
+  },
+  "1993": {
+   "tried": 6,
+   "ok": 0
+  },
+  "1995": {
+   "tried": 4,
+   "ok": 0
+  },
+  "1996": {
+   "tried": 2,
+   "ok": 0
+  },
+  "2020": {
+   "tried": 8,
+   "ok": 8
+  },
+  "1991": {
+   "tried": 3,
+   "ok": 0
+  },
+  "1992": {
+   "tried": 3,
+   "ok": 0
+  },
+  "2012": {
+   "tried": 9,
+   "ok": 9
+  },
+  "2023": {
+   "tried": 17,
+   "ok": 17
+  },
+  "2014": {
+   "tried": 8,
+   "ok": 8
+  },
+  "2011": {
+   "tried": 9,
+   "ok": 9
+  },
+  "2017": {
+   "tried": 6,
+   "ok": 6
+  },
+  "2019": {
+   "tried": 5,
+   "ok": 5
+  },
+  "2015": {
+   "tried": 9,
+   "ok": 9
+  },
+  "2013": {
+   "tried": 7,
+   "ok": 7
+  },
+  "2009": {
+   "tried": 1,
+   "ok": 1
+  },
+  "2018": {
+   "tried": 5,
+   "ok": 5
+  }
+ },
+ "n_processed": 290,
+ "n_compared": 24531,
+ "n_snr_ok": 222,
+ "n_edges": 368,
+ "tests": {
+  "n_rows": 1110,
+  "n_ok": 40,
+  "n_out_of_sample": 6,
+  "Z0_reproduce_M03_24": {
+   "n_members": 6,
+   "n_processed": 6,
+   "n_in_largest_shared_component": 6,
+   "testable": true,
+   "holds": true
+  },
+  "Z1_new_event_best_match": {
+   "cases": [],
+   "n_discriminating": 0,
+   "n_match_B": 0,
+   "n_match_M": 0,
+   "testable": false,
+   "holds": null
+  },
+  "Z2_out_of_sample": {
+   "n_pairs": 6,
+   "n_cross_turn": 1,
+   "n_multiplets": 3,
+   "rho_B": 0.2571428571428572,
+   "p_B": 0.6227871720116619,
+   "rho_M": 0.5428571428571429,
+   "p_M": 0.26570262390670546,
+   "bootstrap": {
+    "n": 682,
+    "frac_B_better": 0.0,
+    "median": -0.4705882352941177,
+    "p05": -0.6896551724137933,
+    "p95": -0.05882352941176472
+   },
+   "testable": false,
+   "holds": null
+  },
+  "Z2b_in_sample": {
+   "n_pairs": 34,
+   "n_cross_turn": 13,
+   "n_multiplets": 6,
+   "rho_B": 0.6953399541634835,
+   "p_B": 5.013851477098003e-06,
+   "rho_M": 0.1122994652406417,
+   "p_M": 0.5271744508999157,
+   "bootstrap": {
+    "n": 1000,
+    "frac_B_better": 0.928,
+    "median": 0.5957261229829918,
+    "p05": -0.13227250124316264,
+    "p95": 0.7816727466883941
+   },
+   "testable": true,
+   "holds": true
+  },
+  "Z3_calibration": {
+   "n_near": 6,
+   "n_far": 6,
+   "median_D_near": 0.0470322447837761,
+   "median_D_far": 0.25711805669951376,
+   "testable": true,
+   "holds": true
+  },
+  "Z5_fit_all": {
+   "n_pairs": 40,
+   "best_rho": 0.6238273921200751,
+   "best_T": 2007.25,
+   "best_ratio": 4.0,
+   "rho_M": 0.12270168855534712
+  }
+ },
+ "finished": "2026-11-17T18:59:19Z",
+ "minutes": 12.4
+}
