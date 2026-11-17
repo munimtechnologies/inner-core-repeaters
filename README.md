@@ -46,6 +46,9 @@ uses were analysed:
   where inner-core rotation was first seen.
 * [`findings/2026-11-17-m0324-prereg.md`](findings/2026-11-17-m0324-prereg.md): the
   M03-24 patch test, which goes down to M4.3 at Zhang & Wen's multiplet.
+* [`findings/2026-11-17-fdscan-prereg.md`](findings/2026-11-17-fdscan-prereg.md): the
+  forecast-date scan, which runs the same best-match test on every South Sandwich patch
+  where it can tell the two models apart.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -80,6 +83,26 @@ two features no published study has used together:
   or the latest pre-turn partner?
 * Z2: an out-of-sample rank test.
 * Z3: calibration.
+
+## The forecast-date scan (`fdscan.py`)
+
+The scan runs the M03-24 best-match test on the whole South Sandwich arc.
+
+* **Which events.** It takes every 2025+ event of M ≥ 4.5 that has catalogue neighbours
+  (within 25 km, M ≥ 4.3) in two time windows:
+  * the backtracking forecast window, |t − e(t)| ≤ 1 yr, about 2000-2003;
+  * later, up to 2008.5, the monotone pick.
+* **Waveforms.** It processes those events through the unchanged `run.py` pipeline, at
+  most 700 events, largest new events first.
+* **The vote.** For each new event it records whether the best PKIKP match is the
+  backtracking pick or the monotone pick.
+* **Decision rule.** The vote is graded with a one-sided binomial test and a bootstrap
+  over whole multiplets. Robustness: excess dissimilarity Dx.
+* **Independence.** A variant drops the M03-24 patch.
+* **Controls.** It also reports the chance level and an SNR control.
+
+The USGS catalogue, counted on 2026-11-17, holds 378 SSI events of M ≥ 4.5 since 2025
+and 1,001 of M ≥ 4.3 from 1999 to mid-2008.
 
 ## Single-event BC−DF times (`bcdf.py`, `cola.py`)
 
@@ -133,13 +156,14 @@ repeaters are taken from ILAR's outer-core detection. Then:
 pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
 python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
+python fdscan.py --data-dir ./data_fd --out-dir ./out_fd
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
 python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan
 ```
 
 ## Data access notes (2026-11-17)
@@ -167,6 +191,9 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.5.0, 2026-11-17: added the M03-24 patch test (`m0324.py`, `test_m0324.py`) and
   pre-registration 5, before any waveform from the patch was processed, plus the data
   access notes.
+* v0.6.0, 2026-11-17: added the forecast-date scan (`fdscan.py`, `test_fdscan.py`) and
+  pre-registration 6, before any waveform for it was processed. No run has finished yet;
+  all jobs are waiting for compute.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
