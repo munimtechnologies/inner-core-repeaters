@@ -19,8 +19,9 @@ Later work:
 * Vidale et al. 2025 (*Nature Geoscience*) extended the data to 2024.
 * Wu, Song & Yang 2026 (*GRL*, doi:10.1029/2025GL119295) used single events at COLA
   through 2024 and found a multidecadal oscillation with no sudden reversal.
-* Zhang & Wen 2026 (*JGR Solid Earth*) argue that episodic changes of the inner-core
-  surface explain the same records without any rotation.
+* Zhang & Wen 2026 (*JGR Solid Earth*, doi:10.1029/2026JB034595) argue that episodic
+  changes of the inner-core surface explain the same records without any rotation. They
+  base this on one multiplet, M03-24, observed 2003-2024.
 
 Two things are still missing:
 
@@ -43,6 +44,8 @@ uses were analysed:
 * [`findings/2026-11-17-cola-prereg.md`](findings/2026-11-17-cola-prereg.md): the
   College, Alaska BC−DF series from 1982 to 2026 (DW.COL, IU.COL, IU.COLA), the station
   where inner-core rotation was first seen.
+* [`findings/2026-11-17-m0324-prereg.md`](findings/2026-11-17-m0324-prereg.md): the
+  M03-24 patch test, which goes down to M4.3 at Zhang & Wen's multiplet.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -58,6 +61,25 @@ uses were analysed:
 6. Grades the pre-registered predictions P1-P4 (`model.py`) and an exploratory fit of
    the turn date and rate ratio (P5). It writes CSV tables, `predictions.json`,
    `report.md` and plots.
+
+## The M03-24 patch test (`m0324.py`)
+
+Zhang & Wen's multiplet M03-24 has six events: 2003-03-21, 2008-02-17, 2011-02-20,
+2020-07-11, 2022-03-07 and 2024-03-21, centred near 59.04°S, 25.69°W. The same patch has
+two features no published study has used together:
+
+* **46 USGS events of M ≥ 4.3 within 40 km in 2025-2026.**
+* **Events on 2001-01-29 and 2002-06-29.** Under Wang et al.'s model these are the partners
+  a 2025-2026 event should match best, because e(2025-2026) = 2001.9-2001.5.
+
+`m0324.py` runs the unchanged `run.py` pipeline on every M ≥ 4.3 event within 35 km,
+1991-2026. It then grades four things:
+
+* Z0: does the objective pipeline re-find the published multiplet?
+* Z1, the main test: does each new event's best PKIKP match pick the backtracking partner
+  or the latest pre-turn partner?
+* Z2: an out-of-sample rank test.
+* Z3: calibration.
 
 ## Single-event BC−DF times (`bcdf.py`, `cola.py`)
 
@@ -110,14 +132,24 @@ repeaters are taken from ILAR's outer-core detection. Then:
 ```
 pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
+python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
 python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324
 ```
+
+## Data access notes (2026-11-17)
+
+* The EarthScope FDSN dataselect service returned data for ILAR in 2002 and 2026, for
+  DW.COL in 1985 and for IU.COLA.
+* IL01 returned no data for a 1990 event, so early-1990s ILAR coverage may be sparse.
+* EarthScope has retired fdsnws-event and irisws-timeseries, and fdsnws-availability has
+  been offline since July 2026. This code uses USGS ComCat for events and asks dataselect
+  directly.
 
 ## Status
 
@@ -132,6 +164,9 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.4.0, 2026-11-17: added the College, Alaska BC−DF series (`cola.py`,
   `test_cola.py`) and pre-registration 4, before any COL/COLA waveform was downloaded.
   `bcdf.py` gained the pause model P. The COLA run is queued.
+* v0.5.0, 2026-11-17: added the M03-24 patch test (`m0324.py`, `test_m0324.py`) and
+  pre-registration 5, before any waveform from the patch was processed, plus the data
+  access notes.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
@@ -147,3 +182,5 @@ Results go in `findings/` whatever they show, including null or negative results
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
 * Event list: Supplementary Table 1 of Wang et al. 2024 (*Nature*), fetched from the
   publisher at run time and not redistributed here.
+* M03-24 membership: Zhang & Wen 2026, from the file names of their CC BY 4.0 Zenodo
+  dataset (doi:10.5281/zenodo.19625711). Event locations: USGS ComCat.
