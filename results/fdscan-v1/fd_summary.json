@@ -1,0 +1,177 @@
+{
+ "version": "0.6.0",
+ "args": {
+  "data_dir": "/data",
+  "out_dir": "/out",
+  "end": "2026-11-17T00:00:00",
+  "min_mag_old": 4.3,
+  "min_mag_new": 4.5,
+  "radius_km": 25.0,
+  "b_half": 1.0,
+  "detect_thr": 0.9,
+  "pair_thr": 0.93,
+  "min_snr_group": 3.0,
+  "min_snr_ref": 5.0,
+  "min_snr_df": 3.0,
+  "max_lag_s": 8.0,
+  "max_station_level": 40,
+  "max_events": 700,
+  "time_budget_min": 200.0,
+  "fetch_frac": 0.7,
+  "plots": 16
+ },
+ "started": "2026-11-17T20:13:26Z",
+ "phase_check": [
+  {
+   "dist": 146.0,
+   "bc_minus_df": 0.7979099359681641,
+   "ab_minus_df": 1.358415424748955
+  },
+  {
+   "dist": 149.0,
+   "bc_minus_df": 4.068740495407383,
+   "ab_minus_df": 8.23602733019834
+  },
+  {
+   "dist": 152.0,
+   "bc_minus_df": 6.5440778199874785,
+   "ab_minus_df": 15.952955853017102
+  }
+ ],
+ "catalog_complete": true,
+ "n_catalog": 1381,
+ "n_catalog_new": 378,
+ "n_catalog_cases": 296,
+ "n_to_process": 700,
+ "coverage_by_year": {
+  "2026": {
+   "tried": 34,
+   "ok": 33
+  },
+  "2000": {
+   "tried": 31,
+   "ok": 30
+  },
+  "2001": {
+   "tried": 45,
+   "ok": 45
+  },
+  "2008": {
+   "tried": 47,
+   "ok": 44
+  },
+  "2005": {
+   "tried": 72,
+   "ok": 70
+  },
+  "2007": {
+   "tried": 94,
+   "ok": 91
+  },
+  "2003": {
+   "tried": 60,
+   "ok": 58
+  },
+  "2006": {
+   "tried": 85,
+   "ok": 70
+  },
+  "2002": {
+   "tried": 71,
+   "ok": 70
+  },
+  "2004": {
+   "tried": 104,
+   "ok": 99
+  },
+  "2025": {
+   "tried": 57,
+   "ok": 56
+  }
+ },
+ "n_processed": 666,
+ "n_compared": 35696,
+ "n_snr_ok": 640,
+ "n_edges": 155,
+ "n_multiplets_new_and_preturn": 14,
+ "tests": {
+  "n_rows": 736,
+  "n_ok": 16,
+  "F1": {
+   "n_cases": 0,
+   "n_discriminating": 0,
+   "n_multiplets": 0,
+   "n_match_B": 0,
+   "n_match_M": 0,
+   "n_neither": 0,
+   "chance_expected_B": 0,
+   "chance_expected_M": 0,
+   "p_binom_B": 1.0,
+   "p_binom_M": 1.0,
+   "boot_frac_B_ahead": null,
+   "boot_frac_M_ahead": null,
+   "frac_best_is_top_snr": null,
+   "testable": false,
+   "verdict": "untestable"
+  },
+  "F1x": {
+   "n_cases": 0,
+   "n_discriminating": 0,
+   "n_multiplets": 0,
+   "n_match_B": 0,
+   "n_match_M": 0,
+   "n_neither": 0,
+   "chance_expected_B": 0,
+   "chance_expected_M": 0,
+   "p_binom_B": 1.0,
+   "p_binom_M": 1.0,
+   "boot_frac_B_ahead": null,
+   "boot_frac_M_ahead": null,
+   "frac_best_is_top_snr": null,
+   "testable": false,
+   "verdict": "untestable"
+  },
+  "F1e_without_M0324": {
+   "n_cases": 0,
+   "n_discriminating": 0,
+   "n_multiplets": 0,
+   "n_match_B": 0,
+   "n_match_M": 0,
+   "n_neither": 0,
+   "chance_expected_B": 0,
+   "chance_expected_M": 0,
+   "p_binom_B": 1.0,
+   "p_binom_M": 1.0,
+   "boot_frac_B_ahead": null,
+   "boot_frac_M_ahead": null,
+   "frac_best_is_top_snr": null,
+   "testable": false,
+   "verdict": "untestable"
+  },
+  "F1_robust": false,
+  "F3_calibration": {
+   "n_near": 7,
+   "n_far": 0,
+   "median_D_near": 0.3073514129200683,
+   "median_D_far": null,
+   "testable": false,
+   "holds": null
+  },
+  "F5_fit_all": {
+   "n_pairs": 16,
+   "best_rho": 0.5235294117647059,
+   "best_T": 2009.25,
+   "best_ratio": 5.0,
+   "rho_M": 0.09705882352941177
+  },
+  "p3_crosscheck": {
+   "n_discriminating": 0,
+   "n_match_B": 0,
+   "n_match_M": 0,
+   "testable": false,
+   "holds": null
+  }
+ },
+ "finished": "2026-11-17T20:23:39Z",
+ "minutes": 10.2
+}
