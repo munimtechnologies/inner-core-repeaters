@@ -40,6 +40,9 @@ uses were analysed:
   array.
 * [`findings/2026-11-17-bcdf-prereg.md`](findings/2026-11-17-bcdf-prereg.md): single-event
   BC−DF travel times at ILAR, which need no repeaters.
+* [`findings/2026-11-17-cola-prereg.md`](findings/2026-11-17-cola-prereg.md): the
+  College, Alaska BC−DF series from 1982 to 2026 (DW.COL, IU.COL, IU.COLA), the station
+  where inner-core rotation was first seen.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -56,21 +59,27 @@ uses were analysed:
    the turn date and rate ratio (P5). It writes CSV tables, `predictions.json`,
    `report.md` and plots.
 
-## Single-event BC−DF times (`bcdf.py`)
+## Single-event BC−DF times (`bcdf.py`, `cola.py`)
 
-This reads the beams cached by `run.py`, with no new downloads. For each event it picks
-the PKIKP onset and correlates the PKIKP pulse with PKPbc to get the BC−DF time and its
-ak135 residual.
+For each event, the PKIKP onset is picked and the PKIKP pulse is correlated with PKPbc to
+get the BC−DF time and its ak135 residual.
 
-A spatial gradient (latitude, longitude, depth) is fitted together with one of two time
-terms:
+* `bcdf.py` uses the ILAR beams cached by `run.py`, with no new downloads.
+* `cola.py` uses the single broadband station at College, Alaska. Its record runs
+  from 1982 (DW.COL short-period, then IU.COL and IU.COLA broadband), the same span as
+  Wu et al. 2026. It adds 2025-2026, a second band (0.6-1.6 Hz), and a cross-check on
+  the second COLA sensor (location 10).
+
+A spatial gradient (latitude, longitude, depth) is fitted together with one time term:
 
 * a monotone rotation, L;
-* Wang et al.'s backtracking, Bk.
+* Wang et al.'s backtracking, Bk;
+* in `cola.py` also a pause, P, where change stops at 2008.5.
 
-Both are fitted on events before 2025. Each then predicts the 2025-2026 events, and the
-pre-registered rule decides whether either prediction wins, or says the data are not
-decisive.
+The terms are fitted on events before 2025. Each then predicts the 2025-2026 events, and
+the pre-registered rule decides whether one prediction wins or the data are not decisive.
+`cola.py` first checks that it recovers the classic rise of BC−DF before 2008.5
+(calibration C1).
 
 ## The published repeater list (`wang_table.py`)
 
@@ -102,11 +111,12 @@ repeaters are taken from ILAR's outer-core detection. Then:
 pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
+python cola.py --data-dir ./data_cola --out-dir ./out_cola
 python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola
 ```
 
 ## Status
@@ -119,14 +129,18 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.3.0, 2026-11-17: added single-event BC−DF travel times (`bcdf.py`) with their
   pre-registration, and the published-repeater cross-match (`wang_table.py`). Both were
   written before any ILAR waveform had been downloaded.
+* v0.4.0, 2026-11-17: added the College, Alaska BC−DF series (`cola.py`,
+  `test_cola.py`) and pre-registration 4, before any COL/COLA waveform was downloaded.
+  `bcdf.py` gained the pause model P. The COLA run is queued.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
 ## Data credits
 
-* Seismic data:
-  * the Eielson array ILAR (FDSN network code IM), through the EarthScope Consortium
-    FDSN web services;
+* Seismic data, through the EarthScope Consortium FDSN web services:
+  * the Eielson array ILAR (FDSN network code IM);
+  * College, Alaska: DW.COL (DWWSSN), and IU.COL and IU.COLA (Global Seismograph
+    Network, IRIS/USGS, doi:10.7914/SN/IU);
   * the Yellowknife array YKA (network CN), from the Canadian National Seismograph
     Network (Natural Resources Canada) and EarthScope.
 * Earthquake catalogue: the USGS ComCat.

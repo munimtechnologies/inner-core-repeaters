@@ -96,6 +96,13 @@ class TestFit(unittest.TestCase):
         slope = np.polyfit(t, c, 1)[0]
         self.assertAlmostEqual(slope, 0.02, delta=0.003)
 
+    def test_constant_model_has_five_coefficients(self):
+        rr = self.rows("L", seed=8)
+        f = bcdf.fit(rr, "0")
+        self.assertEqual(len(f["coef"]), 5)
+        self.assertEqual(f["coef"][4], 0.0)
+        self.assertEqual(len(bcdf.predict(f, rr)), len(rr))
+
 
 if __name__ == "__main__":
     unittest.main()

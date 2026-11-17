@@ -17,7 +17,8 @@ findings/2026-11-17-bcdf-prereg.md):
   L  (monotone):     g(t) = b * (t - 2008.5)
   Bk (backtracking): g(t) = b * (e(t) - 2008.5), e(t) = Wang et al. 2024's equivalent date
 Both are fitted on events before 2025.0 and then predict the residuals of 2025-2026 events,
-which no published study has used.
+which no published study has used. A third term, P (pause: g = b * (min(t, 2008.5) - 2008.5),
+change stops at the turn), is used by cola.py (findings/2026-11-17-cola-prereg.md).
 """
 import argparse
 import csv
@@ -31,7 +32,7 @@ import numpy as np
 import model
 from xcorr import best_lag, fshift, lag_scan, pick_onset
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 FS = 40.0
 PRE = 40.0
 N0, N1 = int((PRE - 35) * FS), int((PRE - 5) * FS)  # noise window (beam is noise-normalised there)
@@ -113,6 +114,19 @@ def measure_elements(X, beam_res, dt_bc_pred, dt_ab_pred=float("nan"), fs=FS):
 
 
 # ----------------------------------------------------------------------------- fitting
+def time_term(t, kind, T=model.T_TURN, ratio=model.RATE_RATIO):
+    t = np.asarray(t, dtype=float)
+    if kind == "L":
+        return t - T
+    if kind == "Bk":
+        return np.array([model.equiv_date(x, T, ratio) for x in t]) - T
+    if kind == "P":
+        return np.minimum(t, T) - T
+    if kind == "0":
+        return np.zeros_like(t)
+    raise ValueError(kind)
+
+
 def design(rows, kind, ref=None, T=model.T_TURN, ratio=model.RATE_RATIO):
     """Columns: 1, dlat, dlon, ddepth/100, time term. ref = (lat0, lon0, z0) centring."""
     lat = np.array([r["lat"] for r in rows], dtype=float)
@@ -121,14 +135,7 @@ def design(rows, kind, ref=None, T=model.T_TURN, ratio=model.RATE_RATIO):
     t = np.array([r["t"] for r in rows], dtype=float)
     if ref is None:
         ref = (float(np.mean(lat)), float(np.mean(lon)), float(np.mean(z)))
-    if kind == "L":
-        g = t - T
-    elif kind == "Bk":
-        g = np.array([model.equiv_date(x, T, ratio) for x in t]) - T
-    elif kind == "0":
-        g = np.zeros_like(t)
-    else:
-        raise ValueError(kind)
+    g = time_term(t, kind, T, ratio)
     A = np.column_stack([np.ones_like(t), lat - ref[0], (lon - ref[1]) * math.cos(math.radians(ref[0])),
                          (z - ref[2]) / 100.0, g])
     return A, ref
@@ -140,6 +147,9 @@ def fit(rows, kind, key="res", ref=None, T=model.T_TURN, ratio=model.RATE_RATIO)
     if kind == "0":
         A = A[:, :4]
     coef, *_ = np.linalg.lstsq(A, y, rcond=None)
+    if kind == "0":
+        coef = np.append(coef, 0.0)
+        A = np.column_stack([A, np.zeros(len(y))])
     pred = A @ coef
     rss = float(np.sum((y - pred) ** 2))
     return dict(coef=coef, ref=ref, rss=rss, n=len(y), kind=kind, T=T, ratio=ratio)
@@ -147,8 +157,6 @@ def fit(rows, kind, key="res", ref=None, T=model.T_TURN, ratio=model.RATE_RATIO)
 
 def predict(f, rows):
     A, _ = design(rows, f["kind"], f["ref"], f["T"], f["ratio"])
-    if f["kind"] == "0":
-        A = A[:, :4]
     return A @ f["coef"]
 
 
@@ -161,7 +169,6 @@ def spatially_corrected(f, rows, key="res"):
 
 def out_of_sample(ins, outs, key="res", nboot=2000, seed=0):
     """Fit L and Bk on `ins`, predict `outs`. Pre-registered decision quantities."""
-    nan = float("nan")
     res = dict(n_in=len(ins), n_out=len(outs), n_cross_in=sum(1 for r in ins if r["t"] > model.T_TURN))
     if len(ins) < 15 or len(outs) < 1:
         res.update(testable=False, reason="need >= 15 in-sample and >= 1 new events")
@@ -248,8 +255,8 @@ def plot(path, rows, corr, fits):
         if f is None:
             continue
         c = f["coef"]
-        g = tt - f["T"] if kind == "L" else np.array([model.equiv_date(x) for x in tt]) - f["T"]
-        ax.plot(tt, c[0] + c[4] * g, color=col, lw=1.2, label="%s fit (< 2025)" % kind)
+        ax.plot(tt, c[0] + c[4] * time_term(tt, kind, f["T"], f["ratio"]), color=col, lw=1.2,
+                label="%s fit (< 2025)" % kind)
     ax.set_xlabel("year")
     ax.set_ylabel("BC-DF residual minus spatial terms (s)")
     ax.set_title("SSI -> ILAR single-event BC-DF residuals (1-2 Hz beams)")
