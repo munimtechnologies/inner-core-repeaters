@@ -22,6 +22,13 @@ in [`results/ilar-v1/`](results/ilar-v1/).
 * On this path PKIKP arrives about 4 s before ak135, the known SSI-Alaska anomaly. The
   BC−DF code was corrected for it before it ever ran
   ([amendment](findings/2026-11-17-bcdf-amendment.md)).
+* **Cross-check against the published grades** (exploratory,
+  [`findings/2026-11-17-wang-crossmatch.md`](findings/2026-11-17-wang-crossmatch.md)).
+  120 of Wang et al.'s 121 events were matched to ComCat, but only 59 are inside the v1
+  magnitude cuts. The pipeline re-found 17 of the 19 ILAR-graded published pairs it
+  could see. On those 17 pairs, the objective D agrees with the by-eye ILAR grades
+  (Spearman 0.62; 16 of 17 separated at D ≈ 0.07). The one clear disagreement is
+  2009-05-05 vs 2022-09-10, graded "different" by eye but nearly identical in D.
 
 ## Why
 
@@ -160,8 +167,14 @@ This script:
    CSV.
 2. Finds each of their 121 events in USGS ComCat.
 3. Flags which events fall inside this pipeline's magnitude cuts.
-4. Lists every ComCat event since February 2023 near each of their 42 locations. These
-   are candidates for new, out-of-sample members of the published multiplets.
+4. Lists every ComCat event since February 2023 near each published source location
+   (12 after merging locations within 20 km). These are candidates for new,
+   out-of-sample members of the published multiplets.
+
+Its first run (2026-11-17) and the comparison with the ILAR v1 pairs are in
+[`findings/2026-11-17-wang-crossmatch.md`](findings/2026-11-17-wang-crossmatch.md) and
+[`results/wang-v1/`](results/wang-v1/). The pair-by-pair table quotes only the 17 published
+ILAR grades it compares against. The publisher's tables are not redistributed.
 
 ## The second array: Yellowknife (`yka.py`)
 
@@ -226,6 +239,9 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   pre-registration and published with its raw tables. Also added: `bcdf.py` and `cola.py`
   v0.5.0 (search windows fixed for the SSI-Alaska anomaly, before any BC−DF or COLA
   measurement) and `ilar_diag.py` (exploratory robustness checks).
+* v0.7.1, 2026-11-17: cross-match with Wang et al. 2024 and an objective check of their
+  ILAR grades (exploratory), plus a new 2026-11-03 member of their multiplet J (an
+  anecdote below the SNR cut).
 
 Results go in `findings/` whatever they show, including null or negative results.
 
@@ -239,7 +255,7 @@ Results go in `findings/` whatever they show, including null or negative results
     Network (Natural Resources Canada) and EarthScope.
 * Earthquake catalogue: the USGS ComCat.
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
-* Event list: Supplementary Table 1 of Wang et al. 2024 (*Nature*), fetched from the
-  publisher at run time and not redistributed here.
+* Event list and the 17 quoted ILAR grades: Supplementary Tables 1-2 of Wang et al. 2024
+  (*Nature*), fetched from the publisher at run time and not redistributed here.
 * M03-24 membership: Zhang & Wen 2026, from the file names of their CC BY 4.0 Zenodo
   dataset (doi:10.5281/zenodo.19625711). Event locations: USGS ComCat.
