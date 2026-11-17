@@ -10,6 +10,11 @@ from the open archive with an objective, published measurement and extends it to
 2025-2026 events that no published study has used. Pre-registration:
 findings/2026-11-17-cola-prereg.md (written before any COL/COLA waveform was downloaded).
 
+v0.5.0: uses bcdf.py v0.5.0, whose DF and BC search windows allow for the SSI-Alaska
+anomaly (DF ~4 s before ak135, BC about on time), and accepts DF onsets from -8 to +1 s
+(was |onset| <= 3 s). See findings/2026-11-17-bcdf-amendment.md. Written before any
+COL/COLA waveform was measured; nothing else changed.
+
 The College site has one continuous record in the EarthScope archive:
   DW.COL  (blank) SHZ 20 Hz  1982-01-08 .. 1991-03-04
   IU.COL  (blank) BHZ 20 Hz  1991-03-04 .. 1996-05-11
@@ -32,7 +37,7 @@ import bcdf
 import model
 from phases import Phases, gc_deg, load_or_build
 
-VERSION = "0.4.0"
+VERSION = "0.5.0"
 FS = bcdf.FS
 PRE = bcdf.PRE
 POST = 40.0
@@ -250,7 +255,7 @@ def measure_row(ev, d, ch, x_alt=None):
     r = bcdf.measure_bcdf(d["x"], d["dt_bc"], d["dt_ab"])
     if r is None:
         return None
-    ok = r["cc"] >= bcdf.MIN_CC and r["snr_df"] >= bcdf.MIN_SNR_DF and abs(r["onset_s"]) <= 3.0
+    ok = r["cc"] >= bcdf.MIN_CC and r["snr_df"] >= bcdf.MIN_SNR_DF and bcdf.onset_ok(r["onset_s"])
     row = dict(id=ev["id"], time=ev["time"], t=ev["t"], lat=ev["lat"], lon=ev["lon"], depth=ev["depth"],
                mag=ev["mag"], chan=chan_id(ch), dist=d["dist"], dt_bc_pred=d["dt_bc"], dt_ab_pred=d["dt_ab"],
                onset_s=r["onset_s"], dt_obs=r["dt_obs_s"], res=r["dt_obs_s"] - d["dt_bc"], cc=r["cc"],
@@ -406,15 +411,16 @@ def plot_examples(path, items):
     fig, ax = plt.subplots(figsize=(9, 0.9 * len(items) + 1.5))
     tt = np.arange(N) / FS - PRE
     for k, (row, x) in enumerate(items):
-        sc = np.max(np.abs(x[int((PRE - 3) * FS):int((PRE + 10) * FS)])) or 1.0
+        sc = np.max(np.abs(x[int((PRE - 10) * FS):int((PRE + 14) * FS)])) or 1.0
         ax.plot(tt, x / sc * 0.45 - k, lw=0.7)
         ax.plot([row["onset_s"]] * 2, [-k - 0.4, -k + 0.4], "r-", lw=1)
         ax.plot([row["onset_s"] + row["dt_obs"]] * 2, [-k - 0.4, -k + 0.4], "b-", lw=1)
-        ax.text(10.3, -k, "%s M%.1f res %+.2f cc %.2f" % (row["time"][:10], row["mag"], row["res"], row["cc"]),
+        ax.plot([row["dt_bc_pred"]] * 2, [-k - 0.4, -k + 0.4], "b:", lw=0.8)
+        ax.text(16.3, -k, "%s M%.1f res %+.2f cc %.2f" % (row["time"][:10], row["mag"], row["res"], row["cc"]),
                 fontsize=7, va="center")
-    ax.set_xlim(-4, 16)
+    ax.set_xlim(-10, 16)
     ax.set_yticks([])
-    ax.set_xlabel("time relative to ak135 PKIKP (s); red = DF onset, blue = DF onset + measured BC-DF")
+    ax.set_xlabel("time relative to ak135 PKIKP (s); red = DF onset, blue = measured BC, dotted = ak135 BC")
     fig.tight_layout()
     fig.savefig(path, dpi=110)
     plt.close(fig)
@@ -441,6 +447,8 @@ def write_report(path, s):
     cov = s.get("coverage_by_year", {})
     L.append(", ".join("%s: %d/%d/%d" % (y, c["tried"], c["processed"], c["usable"]) for y, c in sorted(cov.items())))
     L += ["", "## Channels used", "```", json.dumps(jsonable(s.get("by_channel", {})), indent=1), "```"]
+    L += ["", "## Phase timing (usable rows; vs ak135)", "```", json.dumps(jsonable(s.get("phase_timing", {})),
+                                                                          indent=1), "```"]
     for name in ("primary", "alt_band"):
         L += ["", "## %s" % name, "```", json.dumps(jsonable(s.get(name, {})), indent=1), "```"]
     L += ["", "## IU.COLA 10 vs 00 (same events)", "```", json.dumps(jsonable(s.get("secondary_consistency")), indent=1),
@@ -591,6 +599,7 @@ def _finish(args, s, rows, status, examples):
     s["status_counts"] = counts
 
     use = screen(rows)
+    s["phase_timing"] = bcdf.phase_timing(use)
     s["primary"] = run_tests(use)
     alt_rows = [dict(r, res=r["res_alt"], ok=bool(r["ok"] and r["cc_alt"] >= bcdf.MIN_CC)) for r in rows
                 if math.isfinite(r["res_alt"])]

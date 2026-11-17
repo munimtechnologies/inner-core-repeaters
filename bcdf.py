@@ -11,6 +11,14 @@ heterogeneity moves under the path, i.e. when the inner core rotates relative to
 (Song & Richards 1996; Yang & Song 2023; Wu, Song & Yang 2026, GRL, doi:10.1029/2025GL119295,
 which used single events of SSI sequences at COLA, 40 km from ILAR, to 2024).
 
+v0.5.0 (amendment, findings/2026-11-17-bcdf-amendment.md, written before any BC-DF time was
+measured): the SSI -> Alaska path is the most anomalous PKP path known. DF arrives 1-4 s
+early on it and BC roughly on time (e.g. Tkalcic et al. 2010; Frost & Romanowicz 2019), and
+icr-ilar-v1 picked the DF onset of 68 of 75 multiplet stacks 0.7-6 s before ak135. v0.4.0
+searched DF only within +/-4 s of ak135 and BC at onset + ak135(BC-DF) + [-0.6, +1.5] s, so it
+would have missed BC on most events. v0.5.0 searches DF from -9 to +1 s and BC around its own
+absolute ak135 time (+/-1.5 s). Nothing else changed: same fits, same decision rules.
+
 Events sit at different places, so a linear spatial gradient (latitude, longitude, depth) is
 fitted together with a time term. Two pre-registered time terms are compared (see
 findings/2026-11-17-bcdf-prereg.md):
@@ -32,21 +40,24 @@ import numpy as np
 import model
 from xcorr import best_lag, fshift, lag_scan, pick_onset
 
-VERSION = "0.4.0"
+VERSION = "0.5.0"
 FS = 40.0
 PRE = 40.0
 N0, N1 = int((PRE - 35) * FS), int((PRE - 5) * FS)  # noise window (beam is noise-normalised there)
 
-# Pre-registered settings (findings/2026-11-17-bcdf-prereg.md)
+# Pre-registered settings (findings/2026-11-17-bcdf-prereg.md, amended 2026-11-17 for v0.5.0)
 MIN_DT_BC = 1.0        # s, ak135 BC-DF at the array centre; shorter separations are not measured
 DF_PRE = 0.2           # s before the DF onset in the DF template
 DF_LEN = (0.8, 1.6)    # s, template length = clip(dt_bc_pred - 0.4, 0.8, 1.6)
-SEARCH = (-0.6, 1.5)   # s, BC searched at onset + dt_bc_pred + [-0.6, +1.5] ...
-AB_GUARD = 0.8         # ... but never later than dt_ab_pred - 0.8 s
+DF_SEARCH = (-9.0, 1.0)   # s, DF onset searched in this range around the ak135 DF time (v0.5.0)
+BC_SEARCH = (-1.5, 1.5)   # s, BC searched around its own absolute ak135 time (v0.5.0) ...
+AB_GUARD = 0.8         # ... but never later than the ak135 AB time - 0.8 s
+ONSET_OK = (-8.0, 1.0)    # s, usable DF onsets relative to ak135 (v0.5.0; was |onset| <= 3)
 MIN_CC = 0.75          # beam DF/BC correlation for a usable measurement
 MIN_SNR_DF = 3.0       # rms of the DF window over noise rms
 EL_MIN_CC, EL_MIN_N = 0.6, 5
 NEW_CUT = model.NEW_CUT
+EPOCH_2018 = 2018.73   # 2018-09-25: ILAR digitiser/response epoch break (IRIS station metadata)
 
 
 def log(*a):
@@ -64,17 +75,23 @@ def measure_bcdf(beam, dt_bc_pred, dt_ab_pred=float("nan"), fs=FS, pre=PRE, onse
         return None
     c0 = int(round(pre * fs))
     if onset is None:
-        onset = pick_onset(beam, fs, center=c0, search_s=4.0, sta_s=0.5, lta_s=8.0, thr=5.0)
+        mid_s = 0.5 * (DF_SEARCH[0] + DF_SEARCH[1])
+        half_s = 0.5 * (DF_SEARCH[1] - DF_SEARCH[0])
+        onset = pick_onset(beam, fs, center=c0 + int(round(mid_s * fs)), search_s=half_s, sta_s=0.5,
+                           lta_s=8.0, thr=5.0)
         if onset is None:
             return None
     onset = int(onset)
+    on_s = (onset - c0) / fs
     L = float(np.clip(dt_bc_pred - 0.4, DF_LEN[0], DF_LEN[1]))
     i0, i1 = onset - int(round(DF_PRE * fs)), onset + int(round(L * fs))
     if i0 < 0 or i1 >= len(beam):
         return None
-    lo, hi = dt_bc_pred + SEARCH[0], dt_bc_pred + SEARCH[1]
+    # BC lag (relative to the DF onset) searched around BC's absolute ak135 time
+    lo, hi = dt_bc_pred + BC_SEARCH[0] - on_s, dt_bc_pred + BC_SEARCH[1] - on_s
     if math.isfinite(dt_ab_pred):
-        hi = min(hi, dt_ab_pred - AB_GUARD)
+        hi = min(hi, dt_ab_pred - AB_GUARD - on_s)
+    lo = max(lo, L)  # never let the template match itself
     if hi - lo < 0.3:
         return None
     mid = 0.5 * (lo + hi)
@@ -87,7 +104,7 @@ def measure_bcdf(beam, dt_bc_pred, dt_ab_pred=float("nan"), fs=FS, pre=PRE, onse
         return None
     nrms = float(np.sqrt(np.mean(beam[N0:N1] ** 2))) if len(beam) > N1 else 1.0
     snr = float(np.sqrt(np.mean(beam[i0:i1] ** 2)) / nrms) if nrms > 0 else float("nan")
-    return dict(onset_s=(onset - c0) / fs, dt_obs_s=(cs + lag) / fs, cc=float(c), snr_df=snr, L_s=L,
+    return dict(onset_s=on_s, dt_obs_s=(cs + lag) / fs, cc=float(c), snr_df=snr, L_s=L,
                 onset=onset)
 
 
@@ -111,6 +128,10 @@ def measure_elements(X, beam_res, dt_bc_pred, dt_ab_pred=float("nan"), fs=FS):
     if len(vals) < EL_MIN_N:
         return float("nan"), len(vals)
     return float(np.median(vals)), len(vals)
+
+
+def onset_ok(onset_s):
+    return ONSET_OK[0] <= onset_s <= ONSET_OK[1]
 
 
 # ----------------------------------------------------------------------------- fitting
@@ -223,6 +244,19 @@ def yearly(rows, vals):
             for y, v in sorted(out.items())}
 
 
+def phase_timing(rows):
+    """Descriptive: absolute DF onset and BC-DF residual (both vs ak135), overall and by ILAR epoch."""
+    def stats(rr):
+        if not rr:
+            return dict(n=0)
+        on = np.array([r["onset_s"] for r in rr])
+        rs = np.array([r["res"] for r in rr])
+        return dict(n=len(rr), median_onset_s=float(np.median(on)), median_res_s=float(np.median(rs)),
+                    p10_res_s=float(np.percentile(rs, 10)), p90_res_s=float(np.percentile(rs, 90)))
+    return dict(all=stats(rows), before_2018_09_25=stats([r for r in rows if r["t"] < EPOCH_2018]),
+                after_2018_09_25=stats([r for r in rows if r["t"] >= EPOCH_2018]))
+
+
 # ----------------------------------------------------------------------------- main
 def read_catalog(path):
     evs = {}
@@ -257,10 +291,40 @@ def plot(path, rows, corr, fits):
         c = f["coef"]
         ax.plot(tt, c[0] + c[4] * time_term(tt, kind, f["T"], f["ratio"]), color=col, lw=1.2,
                 label="%s fit (< 2025)" % kind)
+    ax.axvline(EPOCH_2018, color="grey", lw=0.6, ls=":")
     ax.set_xlabel("year")
     ax.set_ylabel("BC-DF residual minus spatial terms (s)")
     ax.set_title("SSI -> ILAR single-event BC-DF residuals (1-2 Hz beams)")
     ax.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path, dpi=110)
+    plt.close(fig)
+
+
+def plot_examples(path, items, n=12):
+    """Beams of a few usable events with the DF onset and the measured BC time marked."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    items = items[:: max(1, len(items) // n)][:n]
+    if not items:
+        return
+    fig, ax = plt.subplots(figsize=(10, 0.9 * len(items) + 1.5))
+    for k, (row, beam) in enumerate(items):
+        t = np.arange(len(beam)) / FS - PRE
+        m = (t > -12) & (t < 25)
+        sc = np.max(np.abs(beam[m])) or 1.0
+        ax.plot(t[m], beam[m] / sc * 0.45 - k, lw=0.7, color="k")
+        ax.plot([row["onset_s"]] * 2, [-k - 0.4, -k + 0.4], color="C1", lw=1.5)
+        ax.plot([row["onset_s"] + row["dt_obs"]] * 2, [-k - 0.4, -k + 0.4], color="C0", lw=1.5)
+        ax.plot([row["dt_bc_pred"]] * 2, [-k - 0.4, -k + 0.4], color="C0", lw=0.8, ls=":")
+        ax.text(25.3, -k, "%s M%.1f" % (row["time"][:10], row["mag"]), fontsize=7, va="center")
+    ax.axvline(0, color="grey", lw=0.6, ls=":")
+    ax.set_xlabel("time relative to ak135 PKIKP (s); orange = DF onset, blue = measured BC, dotted blue = ak135 BC")
+    ax.set_yticks([])
+    ax.set_title("SSI -> ILAR beams used for BC-DF (1-2 Hz)")
     fig.tight_layout()
     fig.savefig(path, dpi=110)
     plt.close(fig)
@@ -296,7 +360,7 @@ def main():
             json.dump(dict(error="no cached ILAR data"), f)
         return
     evs = read_catalog(cat_path)
-    rows, status = [], []
+    rows, status, examples = [], [], []
     for fn in sorted(os.listdir(pdir)):
         if not fn.endswith(".npz"):
             continue
@@ -316,13 +380,15 @@ def main():
             status.append(dict(id=eid, t=e["t"], dist=dist, status="no-measurement"))
             continue
         el, nel = measure_elements(X, r, dt_bc, dt_ab)
-        ok = r["cc"] >= MIN_CC and r["snr_df"] >= MIN_SNR_DF and abs(r["onset_s"]) <= 3.0
+        ok = r["cc"] >= MIN_CC and r["snr_df"] >= MIN_SNR_DF and onset_ok(r["onset_s"])
         row = dict(id=eid, time=e["time"], t=e["t"], lat=e["lat"], lon=e["lon"], depth=e["depth"], mag=e["mag"],
                    dist=dist, dt_bc_pred=dt_bc, onset_s=r["onset_s"], dt_obs=r["dt_obs_s"], res=r["dt_obs_s"] - dt_bc,
                    cc=r["cc"], snr_df=r["snr_df"], dt_obs_el=el, res_el=el - dt_bc if math.isfinite(el) else el,
                    n_el=nel, ok=bool(ok), new=e["t"] >= NEW_CUT)
         status.append(dict(id=eid, t=e["t"], dist=dist, status="ok" if ok else "low-quality"))
         rows.append(row)
+        if ok:
+            examples.append((row, np.asarray(beam, dtype=float)))
     keys = ["id", "time", "t", "lat", "lon", "depth", "mag", "dist", "dt_bc_pred", "onset_s", "dt_obs", "res", "cc",
             "snr_df", "dt_obs_el", "res_el", "n_el", "ok", "new"]
     with open(os.path.join(args.out_dir, "bcdf_events.csv"), "w", newline="") as f:
@@ -331,6 +397,8 @@ def main():
         for r in rows:
             w.writerow(r)
     ok = [r for r in rows if r["ok"]]
+    summary = dict(version=VERSION, n_npz=len(status), n_measured=len(rows), n_ok_before_screen=len(ok))
+    summary["phase_timing_before_screen"] = phase_timing(ok)
     # robust outlier screen, pre-registered: drop |res - median| > 1.0 s (cycle skips)
     if ok:
         med = float(np.median([r["res"] for r in ok]))
@@ -338,8 +406,8 @@ def main():
     ins = [r for r in ok if not r["new"]]
     outs = [r for r in ok if r["new"]]
     log("measured %d, usable %d (in-sample %d, new %d)" % (len(rows), len(ok), len(ins), len(outs)))
-    summary = dict(version=VERSION, n_npz=len(status), n_measured=len(rows), n_ok=len(ok), n_in=len(ins),
-                   n_new=len(outs))
+    summary.update(n_ok=len(ok), n_in=len(ins), n_new=len(outs))
+    summary["phase_timing"] = phase_timing(ok)
     summary["Q1_in_sample"] = {}
     if len(ins) >= 15:
         fL, fB = fit(ins, "L"), fit(ins, "Bk")
@@ -354,6 +422,12 @@ def main():
             plot(os.path.join(args.out_dir, "bcdf_vs_time.png"), ok, corr, dict(L=fL, Bk=fB))
         except Exception as ex:
             log("plot failed", repr(ex))
+    try:
+        keep = {r["id"] for r in ok}
+        plot_examples(os.path.join(args.out_dir, "bcdf_examples.png"),
+                      sorted([x for x in examples if x[0]["id"] in keep], key=lambda x: x[0]["t"]))
+    except Exception as ex:
+        log("example plot failed", repr(ex))
     summary["Q2_out_of_sample"] = out_of_sample(ins, outs)
     el_rows = [dict(r, res=r["res_el"]) for r in ok if math.isfinite(r["res_el"])]
     summary["robust_element_median"] = out_of_sample([r for r in el_rows if not r["new"]],

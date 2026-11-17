@@ -6,6 +6,23 @@
 By MV2, Munim, Inc. (mv2@munimtech.com). The code and text were made with AI agents
 working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY 4.0.
 
+## Results so far (2026-11-17)
+
+The first full run (ILAR, 1998-2026) is graded in
+[`findings/2026-11-17-ilar-results.md`](findings/2026-11-17-ilar-results.md); raw tables are
+in [`results/ilar-v1/`](results/ilar-v1/).
+
+* 1,559 South Sandwich Islands earthquakes were beamed at ILAR. The pipeline found 75
+  repeating multiplets and measured 874 pairs, 136 of which passed the quality cuts.
+* **Calibration (P4) holds.** **In-sample replication (P1) narrowly fails** the
+  pre-registered bar: ρ_B = 0.19 (p = 0.03) against ρ_M = 0.07, but 88% of multiplet
+  bootstraps favour backtracking where 90% was required.
+* **The 2025-2026 tests (P2, P3) were untestable at M ≥ 5.0.** The decisive M ≥ 4.3 tests
+  (`m0324.py`, `fdscan.py`) are queued.
+* On this path PKIKP arrives about 4 s before ak135, the known SSI-Alaska anomaly. The
+  BC−DF code was corrected for it before it ever ran
+  ([amendment](findings/2026-11-17-bcdf-amendment.md)).
+
 ## Why
 
 In 2024, Wang, Vidale and colleagues reported in *Nature* (doi:10.1038/s41586-024-07536-4)
@@ -40,7 +57,9 @@ uses were analysed:
 * [`findings/2026-11-17-yka-prereg.md`](findings/2026-11-17-yka-prereg.md): YKA second
   array.
 * [`findings/2026-11-17-bcdf-prereg.md`](findings/2026-11-17-bcdf-prereg.md): single-event
-  BC−DF travel times at ILAR, which need no repeaters.
+  BC−DF travel times at ILAR, which need no repeaters, and its
+  [amendment](findings/2026-11-17-bcdf-amendment.md) (search windows only, written before
+  any BC−DF time was measured).
 * [`findings/2026-11-17-cola-prereg.md`](findings/2026-11-17-cola-prereg.md): the
   College, Alaska BC−DF series from 1982 to 2026 (DW.COL, IU.COL, IU.COLA), the station
   where inner-core rotation was first seen.
@@ -64,6 +83,11 @@ uses were analysed:
 6. Grades the pre-registered predictions P1-P4 (`model.py`) and an exploratory fit of
    the turn date and rate ratio (P5). It writes CSV tables, `predictions.json`,
    `report.md` and plots.
+
+`ilar_diag.py` runs exploratory robustness checks on the published pair table: the
+instrument epoch, SNR, leave-one-multiplet-out, results without the 2021 sequence, a
+within-multiplet sign test, and a bootstrap of the turn date. It was written after the
+ILAR results were read and is labelled as such.
 
 ## The M03-24 patch test (`m0324.py`)
 
@@ -109,7 +133,9 @@ and 1,001 of M ≥ 4.3 from 1999 to mid-2008.
 For each event, the PKIKP onset is picked and the PKIKP pulse is correlated with PKPbc to
 get the BC−DF time and its ak135 residual.
 
-* `bcdf.py` uses the ILAR beams cached by `run.py`, with no new downloads.
+* `bcdf.py` uses the ILAR beams cached by `run.py`, with no new downloads. Since v0.5.0
+  it searches DF from 9 s before to 1 s after ak135 and BC around its own ak135 time,
+  because on the SSI-Alaska path DF arrives about 4 s early.
 * `cola.py` uses the single broadband station at College, Alaska. Its record runs
   from 1982 (DW.COL short-period, then IU.COL and IU.COLA broadband), the same span as
   Wu et al. 2026. It adds 2025-2026, a second band (0.6-1.6 Hz), and a cross-check on
@@ -155,6 +181,7 @@ repeaters are taken from ILAR's outer-core detection. Then:
 ```
 pip install -r requirements.txt openpyxl
 python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
+python ilar_diag.py --pairs ./out/pairs.csv --out-dir ./out_diag            # after run.py
 python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
 python fdscan.py --data-dir ./data_fd --out-dir ./out_fd
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
@@ -163,17 +190,19 @@ python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
 python yka.py --data-dir ./data --out-dir ./out_yka \
     --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag
 ```
 
 ## Data access notes (2026-11-17)
 
 * The EarthScope FDSN dataselect service returned data for ILAR in 2002 and 2026, for
   DW.COL in 1985 and for IU.COLA.
-* IL01 returned no data for a 1990 event, so early-1990s ILAR coverage may be sparse.
+* ILAR waveforms at EarthScope effectively start in 2000: the first full run beamed 0 of
+  231 SSI events in 1990-1997, 4 of 31 in 1998 and 0 of 16 in 1999.
 * EarthScope has retired fdsnws-event and irisws-timeseries, and fdsnws-availability has
   been offline since July 2026. This code uses USGS ComCat for events and asks dataselect
   directly.
+* ILAR SHZ response metadata change on 2018-09-25 (new digitiser chain, same sensor).
 
 ## Status
 
@@ -192,8 +221,11 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   pre-registration 5, before any waveform from the patch was processed, plus the data
   access notes.
 * v0.6.0, 2026-11-17: added the forecast-date scan (`fdscan.py`, `test_fdscan.py`) and
-  pre-registration 6, before any waveform for it was processed. No run has finished yet;
-  all jobs are waiting for compute.
+  pre-registration 6, before any waveform for it was processed.
+* v0.7.0, 2026-11-17: **first results.** The ILAR run was graded against its
+  pre-registration and published with its raw tables. Also added: `bcdf.py` and `cola.py`
+  v0.5.0 (search windows fixed for the SSI-Alaska anomaly, before any BC−DF or COLA
+  measurement) and `ilar_diag.py` (exploratory robustness checks).
 
 Results go in `findings/` whatever they show, including null or negative results.
 

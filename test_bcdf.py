@@ -19,17 +19,17 @@ def ricker(t, f=1.5):
 
 @unittest.skipIf(np is None, "numpy missing")
 class TestMeasure(unittest.TestCase):
-    def make(self, df_early=0.5, bcdf_true=1.8, seed=1):
+    def make(self, df_early=0.5, bcdf_true=1.8, ab_after=4.6, df_amp=1.0, seed=1):
         fs, pre = bcdf.FS, bcdf.PRE
         n = int(80 * fs)
         t = np.arange(n) / fs - pre  # 0 = predicted DF
         rng = np.random.default_rng(seed)
         x = 0.03 * rng.standard_normal(n)
         tdf = -df_early
-        x += ricker(t - tdf)
+        x += df_amp * ricker(t - tdf)
         x += 1.3 * ricker(t - tdf - bcdf_true)
         # AB: Hilbert-like (90-degree) pulse later
-        x += 0.8 * np.gradient(ricker(t - tdf - 4.6)) / 4.0
+        x += 0.8 * np.gradient(ricker(t - tdf - ab_after)) / 4.0
         return x
 
     def test_bcdf_recovered(self):
@@ -39,6 +39,24 @@ class TestMeasure(unittest.TestCase):
         self.assertAlmostEqual(r["dt_obs_s"], 1.8, delta=0.03)
         self.assertGreater(r["cc"], 0.9)
         self.assertLess(abs(r["onset_s"] + 0.5 + 0.4), 0.4)  # onset a little before the pulse centre
+
+    def test_ssi_ilar_geometry(self):
+        """SSI -> ILAR as seen by icr-ilar-v1: DF ~4.6 s early, BC ~0.4 s early, ak135 BC-DF 7.1 s,
+        AB on time at 18 s. The true BC-DF (11.3 s) is far outside v0.4.0's search window."""
+        df_early, bc_abs, ab_abs = 4.6, 7.1 - 0.4, 18.0
+        x = self.make(df_early=df_early, bcdf_true=bc_abs + df_early, ab_after=ab_abs + df_early, df_amp=0.5)
+        r = bcdf.measure_bcdf(x, dt_bc_pred=7.1, dt_ab_pred=18.0)
+        self.assertIsNotNone(r)
+        self.assertAlmostEqual(r["dt_obs_s"], 11.3, delta=0.03)
+        self.assertGreater(r["cc"], 0.9)
+        self.assertLess(abs(r["onset_s"] + df_early + 0.4), 0.4)
+        self.assertTrue(bcdf.onset_ok(r["onset_s"]))
+
+    def test_onset_window(self):
+        self.assertTrue(bcdf.onset_ok(-7.9))
+        self.assertTrue(bcdf.onset_ok(0.9))
+        self.assertFalse(bcdf.onset_ok(-8.1))
+        self.assertFalse(bcdf.onset_ok(1.1))
 
     def test_too_close_not_measured(self):
         x = self.make(bcdf_true=0.9)
@@ -63,7 +81,8 @@ class TestFit(unittest.TestCase):
             lat, lon, z = rng.uniform(-60, -55), rng.uniform(-29, -24), rng.uniform(10, 80)
             g = (model.equiv_date(t) if truth == "Bk" else t) - model.T_TURN
             res = 0.4 + 0.05 * (lat + 57.5) - 0.03 * (lon + 26.5) + 0.02 * g + 0.01 * rng.standard_normal()
-            out.append(dict(t=t, lat=lat, lon=lon, depth=z, res=res, new=t >= model.NEW_CUT))
+            out.append(dict(t=t, lat=lat, lon=lon, depth=z, res=res, new=t >= model.NEW_CUT,
+                            onset_s=-4.0))
         return out
 
     def test_backtracking_truth(self):
@@ -102,6 +121,13 @@ class TestFit(unittest.TestCase):
         self.assertEqual(len(f["coef"]), 5)
         self.assertEqual(f["coef"][4], 0.0)
         self.assertEqual(len(bcdf.predict(f, rr)), len(rr))
+
+    def test_phase_timing_epochs(self):
+        rr = self.rows("L", seed=9)
+        p = bcdf.phase_timing(rr)
+        self.assertEqual(p["all"]["n"], len(rr))
+        self.assertEqual(p["before_2018_09_25"]["n"] + p["after_2018_09_25"]["n"], len(rr))
+        self.assertAlmostEqual(p["all"]["median_onset_s"], -4.0)
 
 
 if __name__ == "__main__":
