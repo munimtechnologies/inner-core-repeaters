@@ -8,6 +8,15 @@ working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY
 
 ## Results so far (2026-11-18)
 
+**Next, queued: one clock or many?**
+[Pre-registration 13](findings/2026-11-18-h13-prereg.md) (`mantlep3.py`) applies the mantle-P
+source check that decided M03-24 to every published YKA and ILAR pair of South Sandwich Islands
+repeaters, at the eight stations usable below. It scores how alike each pair's sources are and
+asks whether the inner-core change among source-verified pairs follows the backtracking clock
+(rotation: all paths on one time-line), a steady clock, or no clock (local change of the
+inner-core surface). It was published before any new waveform was fetched; its results will go
+in `findings/` whatever they show.
+
 **Latest: the inner-core change at M03-24 is on the path through the core, not at the
 source** (pre-registered, decision **N**;
 [`findings/2026-11-18-mantlep2-results.md`](findings/2026-11-18-mantlep2-results.md),
@@ -201,6 +210,9 @@ uses were analysed:
 * [`findings/2026-11-18-yka-prospective-prereg.md`](findings/2026-11-18-yka-prospective-prereg.md):
   the prospective YKA test, which uses only earthquakes from 2026-11-19 on, with a
   location-and-SNR selection rule fixed in advance.
+* [`findings/2026-11-18-h13-prereg.md`](findings/2026-11-18-h13-prereg.md): the
+  source-verified clock test across all published YKA and ILAR families (`mantlep3.py`),
+  written before any of its waveforms were fetched.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -223,7 +235,7 @@ within-multiplet sign test, and a bootstrap of the turn date. It was written aft
 ILAR results were read and is labelled as such. `icrdiag.py` does the same kind of
 exploratory work for the YKA stage-B pairs and the ILAR BC−DF series.
 
-## The M03-24 patch test (`m0324.py`), its check (`m0324_check.py`) and the source control (`mantlep.py`, `mantlep2.py`)
+## The M03-24 patch test (`m0324.py`), its check (`m0324_check.py`) and the source control (`mantlep.py`, `mantlep2.py`, `mantlep3.py`)
 
 Zhang & Wen's multiplet M03-24 has six events: 2003-03-21, 2008-02-17, 2011-02-20,
 2020-07-11, 2022-03-07 and 2024-03-21, centred near 59.04°S, 25.69°W. The same patch has
@@ -241,6 +253,13 @@ nine-event family with an element bootstrap, three other windows and the YKA arr
 global stations 30-85° away. Mantle P does not touch the core, so it tells source changes
 from path changes. `mantlep2.py` found 42 IU, II and GT stations, of which 8 were usable;
 the decision is N (no source split).
+
+`mantlep3.py` (pre-registration 13) runs `mantlep2.py`'s alignment and gates family by family
+at those 8 stations for every ok pair of the published YKA and ILAR pair tables. It turns each
+pair's mantle-P late-coda dissimilarity into a source score S (median over stations of its
+percentile), checks that S predicts the core-side D (calibration), and then asks which clock
+the core-side D follows among pairs with S ≤ 1/3. `get_deps.py` fetches the pinned
+`mantlep2.py` when the script runs outside this repository.
 
 ## The forecast-date scan (`fdscan.py`)
 
@@ -287,6 +306,7 @@ python ilar_diag.py --pairs ./out/pairs.csv --out-dir ./out_diag            # af
 python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
 python m0324_check.py --data-dir ./data_m0324 --out-dir ./out_m0324_check  # after m0324.py
 python mantlep2.py --data-dir ./data_mp --out-dir ./out_mantlep2           # source control
+python mantlep3.py --data-dir ./data_mp --out-dir ./out_h13                # pre-registration 13
 python fdscan.py --data-dir ./data_fd --out-dir ./out_fd
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
@@ -295,7 +315,7 @@ python yka.py --data-dir ./data --out-dir ./out_yka                       # stag
 python yka_b.py --data-dir ./data --out-dir ./out_ykab --tables-dir . --repick   # stage B
 python ykagen.py --data-dir ./data_gen --out-dir ./out_ykagen             # hardware control
 python icrdiag.py --out-dir ./out_diag2                                    # exploratory
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen test_ykab_grade test_icrdiag test_mantlep test_mantlep2
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen test_ykab_grade test_icrdiag test_mantlep test_mantlep2 test_mantlep3
 ```
 
 ## Data access notes
@@ -333,6 +353,10 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.14.0, 2026-11-18: **mantle-P control results (pre-registration 11): N.** The M03-24
   split is absent in mantle P at 7 unseen stations, so it arises on the path through the
   core; synthesis of all lanes.
+* v0.14.1, 2026-11-18: pre-registration 13 (source-verified clock test across all
+  families) and `mantlep3.py` 0.15.0.
+* v0.14.2, 2026-11-18: synthetic tests for `mantlep3.py` (`test_mantlep3.py`; the
+  family-measurement test now uses records that share their early coda, as alike sources do).
 
 Results go in `findings/` whatever they show, including null or negative results.
 
