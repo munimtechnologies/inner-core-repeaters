@@ -6,9 +6,42 @@
 By MV2, Munim, Inc. (mv2@munimtech.com). The code and text were made with AI agents
 working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY 4.0.
 
-## Results so far (2026-11-17)
+## Results so far (2026-11-18)
 
-**Latest: the arc-wide scan and the second array**
+**Latest: the out-of-sample tests on 2025-2026 earthquakes return a null**
+([`findings/2026-11-18-ykab-v2-bcdf-v2-results.md`](findings/2026-11-18-ykab-v2-bcdf-v2-results.md),
+tables in [`results/ykab-v2/`](results/ykab-v2/) and [`results/bcdf-v2/`](results/bcdf-v2/)).
+
+* **Yellowknife (YKA) stage B cannot be interpreted.** Its pre-registered calibration
+  (P4-Y) failed: pairs less than 2 years apart were not more alike than pairs far apart
+  (median D 0.098 vs 0.084). The new-event vote on 2025-2026 earthquakes could be run for the
+  first time (6 cases in 4 families) and was **inconclusive**: 2 backtracking, 1 monotone,
+  3 neither.
+* **The YKA hardware control is complete and passes.** YKA's 2013-14 change of electronics
+  alters the similarity measure by about 0.01, an order of magnitude below real pair
+  differences (H1-H4 hold;
+  [`findings/2026-11-18-ykab-v1-ykagen-results.md`](findings/2026-11-18-ykab-v1-ykagen-results.md)).
+* **ILAR BC−DF travel times show no time trend** over 2000-2024 (+0.0014 s/yr). They cannot
+  separate a monotone clock from backtracking on the 24 new 2025-2026 events (not decisive,
+  as forecast).
+* An exploratory diagnostic of the YKA calibration failure and of a two-branch pattern in
+  the BC−DF times was written down before it ran
+  ([`findings/2026-11-18-diag2-plan.md`](findings/2026-11-18-diag2-plan.md), `icrdiag.py`).
+  Any further confirmatory YKA test will be **prospective**: only earthquakes after
+  2026-11-18.
+
+**Earlier on 2026-11-18**
+
+* ILAR diagnostics: the lean towards backtracking at ILAR is consistent but weak. It
+  depends on the 2021 sequence, and the best turn date is 2012 (bootstrap 2008.5-2018.5)
+  ([`findings/2026-11-18-diag-m0324chk-results.md`](findings/2026-11-18-diag-m0324chk-results.md)).
+* The 2025-12-13 anomaly at M03-24 is not robust at ILAR. Two arrays' late coda split
+  M03-24 into {2003, 2020, 2022-03, 2024, 2025} and {2008, 2011, 2014}. A mantle-P control
+  for source sub-clusters is queued
+  ([`findings/2026-11-18-m0324chk-v2-results.md`](findings/2026-11-18-m0324chk-v2-results.md),
+  [pre-registration 10](findings/2026-11-18-mantlep-prereg.md)).
+
+**The arc-wide scan and the second array (2026-11-17)**
 ([`findings/2026-11-17-fdscan-yka-a-results.md`](findings/2026-11-17-fdscan-yka-a-results.md),
 tables in [`results/fdscan-v1/`](results/fdscan-v1/) and [`results/yka-v1/`](results/yka-v1/)).
 
@@ -20,17 +53,6 @@ tables in [`results/fdscan-v1/`](results/fdscan-v1/) and [`results/yka-v1/`](res
   1990-2026, and 131 events from 2025-2026 have a PKIKP beam SNR of 5 or more. Its automatic
   statics census independently finds the 2014-2019 timing offsets (0.11-0.20 s) that Wang
   et al. corrected by hand, with none before 2014 or after 2019.
-* **Next (queued, pre-registered before any measurement):**
-  * ILAR families measured at YKA, which is the first test that can put 2025-2026 events
-    against their pre-2008 partners
-    ([`findings/2026-11-17-yka-stageb-prereg.md`](findings/2026-11-17-yka-stageb-prereg.md),
-    `yka_b.py`);
-  * a **hardware control**. Every one of those pairs crosses YKA's 2013-2014 change of
-    electronics (same Geotech S-13 sensors, new pre-amp and digitiser). The two systems
-    recorded side by side for nine months, so the same earthquakes can be compared on both
-    to measure what the change alone does to the similarity metric
-    ([`findings/2026-11-17-yka-hardware-prereg.md`](findings/2026-11-17-yka-hardware-prereg.md),
-    `ykagen.py`).
 
 **The M03-24 patch test**
 ([`findings/2026-11-17-m0324-results.md`](findings/2026-11-17-m0324-results.md), tables in
@@ -44,11 +66,9 @@ tables in [`results/fdscan-v1/`](results/fdscan-v1/) and [`results/yka-v1/`](res
   grades for this family (Spearman 0.67, 15 pairs).
 * The pre-registered 2025-2026 tests were **untestable**. Of 46 new events near the patch,
   only one has a PKIKP signal above the pre-set gate.
-* That one event, 2025-12-13, **goes against the backtracking forecast** (exploratory,
-  one event). Its PKIKP matches the 2011 event (D 0.033), not the 2003 event (D 0.167).
-  A pre-registered check (element bootstrap, other windows, and the YKA array in Canada)
-  was filed before being run:
-  [`findings/2026-11-17-m0324-check-prereg.md`](findings/2026-11-17-m0324-check-prereg.md).
+* That one event, 2025-12-13, went against the backtracking forecast at ILAR (exploratory,
+  one event). The follow-up check found this not robust, and at YKA the same event matches
+  2003 best.
 * College, Alaska single-station BC−DF (`cola.py`) kept only 27 of 2,166 events (one from
   2025). Not decisive; that lane is paused (same findings file, section 2).
 
@@ -123,10 +143,13 @@ uses were analysed:
   anomaly was seen, before the checks ran).
 * [`findings/2026-11-17-yka-stageb-prereg.md`](findings/2026-11-17-yka-stageb-prereg.md):
   YKA stage B on the merged ILAR families, with the new-event vote F1-Y (written after
-  YKA stage A and before any stage-B YKA measurement).
+  YKA stage A and before any stage-B YKA measurement), and its
+  [pick amendment](findings/2026-11-18-yka-pick-amendment.md).
 * [`findings/2026-11-17-yka-hardware-prereg.md`](findings/2026-11-17-yka-hardware-prereg.md):
   the YKA hardware control on the 2013-2014 overlap of the legacy and current systems
   (written before any overlap waveform or stage-B measurement).
+* [`findings/2026-11-18-mantlep-prereg.md`](findings/2026-11-18-mantlep-prereg.md):
+  mantle-P control of the M03-24 late-coda split (source sub-clusters or not).
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -146,7 +169,8 @@ uses were analysed:
 `ilar_diag.py` runs exploratory robustness checks on the published pair table: the
 instrument epoch, SNR, leave-one-multiplet-out, results without the 2021 sequence, a
 within-multiplet sign test, and a bootstrap of the turn date. It was written after the
-ILAR results were read and is labelled as such.
+ILAR results were read and is labelled as such. `icrdiag.py` does the same kind of
+exploratory work for the YKA stage-B pairs and the ILAR BC−DF series.
 
 ## The M03-24 patch test (`m0324.py`) and its follow-up check (`m0324_check.py`)
 
@@ -159,114 +183,46 @@ two features no published study has used together:
   a 2025-2026 event should match best, because e(2025-2026) = 2001.9-2001.5.
 
 `m0324.py` runs the unchanged `run.py` pipeline on every M ≥ 4.3 event within 35 km,
-1991-2026. It then grades four things:
-
-* Z0: does the objective pipeline re-find the published multiplet?
-* Z1, the main test: does each new event's best PKIKP match pick the backtracking partner
-  or the latest pre-turn partner?
-* Z2: an out-of-sample rank test.
-* Z3: calibration.
-
-`m0324_check.py` takes the nine-event family and does the following:
-
-* recomputes its D matrix from the cached ILAR beams;
-* resamples ILAR's elements (bootstrap and leave-one-out);
-* tries three other PKIKP windows;
-* measures the same nine events at YKA with the published `yka.py` (fetched at a pinned
-  commit).
-
-Inputs `z004_events.csv`, `z004_edges.csv` and `z004_published_D.csv` are copied from the
-icr-m0324-v1 output.
+1991-2026, and grades Z0 (re-finding the published multiplet), Z1 (the new-event vote),
+Z2 (an out-of-sample rank test) and Z3 (calibration). `m0324_check.py` re-measures the
+nine-event family with an element bootstrap, three other windows and the YKA array.
+`mantlep.py` measures mantle P of the same events, which does not touch the core.
 
 ## The forecast-date scan (`fdscan.py`)
 
-The scan runs the M03-24 best-match test on the whole South Sandwich arc.
-
-* **Which events.** It takes every 2025+ event of M ≥ 4.5 that has catalogue neighbours
-  (within 25 km, M ≥ 4.3) in two time windows:
-  * the backtracking forecast window, |t − e(t)| ≤ 1 yr, about 2000-2003;
-  * later, up to 2008.5, the monotone pick.
-* **Waveforms.** It processes those events through the unchanged `run.py` pipeline, at
-  most 700 events, largest new events first.
-* **The vote.** For each new event it records whether the best PKIKP match is the
-  backtracking pick or the monotone pick.
-* **Decision rule.** The vote is graded with a one-sided binomial test and a bootstrap
-  over whole multiplets. Robustness: excess dissimilarity Dx.
-* **Independence.** A variant drops the M03-24 patch.
-* **Controls.** It also reports the chance level and an SNR control.
-
-The USGS catalogue, counted on 2026-11-17, holds 378 SSI events of M ≥ 4.5 since 2025
-and 1,001 of M ≥ 4.3 from 1999 to mid-2008.
+The scan runs the M03-24 best-match test on the whole South Sandwich arc: every 2025+
+event of M ≥ 4.5 with catalogue neighbours (within 25 km, M ≥ 4.3) both in the
+backtracking forecast window (about 2000-2003) and later, up to 2008.5. The vote is graded
+with a one-sided binomial test and a bootstrap over whole multiplets.
 
 ## Single-event BC−DF times (`bcdf.py`, `cola.py`)
 
 For each event, the PKIKP onset is picked and the PKIKP pulse is correlated with PKPbc to
-get the BC−DF time and its ak135 residual.
-
-* `bcdf.py` uses the ILAR beams cached by `run.py`, with no new downloads. Since v0.5.0
-  it searches DF from 9 s before to 1 s after ak135 and BC around its own ak135 time,
-  because on the SSI-Alaska path DF arrives about 4 s early.
-* `cola.py` uses the single broadband station at College, Alaska. Its record runs
-  from 1982 (DW.COL short-period, then IU.COL and IU.COLA broadband), the same span as
-  Wu et al. 2026. It adds 2025-2026, a second band (0.6-1.6 Hz), and a cross-check on
-  the second COLA sensor (location 10). Its first run kept only 27 usable events, and one
-  of its own synthetic unit tests fails (see the M03-24 results, section 2).
-
-A spatial gradient (latitude, longitude, depth) is fitted together with one time term:
-
-* a monotone rotation, L;
-* Wang et al.'s backtracking, Bk;
-* in `cola.py` also a pause, P, where change stops at 2008.5.
-
-The terms are fitted on events before 2025. Each then predicts the 2025-2026 events, and
-the pre-registered rule decides whether one prediction wins or the data are not decisive.
-`cola.py` first checks that it recovers the classic rise of BC−DF before 2008.5
-(calibration C1).
+get the BC−DF time and its ak135 residual. `bcdf.py` uses the ILAR beams cached by
+`run.py`; since v0.5.0 it searches DF from 9 s before to 1 s after ak135 and BC around its
+own ak135 time. `cola.py` uses the single station at College, Alaska (1982-2026). A
+spatial gradient is fitted together with one time term (monotone L, backtracking Bk, and in
+`cola.py` a pause P) on events before 2025, and each predicts the 2025-2026 events.
 
 ## The published repeater list (`wang_table.py`)
 
-This script:
-
-1. Downloads Supplementary Table 1 of Wang et al. 2024 (xlsx) and writes every sheet to
-   CSV.
-2. Finds each of their 121 events in USGS ComCat.
-3. Flags which events fall inside this pipeline's magnitude cuts.
-4. Lists every ComCat event since February 2023 near each published source location
-   (12 after merging locations within 20 km). These are candidates for new,
-   out-of-sample members of the published multiplets.
-
-Its first run (2026-11-17) and the comparison with the ILAR v1 pairs are in
-[`findings/2026-11-17-wang-crossmatch.md`](findings/2026-11-17-wang-crossmatch.md) and
-[`results/wang-v1/`](results/wang-v1/). The pair-by-pair tables quote only the published
-ILAR grades they compare against. The publisher's tables are not redistributed.
+Downloads Supplementary Table 1 of Wang et al. 2024 at run time, finds each of their 121
+events in USGS ComCat and lists new catalogue events near each published source. The
+publisher's tables are not redistributed.
 
 ## The second array: Yellowknife (`yka.py`, `yka_b.py`, `ykagen.py`)
 
 YKA sits about 133-142° from the SSI, where PKIKP has no outer-core companion phase, so
-repeaters are taken from ILAR's outer-core detection. Then:
+repeaters are taken from ILAR's outer-core detection.
 
-* **Stage A** downloads YKA records for every catalogue event and makes beams.
-  * Legacy YKB/YKR elements, 1989-2014, come from the Canadian National Seismograph
-    Network (NRCan) FDSN service.
-  * Current YKAB/YKAR elements, from 2013, come from EarthScope.
-  * It writes archive coverage by year, a census of per-element static (clock) offsets,
-    and quick-look plots with ak135 phases marked.
-* **Stage B** (`--ilar-multiplets multiplets.csv`) aligns each pair on the direct PKIKP
-  pulse and measures the similarity of the PKIKP coda (+1 to +6 s). It then grades the
-  same predictions on YKA alone, and compares ILAR and YKA pair by pair.
-* **`yka_b.py`** (v0.9.0) runs stage B on the ILAR families of ilar-v1, m0324-v1 and
-  fdscan-v1, merged where they share an event. It lowers the YKA catalogue to M4.3 so
-  ILAR's small pre-2008 partners are included, and grades the new-event vote F1-Y of
-  pre-registration 8. It fetches `yka.py` and its helpers at a pinned commit.
-* **`ykagen.py`** (v0.9.1) is the hardware control.
-  * **Which events:** every M ≥ 4.7 event 128.5-145.5° from YKA between 2013-06-27 and
-    2014-04-01, when the legacy (CNSN digitiser, 20 sps) and current (YKA pre-amp and
-    Guralp digitiser, 40 sps) systems both recorded from Geotech S-13 sensors on the same
-    piers.
-  * **How:** each system is processed separately with `yka.py`'s unchanged steps, and the
-    two beams of the same earthquake are compared exactly as a stage-B pair.
-  * **What it reports:** the hardware-only floor of D, the survival of the cc ≥ 0.90
-    gate, polarity, and the timing offset between the systems (pre-registration 9).
+* **Stage A** downloads YKA records (legacy YKB/YKR 1989-2014 from NRCan, current
+  YKAB/YKAR from 2013 via EarthScope), makes beams, and writes coverage and a statics census.
+* **Stage B** aligns each pair on the direct PKIKP pulse and measures the similarity of the
+  PKIKP coda (+1 to +6 s).
+* **`yka_b.py`** (0.10.1) runs stage B on the merged ILAR families and grades the new-event
+  vote F1-Y. `--repick` searches the stack onset within ak135 ± 2 s (`yka_repick.py`).
+  `ykab_grade.py` grades the pick-validity rule and H4.
+* **`ykagen.py`** is the hardware control on the 2013-14 overlap of the two systems.
 
 ```
 pip install -r requirements.txt openpyxl
@@ -279,65 +235,38 @@ python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # afte
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
 python wang_table.py --data-dir ./data --out-dir ./out_wang
 python yka.py --data-dir ./data --out-dir ./out_yka                       # stage A
-python yka.py --data-dir ./data --out-dir ./out_yka \
-    --ilar-multiplets ./out/multiplets.csv --ilar-pairs ./out/pairs.csv   # stage B
-python yka_b.py --data-dir ./data --out-dir ./out_ykab --tables-dir .     # stage B, merged families
+python yka_b.py --data-dir ./data --out-dir ./out_ykab --tables-dir . --repick   # stage B
 python ykagen.py --data-dir ./data_gen --out-dir ./out_ykagen             # hardware control
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen
+python icrdiag.py --out-dir ./out_diag2                                    # exploratory
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen test_ykab_grade test_icrdiag
 ```
 
-## Data access notes (2026-11-17)
+## Data access notes
 
-* The EarthScope FDSN dataselect service returned data for ILAR in 2002 and 2026, for
-  DW.COL in 1985 and for IU.COLA.
-* ILAR waveforms at EarthScope effectively start in 2000: the first full run beamed 0 of
-  231 SSI events in 1990-1997, 4 of 31 in 1998 and 0 of 16 in 1999.
-* YKA, by contrast, is nearly complete from 1990 (NRCan legacy elements) to 2026
-  (EarthScope): 1,861 of 1,881 events.
+* ILAR waveforms at EarthScope effectively start in 2000. YKA is nearly complete from 1990
+  (NRCan legacy elements) to 2026 (EarthScope): 1,861 of 1,881 events.
 * EarthScope has retired fdsnws-event and irisws-timeseries, and fdsnws-availability has
   been offline since July 2026. This code uses USGS ComCat for events and asks dataselect
   directly.
 * ILAR SHZ response metadata change on 2018-09-25 (new digitiser chain, same sensor).
-* YKA SHZ station metadata (EarthScope, 2026-11-17): the legacy YKB*/YKR* channels
-  (1989-01-25 to 2014-04-02, 20 sps) and the current YKAB*/YKAR* channels (from
-  2013-06-26, 40 sps) both use Geotech S-13 sensors at the same coordinates. The
-  electronics differ (CNSN digitiser vs the YKA pre-amp and a Guralp digitiser).
+* YKA's legacy (20 sps) and current (40 sps) channels use Geotech S-13 sensors at the same
+  coordinates; the electronics differ.
 * ObsPy cannot re-write DW.COL records stored in the DWWSSN encoding, so `cola.py` measures
   them in memory without caching them.
 
 ## Status
 
-* v0.1.0, 2026-11-17: ILAR code and pre-registration published; the first full ILAR run
-  is queued.
-* v0.2.0, 2026-11-17: the YKA second array (`yka.py`, `test_yka.py`) and its
-  pre-registration were added before any YKA data were downloaded. The YKA stage A run
-  is queued.
-* v0.3.0, 2026-11-17: added single-event BC−DF travel times (`bcdf.py`) with their
-  pre-registration, and the published-repeater cross-match (`wang_table.py`). Both were
-  written before any ILAR waveform had been downloaded.
-* v0.4.0, 2026-11-17: added the College, Alaska BC−DF series (`cola.py`,
-  `test_cola.py`) and pre-registration 4, before any COL/COLA waveform was downloaded.
-  `bcdf.py` gained the pause model P. The COLA run is queued.
-* v0.5.0, 2026-11-17: added the M03-24 patch test (`m0324.py`, `test_m0324.py`) and
-  pre-registration 5, before any waveform from the patch was processed, plus the data
-  access notes.
-* v0.6.0, 2026-11-17: added the forecast-date scan (`fdscan.py`, `test_fdscan.py`) and
-  pre-registration 6, before any waveform for it was processed.
-* v0.7.0, 2026-11-17: **first results.** The ILAR run was graded against its
-  pre-registration and published with its raw tables. Also added: `bcdf.py` and `cola.py`
-  v0.5.0 (search windows fixed for the SSI-Alaska anomaly, before any BC−DF or COLA
-  measurement) and `ilar_diag.py` (exploratory robustness checks).
-* v0.7.1, 2026-11-17: cross-match with Wang et al. 2024 and an objective check of their
-  ILAR grades (exploratory), plus a new 2026-11-03 member of their multiplet J (an
-  anecdote below the SNR cut).
-* v0.8.0, 2026-11-17: **M03-24 and COLA results** graded and published with raw tables.
-  Added `m0324_check.py` and pre-registration 7 for the 2025-12-13 anomaly, before it ran.
-* v0.9.0, 2026-11-17: **forecast-date scan and YKA stage A results** (scan untestable,
-  limited by ILAR's PKIKP SNR; YKA strong and complete, and its statics census finds the
-  2014-2019 clock offsets on its own). Added `yka_b.py` and pre-registration 8 (ILAR
-  families measured at YKA) before any stage-B measurement.
-* v0.9.1, 2026-11-17: added the YKA hardware control (`ykagen.py`, `test_ykagen.py`) and
-  pre-registration 9, before any overlap-window waveform or stage-B measurement.
+* v0.1.0-v0.6.0, 2026-11-17: code and pre-registrations 1-6 (ILAR, YKA, BC−DF, COLA,
+  M03-24, forecast-date scan), each published before its data were analysed.
+* v0.7.0-v0.7.1, 2026-11-17: first ILAR results and the cross-match with Wang et al.
+* v0.8.0, 2026-11-17: M03-24 and COLA results; pre-registration 7.
+* v0.9.0-v0.9.1, 2026-11-17: forecast-date scan and YKA stage A results; pre-registrations
+  8 (YKA stage B) and 9 (hardware control).
+* v0.9.2, 2026-11-18: ILAR diagnostics and the YKA pick amendment.
+* v0.10.0, 2026-11-18: M03-24 check v2 results; pre-registration 10 (mantle P).
+* v0.11.0, 2026-11-18: YKA stage B v1 (pick rule triggered) and hardware-control results.
+* v0.12.0, 2026-11-18: **YKA stage B v2 and ILAR BC−DF results** (calibration fails at YKA,
+  vote inconclusive, BC−DF not decisive); `icrdiag.py` and its plan.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
