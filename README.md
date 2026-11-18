@@ -8,8 +8,28 @@ working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY
 
 ## Results so far (2026-11-18)
 
-**Latest: the source control for M03-24 (mantle P) is untestable as run, but its one clean
-station points to a path effect** ([`findings/2026-11-18-mantlep-v1-results.md`](findings/2026-11-18-mantlep-v1-results.md),
+**Latest: at Yellowknife the source sets the limit, not time; the ILAR BC−DF lane is closed**
+(exploratory, [`findings/2026-11-18-diag2-results.md`](findings/2026-11-18-diag2-results.md),
+tables in [`results/diag-v1/`](results/diag-v1/)).
+
+* At YKA, coda dissimilarity between "repeaters" shows **no dependence on the time between
+  them**. It grows with catalogue source separation (median ~15 km) and with magnitude
+  difference, and it falls with SNR. Of the four explanations written down before the
+  diagnostic ran, only location is supported. Families defined by ILAR's outer-core phases
+  are not tight enough for YKA's inner-core coda at M4.3-5.3.
+* In the 1-3 s window, calibration holds in all 8 families (sign p = 0.004). That window was
+  not pre-registered for this purpose.
+* The "two branches" in ILAR BC−DF times are failed DF onset picks (late picks, and early
+  picks on an intermediate-depth cluster), not geography or cycle skips. Their share is flat
+  in time. The core scatter (σ ≈ 0.57 s) is about 10 times too large to separate the clocks,
+  so **single-event BC−DF at ILAR is closed**.
+* The YKA lane continues only **prospectively**:
+  [pre-registration 12](findings/2026-11-18-yka-prospective-prereg.md) fixes a
+  location-and-SNR selection rule now, for earthquakes after 2026-11-19 only. It has two
+  looks, in 2027 and 2028.
+
+**Earlier on 2026-11-18: the source control for M03-24 (mantle P) is untestable as run, but its
+one clean station points to a path effect** ([`findings/2026-11-18-mantlep-v1-results.md`](findings/2026-11-18-mantlep-v1-results.md),
 tables and plots in [`results/mantlep-v1/`](results/mantlep-v1/)).
 
 * Only 1 of 9 stations passed the gates (forecast: at least 3), so the pre-registered decision
@@ -25,7 +45,7 @@ tables and plots in [`results/mantlep-v1/`](results/mantlep-v1/)).
   not change, and the change is on the path through the core.
 * A corrected test, [pre-registration 11](findings/2026-11-18-mantlep2-prereg.md)
   (`mantlep2.py`), was published before it fetched any new station. Its primary decision
-  excludes the stations whose waveforms were seen.
+  excludes the stations whose waveforms were seen. It is queued.
 
 **Earlier on 2026-11-18: the out-of-sample tests on 2025-2026 earthquakes return a null**
 ([`findings/2026-11-18-ykab-v2-bcdf-v2-results.md`](findings/2026-11-18-ykab-v2-bcdf-v2-results.md),
@@ -43,11 +63,6 @@ tables in [`results/ykab-v2/`](results/ykab-v2/) and [`results/bcdf-v2/`](result
 * **ILAR BC−DF travel times show no time trend** over 2000-2024 (+0.0014 s/yr). They cannot
   separate a monotone clock from backtracking on the 24 new 2025-2026 events (not decisive,
   as forecast).
-* An exploratory diagnostic of the YKA calibration failure and of a two-branch pattern in
-  the BC−DF times was written down before it ran
-  ([`findings/2026-11-18-diag2-plan.md`](findings/2026-11-18-diag2-plan.md), `icrdiag.py`).
-  Any further confirmatory YKA test will be **prospective**: only earthquakes after
-  2026-11-18.
 * ILAR diagnostics: the lean towards backtracking at ILAR is consistent but weak. It
   depends on the 2021 sequence, and the best turn date is 2012 (bootstrap 2008.5-2018.5)
   ([`findings/2026-11-18-diag-m0324chk-results.md`](findings/2026-11-18-diag-m0324chk-results.md)).
@@ -167,6 +182,9 @@ uses were analysed:
 * [`findings/2026-11-18-mantlep2-prereg.md`](findings/2026-11-18-mantlep2-prereg.md):
   the corrected mantle-P control (written after v1 was untestable, before any new station
   was fetched; stations already seen are left out of the primary decision).
+* [`findings/2026-11-18-yka-prospective-prereg.md`](findings/2026-11-18-yka-prospective-prereg.md):
+  the prospective YKA test, which uses only earthquakes from 2026-11-19 on, with a
+  location-and-SNR selection rule fixed in advance.
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -214,14 +232,16 @@ event of M ≥ 4.5 with catalogue neighbours (within 25 km, M ≥ 4.3) both in t
 backtracking forecast window (about 2000-2003) and later, up to 2008.5. The vote is graded
 with a one-sided binomial test and a bootstrap over whole multiplets.
 
-## Single-event BC−DF times (`bcdf.py`, `cola.py`)
+## Single-event BC−DF times (`bcdf.py`, `cola.py`), closed
 
 For each event, the PKIKP onset is picked and the PKIKP pulse is correlated with PKPbc to
 get the BC−DF time and its ak135 residual. `bcdf.py` uses the ILAR beams cached by
 `run.py`; since v0.5.0 it searches DF from 9 s before to 1 s after ak135 and BC around its
 own ak135 time. `cola.py` uses the single station at College, Alaska (1982-2026). A
 spatial gradient is fitted together with one time term (monotone L, backtracking Bk, and in
-`cola.py` a pause P) on events before 2025, and each predicts the 2025-2026 events.
+`cola.py` a pause P) on events before 2025, and each predicts the 2025-2026 events. Both
+lanes are closed: the onset-pick scatter (σ ≈ 0.5 s) is far above the few hundredths of a
+second needed ([diag2 results](findings/2026-11-18-diag2-results.md)).
 
 ## The published repeater list (`wang_table.py`)
 
@@ -289,8 +309,10 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.11.0, 2026-11-18: YKA stage B v1 (pick rule triggered) and hardware-control results.
 * v0.12.0, 2026-11-18: YKA stage B v2 and ILAR BC−DF results (calibration fails at YKA,
   vote inconclusive, BC−DF not decisive); `icrdiag.py` and its plan.
-* v0.13.0, 2026-11-18: **mantle-P control v1 results** (untestable; exploratory QSPA reading
-  points to a path effect) and **pre-registration 11** (`mantlep2.py`).
+* v0.13.0, 2026-11-18: mantle-P control v1 results (untestable; exploratory QSPA reading
+  points to a path effect) and pre-registration 11 (`mantlep2.py`).
+* v0.13.1, 2026-11-18: **diagnostic results** (YKA limited by source separation, not
+  time; ILAR BC−DF closed) and **pre-registration 12** (prospective YKA test).
 
 Results go in `findings/` whatever they show, including null or negative results.
 
