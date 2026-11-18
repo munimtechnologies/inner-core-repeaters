@@ -1,0 +1,360 @@
+{
+ "version": "0.10.0",
+ "started": "2026-11-18T10:44:59Z",
+ "group_Y": [
+  "usp000fz4d",
+  "usp000hute",
+  "usc000t4wj"
+ ],
+ "band_hz": [
+  1.0,
+  2.0
+ ],
+ "windows": {
+  "D_early": [
+   1.0,
+   3.0
+  ],
+  "D_late": [
+   3.0,
+   10.0
+  ]
+ },
+ "gates": {
+  "snr_direct": 5.0,
+  "snr_late": 2.0
+ },
+ "hit_rank": 3,
+ "core_controls": {
+  "yka_c310": {
+   "rank": 1,
+   "of": 56,
+   "sep": 0.11298044102564105
+  },
+  "yka_c13": {
+   "rank": 8,
+   "of": 56,
+   "sep": 0.0018107615384615377
+  },
+  "ilar_long": {
+   "rank": 1,
+   "of": 56,
+   "sep": 0.1385815897435897
+  },
+  "ilar_early": {
+   "rank": 10,
+   "of": 56,
+   "sep": 0.026754035897435913
+  }
+ },
+ "stations": [
+  {
+   "station": "II.SUR",
+   "n_fetched": 8,
+   "ref": "us7000am0e",
+   "onset_minus_pred_s": -3.0,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "D_early": {
+    "rank": 26,
+    "of": 56,
+    "sep": 0.04280230744652047,
+    "median_D": 0.41142100301817636
+   },
+   "D_late": {
+    "rank": 48,
+    "of": 56,
+    "sep": -0.09666134634852597,
+    "median_D": 0.9982067507074333
+   },
+   "tight_median_D_late": 1.0189198637608086,
+   "other_median_D_late": 0.9916429471775839,
+   "xy_stack_late": {
+    "cc0": -0.05399014610864368,
+    "best_lag_s": -0.8,
+    "best_cc": 0.5039351210888195
+   },
+   "status": "ok"
+  },
+  {
+   "station": "IU.TSUM",
+   "n_fetched": 6,
+   "ref": "us6000mk65",
+   "onset_minus_pred_s": 1.75,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": true,
+    "usp000hute": true,
+    "usc000t4wj": false,
+    "us7000am0e": true,
+    "us6000h2wz": false,
+    "us6000mk65": true,
+    "us6000runq": true
+   },
+   "usable": false,
+   "tight_median_D_late": 0.1197142401472352,
+   "other_median_D_late": 0.122288977998604,
+   "xy_stack_late": {
+    "cc0": 0.9595922375276829,
+    "best_lag_s": 0.0,
+    "best_cc": 0.9595922375276829
+   },
+   "status": "ok"
+  },
+  {
+   "station": "II.ASCN",
+   "n_fetched": 5,
+   "ref": "us7000am0e",
+   "onset_minus_pred_s": -1.1,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "tight_median_D_late": 1.097298181760999,
+   "other_median_D_late": 0.7815837946103223,
+   "xy_stack_late": {
+    "cc0": 0.4713564618954267,
+    "best_lag_s": 0.0,
+    "best_cc": 0.4713564618954267
+   },
+   "status": "ok"
+  },
+  {
+   "station": "II.SHEL",
+   "n_fetched": 7,
+   "ref": "usp000fz4d",
+   "onset_minus_pred_s": -2.85,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "tight_median_D_late": 0.9742437221921458,
+   "other_median_D_late": 0.8743819794962797,
+   "xy_stack_late": {
+    "cc0": 0.5383488580082822,
+    "best_lag_s": -0.75,
+    "best_cc": 0.6403213234467275
+   },
+   "status": "ok"
+  },
+  {
+   "station": "IU.RCBR",
+   "n_fetched": 8,
+   "ref": "us6000h2wz",
+   "onset_minus_pred_s": -2.8,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "D_early": {
+    "rank": 27,
+    "of": 56,
+    "sep": 0.012368784366624808,
+    "median_D": 0.9077578135482158
+   },
+   "D_late": {
+    "rank": 22,
+    "of": 56,
+    "sep": 0.02068642243306984,
+    "median_D": 1.0306411673504086
+   },
+   "tight_median_D_late": 1.3210522539183267,
+   "other_median_D_late": 0.9801283236175891,
+   "xy_stack_late": {
+    "cc0": 0.7223516818908183,
+    "best_lag_s": 0.0,
+    "best_cc": 0.7223516818908183
+   },
+   "status": "ok"
+  },
+  {
+   "station": "II.NNA",
+   "n_fetched": 6,
+   "ref": "us6000mk65",
+   "onset_minus_pred_s": 0.65,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "tight_median_D_late": 0.5896299076785887,
+   "other_median_D_late": 0.5113276590477152,
+   "xy_stack_late": {
+    "cc0": 0.7128713954797548,
+    "best_lag_s": 0.0,
+    "best_cc": 0.7128713954797548
+   },
+   "status": "ok"
+  },
+  {
+   "station": "IU.CASY",
+   "n_fetched": 7,
+   "ref": "us7000am0e",
+   "onset_minus_pred_s": -3.0,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "tight_median_D_late": 1.0212201747419232,
+   "other_median_D_late": 1.014099455266886,
+   "xy_stack_late": {
+    "cc0": 0.21449007915291723,
+    "best_lag_s": -1.6,
+    "best_cc": 0.6275669578654263
+   },
+   "status": "ok"
+  },
+  {
+   "station": "IU.SJG",
+   "n_fetched": 8,
+   "ref": "us6000mk65",
+   "onset_minus_pred_s": -1.2,
+   "gates": {
+    "usp000bt5x": false,
+    "usp000fz4d": false,
+    "usp000hute": false,
+    "usc000t4wj": false,
+    "us7000am0e": false,
+    "us6000h2wz": false,
+    "us6000mk65": false,
+    "us6000runq": false
+   },
+   "usable": false,
+   "D_early": {
+    "rank": 3,
+    "of": 56,
+    "sep": 0.3558617391008362,
+    "median_D": 0.799607646991519
+   },
+   "D_late": {
+    "rank": 9,
+    "of": 56,
+    "sep": 0.09900701655010624,
+    "median_D": 1.0078545805328685
+   },
+   "tight_median_D_late": 1.3694386741801092,
+   "other_median_D_late": 1.0021817701399485,
+   "xy_stack_late": {
+    "cc0": -0.014699090247179124,
+    "best_lag_s": -2.0,
+    "best_cc": 0.38904839779216804
+   },
+   "status": "ok"
+  },
+  {
+   "station": "IU.QSPA",
+   "n_fetched": 8,
+   "ref": "us7000am0e",
+   "onset_minus_pred_s": 2.5,
+   "gates": {
+    "usp000bt5x": true,
+    "usp000fz4d": true,
+    "usp000hute": true,
+    "usc000t4wj": true,
+    "us7000am0e": true,
+    "us6000h2wz": true,
+    "us6000mk65": true,
+    "us6000runq": true
+   },
+   "usable": true,
+   "D_early": {
+    "rank": 13,
+    "of": 56,
+    "sep": 0.0689592942920329,
+    "median_D": 0.44706037601888426
+   },
+   "D_late": {
+    "rank": 19,
+    "of": 56,
+    "sep": 0.016662303914853183,
+    "median_D": 0.6288194385051226
+   },
+   "tight_median_D_late": 0.4515461686163261,
+   "other_median_D_late": 0.6332511621051786,
+   "xy_stack_late": {
+    "cc0": 0.8917932580937106,
+    "best_lag_s": 0.0,
+    "best_cc": 0.8917932580937106
+   },
+   "status": "ok"
+  }
+ ],
+ "n_usable": 1,
+ "usable": [
+  "IU.QSPA"
+ ],
+ "ranks_D_late": [
+  19
+ ],
+ "hits": 0,
+ "decision": "untestable",
+ "ranks_D_early": [
+  13
+ ],
+ "network_combined_D_late": {
+  "rank": 19,
+  "of": 56,
+  "z": 0.12110387160170842,
+  "n_stations": 1
+ },
+ "all_stations_ungated": {
+  "ranks": [
+   48,
+   22,
+   9,
+   19
+  ],
+  "stations": [
+   "II.SUR",
+   "IU.RCBR",
+   "IU.SJG",
+   "IU.QSPA"
+  ],
+  "label": "includes stations failing the gates; not the decision"
+ },
+ "finished": "2026-11-18T11:14:28Z",
+ "minutes": 29.5
+}

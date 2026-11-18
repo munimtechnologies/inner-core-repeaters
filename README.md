@@ -8,7 +8,26 @@ working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY
 
 ## Results so far (2026-11-18)
 
-**Latest: the out-of-sample tests on 2025-2026 earthquakes return a null**
+**Latest: the source control for M03-24 (mantle P) is untestable as run, but its one clean
+station points to a path effect** ([`findings/2026-11-18-mantlep-v1-results.md`](findings/2026-11-18-mantlep-v1-results.md),
+tables and plots in [`results/mantlep-v1/`](results/mantlep-v1/)).
+
+* Only 1 of 9 stations passed the gates (forecast: at least 3), so the pre-registered decision
+  is **untestable**. The positive controls hold: the hypothesised split is the best of 56 in
+  both YKA's and ILAR's late PKIKP coda.
+* v1 had three faults, found after the run. Windows were anchored on the ak135 P time, but P
+  arrives 2.5-7 s late at some stations. A noise window ran off the grid, which made a gate
+  fail silently. And every station needed all eight events.
+* **Exploratory:** at the South Pole (QSPA), the five events that were aligned (2008, 2011,
+  2014, 2022, 2025) are indistinguishable in mantle P (D 0.002-0.013; X–Y pairs no more
+  different than pairs within a group, ratio 1.05). On the same pairs, YKA's PKIKP coda
+  differs 6.4 times more across the groups than within them. If this holds, the source did
+  not change, and the change is on the path through the core.
+* A corrected test, [pre-registration 11](findings/2026-11-18-mantlep2-prereg.md)
+  (`mantlep2.py`), was published before it fetched any new station. Its primary decision
+  excludes the stations whose waveforms were seen.
+
+**Earlier on 2026-11-18: the out-of-sample tests on 2025-2026 earthquakes return a null**
 ([`findings/2026-11-18-ykab-v2-bcdf-v2-results.md`](findings/2026-11-18-ykab-v2-bcdf-v2-results.md),
 tables in [`results/ykab-v2/`](results/ykab-v2/) and [`results/bcdf-v2/`](results/bcdf-v2/)).
 
@@ -29,17 +48,12 @@ tables in [`results/ykab-v2/`](results/ykab-v2/) and [`results/bcdf-v2/`](result
   ([`findings/2026-11-18-diag2-plan.md`](findings/2026-11-18-diag2-plan.md), `icrdiag.py`).
   Any further confirmatory YKA test will be **prospective**: only earthquakes after
   2026-11-18.
-
-**Earlier on 2026-11-18**
-
 * ILAR diagnostics: the lean towards backtracking at ILAR is consistent but weak. It
   depends on the 2021 sequence, and the best turn date is 2012 (bootstrap 2008.5-2018.5)
   ([`findings/2026-11-18-diag-m0324chk-results.md`](findings/2026-11-18-diag-m0324chk-results.md)).
 * The 2025-12-13 anomaly at M03-24 is not robust at ILAR. Two arrays' late coda split
-  M03-24 into {2003, 2020, 2022-03, 2024, 2025} and {2008, 2011, 2014}. A mantle-P control
-  for source sub-clusters is queued
-  ([`findings/2026-11-18-m0324chk-v2-results.md`](findings/2026-11-18-m0324chk-v2-results.md),
-  [pre-registration 10](findings/2026-11-18-mantlep-prereg.md)).
+  M03-24 into {2003, 2020, 2022-03, 2024, 2025} and {2008, 2011, 2014}
+  ([`findings/2026-11-18-m0324chk-v2-results.md`](findings/2026-11-18-m0324chk-v2-results.md)).
 
 **The arc-wide scan and the second array (2026-11-17)**
 ([`findings/2026-11-17-fdscan-yka-a-results.md`](findings/2026-11-17-fdscan-yka-a-results.md),
@@ -150,6 +164,9 @@ uses were analysed:
   (written before any overlap waveform or stage-B measurement).
 * [`findings/2026-11-18-mantlep-prereg.md`](findings/2026-11-18-mantlep-prereg.md):
   mantle-P control of the M03-24 late-coda split (source sub-clusters or not).
+* [`findings/2026-11-18-mantlep2-prereg.md`](findings/2026-11-18-mantlep2-prereg.md):
+  the corrected mantle-P control (written after v1 was untestable, before any new station
+  was fetched; stations already seen are left out of the primary decision).
 
 ## What the ILAR pipeline does (`run.py`)
 
@@ -172,7 +189,7 @@ within-multiplet sign test, and a bootstrap of the turn date. It was written aft
 ILAR results were read and is labelled as such. `icrdiag.py` does the same kind of
 exploratory work for the YKA stage-B pairs and the ILAR BC−DF series.
 
-## The M03-24 patch test (`m0324.py`) and its follow-up check (`m0324_check.py`)
+## The M03-24 patch test (`m0324.py`), its check (`m0324_check.py`) and the source control (`mantlep.py`, `mantlep2.py`)
 
 Zhang & Wen's multiplet M03-24 has six events: 2003-03-21, 2008-02-17, 2011-02-20,
 2020-07-11, 2022-03-07 and 2024-03-21, centred near 59.04°S, 25.69°W. The same patch has
@@ -186,7 +203,9 @@ two features no published study has used together:
 1991-2026, and grades Z0 (re-finding the published multiplet), Z1 (the new-event vote),
 Z2 (an out-of-sample rank test) and Z3 (calibration). `m0324_check.py` re-measures the
 nine-event family with an element bootstrap, three other windows and the YKA array.
-`mantlep.py` measures mantle P of the same events, which does not touch the core.
+`mantlep.py` (v1) and `mantlep2.py` (corrected) measure mantle P of the same events at
+global stations 30-85° away. Mantle P does not touch the core, so it tells source changes
+from path changes.
 
 ## The forecast-date scan (`fdscan.py`)
 
@@ -230,6 +249,7 @@ python run.py --data-dir ./data --out-dir ./out --time-budget-min 200
 python ilar_diag.py --pairs ./out/pairs.csv --out-dir ./out_diag            # after run.py
 python m0324.py --data-dir ./data_m0324 --out-dir ./out_m0324
 python m0324_check.py --data-dir ./data_m0324 --out-dir ./out_m0324_check  # after m0324.py
+python mantlep2.py --data-dir ./data_mp --out-dir ./out_mantlep2           # source control
 python fdscan.py --data-dir ./data_fd --out-dir ./out_fd
 python bcdf.py --data-dir ./data --out-dir ./out_bcdf                     # after run.py
 python cola.py --data-dir ./data_cola --out-dir ./out_cola
@@ -238,7 +258,7 @@ python yka.py --data-dir ./data --out-dir ./out_yka                       # stag
 python yka_b.py --data-dir ./data --out-dir ./out_ykab --tables-dir . --repick   # stage B
 python ykagen.py --data-dir ./data_gen --out-dir ./out_ykagen             # hardware control
 python icrdiag.py --out-dir ./out_diag2                                    # exploratory
-python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen test_ykab_grade test_icrdiag
+python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bcdf test_wang_table test_cola test_m0324 test_fdscan test_ilar_diag test_m0324_check test_yka_b test_ykagen test_ykab_grade test_icrdiag test_mantlep test_mantlep2
 ```
 
 ## Data access notes
@@ -253,6 +273,8 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   coordinates; the electronics differ.
 * ObsPy cannot re-write DW.COL records stored in the DWWSSN encoding, so `cola.py` measures
   them in memory without caching them.
+* Mantle P from the South Sandwich Islands arrives 2.5-7 s after ak135 at some global
+  stations (QSPA, CASY), so windows must be anchored on the observed onset (`mantlep2.py`).
 
 ## Status
 
@@ -265,8 +287,10 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
 * v0.9.2, 2026-11-18: ILAR diagnostics and the YKA pick amendment.
 * v0.10.0, 2026-11-18: M03-24 check v2 results; pre-registration 10 (mantle P).
 * v0.11.0, 2026-11-18: YKA stage B v1 (pick rule triggered) and hardware-control results.
-* v0.12.0, 2026-11-18: **YKA stage B v2 and ILAR BC−DF results** (calibration fails at YKA,
+* v0.12.0, 2026-11-18: YKA stage B v2 and ILAR BC−DF results (calibration fails at YKA,
   vote inconclusive, BC−DF not decisive); `icrdiag.py` and its plan.
+* v0.13.0, 2026-11-18: **mantle-P control v1 results** (untestable; exploratory QSPA reading
+  points to a path effect) and **pre-registration 11** (`mantlep2.py`).
 
 Results go in `findings/` whatever they show, including null or negative results.
 
@@ -277,7 +301,9 @@ Results go in `findings/` whatever they show, including null or negative results
   * College, Alaska: DW.COL (DWWSSN), and IU.COL and IU.COLA (Global Seismograph
     Network, IRIS/USGS, doi:10.7914/SN/IU);
   * the Yellowknife array YKA (network CN), from the Canadian National Seismograph
-    Network (Natural Resources Canada) and EarthScope.
+    Network (Natural Resources Canada) and EarthScope;
+  * Global Seismograph Network stations of networks IU (doi:10.7914/SN/IU) and II
+    (IRIS/IDA, doi:10.7914/SN/II), and the GT network, for the mantle-P control.
 * Earthquake catalogue: the USGS ComCat.
 * Travel times: ak135, via ObsPy TauP (ObsPy is LGPL-3.0, used as a library).
 * Event list and the quoted ILAR grades: Supplementary Tables 1-2 of Wang et al. 2024
