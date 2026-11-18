@@ -1,0 +1,58 @@
+{
+ "version": "0.8.0",
+ "started": "2026-11-18T01:06:03Z",
+ "args": {
+  "data_dir": "/data",
+  "out_dir": "/out",
+  "nboot": 500,
+  "no_yka": false
+ },
+ "ilar_missing": [
+  "usp000bt5x",
+  "usp000fz4d",
+  "usp000hute",
+  "usc000t4wj",
+  "us7000am0e",
+  "us6000h2wz",
+  "us6000ittv",
+  "us6000mk65",
+  "us6000runq"
+ ],
+ "ilar_error": "missing cached ILAR beams; nothing measured at ILAR",
+ "yka": {
+  "status": "ran",
+  "n_processed": 9,
+  "multiplet": {
+   "mult": "Z004",
+   "n_ilar": 9,
+   "status": "ok",
+   "n_yka": 9,
+   "root": "usp000bt5x",
+   "n_aligned": 9,
+   "n_flipped": 0,
+   "pick_minus_pred_s": -4.8
+  },
+  "n_pairs": 36,
+  "n_ok": 0,
+  "tests": {
+   "Y1": {
+    "D_2003_new": 0.04414875183025735,
+    "D_2011_new": 0.016919213106656894,
+    "ok_2003_new": false,
+    "ok_2011_new": false,
+    "testable": false,
+    "replicated": null,
+    "ungated_same_direction": true
+   },
+   "Y0": {
+    "D_2003_2011": 0.00884631026201943,
+    "D_2003_2020": 0.06462286393747607,
+    "D_2003_2024": 0.003631789328486068,
+    "testable": false,
+    "holds": null
+   }
+  }
+ },
+ "finished": "2026-11-18T01:09:20Z",
+ "minutes": 3.3
+}
