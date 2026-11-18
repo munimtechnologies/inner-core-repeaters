@@ -8,8 +8,27 @@ working in MV2's name. Code: Apache-2.0. Findings text and derived tables: CC BY
 
 ## Results so far (2026-11-18)
 
-**Latest: at Yellowknife the source sets the limit, not time; the ILAR BC−DF lane is closed**
-(exploratory, [`findings/2026-11-18-diag2-results.md`](findings/2026-11-18-diag2-results.md),
+**Latest: the inner-core change at M03-24 is on the path through the core, not at the
+source** (pre-registered, decision **N**;
+[`findings/2026-11-18-mantlep2-results.md`](findings/2026-11-18-mantlep2-results.md),
+tables and plots in [`results/mantlep2-v1/`](results/mantlep2-v1/)).
+
+* Eight earthquakes of one repeating South Sandwich Islands source (2003-2025) split into
+  {2003, 2020, 2022, 2024, 2025} and {2008, 2011, 2014} by their inner-core waves at both
+  Alaska (ILAR) and Canada (YKA). The inner-core waves changed after 2003 and changed back by
+  2020, as the backtracking clock predicts.
+* The mantle P waves of the same earthquakes, which never enter the core, show **no split
+  at any of 7 usable global stations** that had not been looked at before (0 hits; the
+  pre-registered rule needed at most 1 for N). Through the core, pairs across the groups differ
+  8.0 times (YKA) and 3.4 times (ILAR) more than pairs within a group; in mantle P the median
+  ratio is 1.19.
+* So the earthquakes did not change; the path through the core did. The test cannot tell an
+  inner core that turned back from an inner-core surface that changed and recovered, and a
+  change confined to the structure straight below the source is not excluded. It is one
+  multiplet; other families are next.
+
+**Earlier on 2026-11-18: at Yellowknife the source sets the limit, not time; the ILAR BC−DF
+lane is closed** (exploratory, [`findings/2026-11-18-diag2-results.md`](findings/2026-11-18-diag2-results.md),
 tables in [`results/diag-v1/`](results/diag-v1/)).
 
 * At YKA, coda dissimilarity between "repeaters" shows **no dependence on the time between
@@ -28,24 +47,21 @@ tables in [`results/diag-v1/`](results/diag-v1/)).
   location-and-SNR selection rule now, for earthquakes after 2026-11-19 only. It has two
   looks, in 2027 and 2028.
 
-**Earlier on 2026-11-18: the source control for M03-24 (mantle P) is untestable as run, but its
-one clean station points to a path effect** ([`findings/2026-11-18-mantlep-v1-results.md`](findings/2026-11-18-mantlep-v1-results.md),
+**Earlier on 2026-11-18: the first source control for M03-24 (mantle P) was untestable as
+run** ([`findings/2026-11-18-mantlep-v1-results.md`](findings/2026-11-18-mantlep-v1-results.md),
 tables and plots in [`results/mantlep-v1/`](results/mantlep-v1/)).
 
 * Only 1 of 9 stations passed the gates (forecast: at least 3), so the pre-registered decision
-  is **untestable**. The positive controls hold: the hypothesised split is the best of 56 in
+  was **untestable**. The positive controls held: the hypothesised split is the best of 56 in
   both YKA's and ILAR's late PKIKP coda.
 * v1 had three faults, found after the run. Windows were anchored on the ak135 P time, but P
   arrives 2.5-7 s late at some stations. A noise window ran off the grid, which made a gate
   fail silently. And every station needed all eight events.
-* **Exploratory:** at the South Pole (QSPA), the five events that were aligned (2008, 2011,
-  2014, 2022, 2025) are indistinguishable in mantle P (D 0.002-0.013; X–Y pairs no more
-  different than pairs within a group, ratio 1.05). On the same pairs, YKA's PKIKP coda
-  differs 6.4 times more across the groups than within them. If this holds, the source did
-  not change, and the change is on the path through the core.
-* A corrected test, [pre-registration 11](findings/2026-11-18-mantlep2-prereg.md)
-  (`mantlep2.py`), was published before it fetched any new station. Its primary decision
-  excludes the stations whose waveforms were seen. It is queued.
+* Exploratory: at the South Pole (QSPA), the five events that were aligned looked
+  indistinguishable in mantle P. The corrected test,
+  [pre-registration 11](findings/2026-11-18-mantlep2-prereg.md) (`mantlep2.py`), was published
+  before it fetched any new station and left the stations already seen out of its primary
+  decision. Its result is the "Latest" entry above.
 
 **Earlier on 2026-11-18: the out-of-sample tests on 2025-2026 earthquakes return a null**
 ([`findings/2026-11-18-ykab-v2-bcdf-v2-results.md`](findings/2026-11-18-ykab-v2-bcdf-v2-results.md),
@@ -223,7 +239,8 @@ Z2 (an out-of-sample rank test) and Z3 (calibration). `m0324_check.py` re-measur
 nine-event family with an element bootstrap, three other windows and the YKA array.
 `mantlep.py` (v1) and `mantlep2.py` (corrected) measure mantle P of the same events at
 global stations 30-85° away. Mantle P does not touch the core, so it tells source changes
-from path changes.
+from path changes. `mantlep2.py` found 42 IU, II and GT stations, of which 8 were usable;
+the decision is N (no source split).
 
 ## The forecast-date scan (`fdscan.py`)
 
@@ -311,8 +328,11 @@ python -m unittest -v test_xcorr test_model test_cluster_phases test_yka test_bc
   vote inconclusive, BC−DF not decisive); `icrdiag.py` and its plan.
 * v0.13.0, 2026-11-18: mantle-P control v1 results (untestable; exploratory QSPA reading
   points to a path effect) and pre-registration 11 (`mantlep2.py`).
-* v0.13.1, 2026-11-18: **diagnostic results** (YKA limited by source separation, not
-  time; ILAR BC−DF closed) and **pre-registration 12** (prospective YKA test).
+* v0.13.1, 2026-11-18: diagnostic results (YKA limited by source separation, not time;
+  ILAR BC−DF closed) and pre-registration 12 (prospective YKA test).
+* v0.14.0, 2026-11-18: **mantle-P control results (pre-registration 11): N.** The M03-24
+  split is absent in mantle P at 7 unseen stations, so it arises on the path through the
+  core; synthesis of all lanes.
 
 Results go in `findings/` whatever they show, including null or negative results.
 
