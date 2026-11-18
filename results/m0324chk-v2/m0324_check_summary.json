@@ -1,0 +1,85 @@
+{
+ "version": "0.8.0",
+ "started": "2026-11-18T02:20:57Z",
+ "args": {
+  "data_dir": "/data",
+  "out_dir": "/out/check",
+  "nboot": 500,
+  "no_yka": true
+ },
+ "ilar_missing": [],
+ "ilar_frame": {
+  "root": "us7000am0e",
+  "onset": 1384,
+  "dfw": [
+   1372,
+   1484
+  ],
+  "refw": [
+   1657,
+   2435
+  ],
+  "pick_minus_pred_s": -5.4,
+  "n_members": 9
+ },
+ "R0_reproduction": {
+  "n": 36,
+  "max_abs_diff": 0.0,
+  "reproduced": true
+ },
+ "common_elements": [
+  "IL01",
+  "IL03",
+  "IL04",
+  "IL05",
+  "IL06",
+  "IL07",
+  "IL08",
+  "IL09",
+  "IL10",
+  "IL11",
+  "IL12",
+  "IL13",
+  "IL14",
+  "IL15",
+  "IL16",
+  "IL17",
+  "IL18",
+  "IL19"
+ ],
+ "C1_element_bootstrap": {
+  "frac_boot": 0.938,
+  "n_boot": 500,
+  "n_loo": 18,
+  "loo_min_diff": 0.10654654242469297,
+  "loo_max_diff": 0.18683776836690236,
+  "testable": true,
+  "robust": false
+ },
+ "C1_in_sample_contrast": {
+  "frac_2003_2011_gt_2003_2020": 1.0,
+  "frac_2003_2011_gt_2003_2024": 1.0,
+  "frac_2003_new_gt_2024_new": 0.93,
+  "frac_2003_new_gt_2008_new": 0.696
+ },
+ "C2_windows": {
+  "W_early": {
+   "D_2003_new": 0.34207871708680304,
+   "D_2011_new": 0.021098043957086143,
+   "same_direction": true
+  },
+  "W_late": {
+   "D_2003_new": 0.07517450822546667,
+   "D_2011_new": 0.03242396151527083,
+   "same_direction": true
+  },
+  "W_long": {
+   "D_2003_new": 0.08588488269137162,
+   "D_2011_new": 0.12122615482577459,
+   "same_direction": false
+  }
+ },
+ "C2_windows_all_same_direction": false,
+ "finished": "2026-11-18T02:21:15Z",
+ "minutes": 0.3
+}

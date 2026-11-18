@@ -1,0 +1,10 @@
+id,time,status,gen,snr,n_sta,source
+usp000bt5x,2003-03-21T10:47:47.620Z,ok,legacy,115.13,18,fetched:nrcan
+usp000fz4d,2008-02-17T19:32:09.100Z,ok,legacy,75.08,12,fetched:nrcan
+usp000hute,2011-02-20T17:37:37.320Z,ok,legacy,74.7,16,fetched:nrcan
+usc000t4wj,2014-12-09T19:23:36.400Z,ok,new,64.94,18,fetched:earthscope
+us7000am0e,2020-07-11T18:58:06.501Z,ok,new,48.97,17,fetched:earthscope
+us6000h2wz,2022-03-07T23:25:40.208Z,ok,new,59.25,17,fetched:earthscope
+us6000ittv,2022-10-15T00:12:35.059Z,ok,new,6.24,18,fetched:earthscope
+us6000mk65,2024-03-21T02:47:21.923Z,ok,new,72.9,18,fetched:earthscope
+us6000runq,2025-12-13T14:04:33.132Z,ok,new,56.3,18,fetched:earthscope
