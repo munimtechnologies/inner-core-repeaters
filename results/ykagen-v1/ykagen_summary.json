@@ -1,0 +1,46 @@
+{
+ "n_rows": 245,
+ "n_compared": 79,
+ "n_ok": 16,
+ "n_ok_ssi": 10,
+ "testable": true,
+ "D_median": 0.011288166121190768,
+ "D_q25": 0.007377919719742804,
+ "D_q75": 0.01678120690496579,
+ "D_q90": 0.029726800408203802,
+ "frac_cc_ref_ge_thr": 1.0,
+ "frac_flipped": 0.0,
+ "off_s_median": -0.09011210903268531,
+ "off_s_q10_q90": [
+  -0.10704761958893319,
+  -0.07964495709463312
+ ],
+ "Ds_median_of_events": 0.010297722094806616,
+ "sens_D_median": {
+  "D_c13": 0.009581040709955413,
+  "D_c310": 0.014913190177946567,
+  "D_full": 0.009506385477733692
+ },
+ "ssi_D_median": 0.013996109697843873,
+ "H1_floor_small": "holds",
+ "H2_gate_survives": "holds",
+ "H3_no_flip": "holds",
+ "version": "0.9.1",
+ "commit": "7067d4fc2b0a2fdb1378a1c406dd680c8d0b69b1",
+ "n_catalogue": 245,
+ "overlap": [
+  "2013-06-27T00:00:00",
+  "2014-04-01T00:00:00"
+ ],
+ "radius_deg": [
+  128.5,
+  145.5
+ ],
+ "min_mag": 4.7,
+ "status_counts": {
+  "ok": 79,
+  "one-generation-only": 5,
+  "no-DF-pick": 46,
+  "skipped-time-budget": 115
+ }
+}

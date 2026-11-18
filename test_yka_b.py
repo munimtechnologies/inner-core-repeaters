@@ -65,6 +65,12 @@ class TestMerge(unittest.TestCase):
                 r = list(csv.DictReader(f))
             self.assertEqual(float(r[0]["D"]), 0.1)
 
+    def test_fd_tables_present(self):
+        here = os.path.dirname(os.path.abspath(__file__))
+        fams = yka_b.read_families(os.path.join(here, "fd_multiplets.csv"), "F")
+        self.assertEqual(len(fams), 14)
+        self.assertEqual(len(fams[-1]["ids"]), 36)
+
 
 class TestVote(unittest.TestCase):
     def test_case_logic(self):

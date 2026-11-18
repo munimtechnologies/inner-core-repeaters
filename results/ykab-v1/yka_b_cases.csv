@@ -1,0 +1,3 @@
+mult,ev2,t2,e_t2,n_partners,partners,best_ev1,best_t1,best_D,B_pick,B_t1,M_pick,M_t1,discriminating,matches_B,matches_M,best_is_top_snr,chance
+Y002,us6000rk5n,2025.826,2001.57,5,usp000abph@2001.21:D=0.024;usp000dr75@2005.38:D=0.795;usp000dsnt@2005.44:D=0.036;usp000ec3f@2006.20:D=0.080;usp000f787@2007.22:D=0.037,usp000abph,2001.21,0.0237,usp000abph,2001.21,usp000f787,2007.224,True,True,False,False,0.2
+Y002,us6000tmzw,2026.643,2001.243,5,usp000abph@2001.21:D=0.257;usp000dr75@2005.38:D=0.244;usp000dsnt@2005.44:D=0.211;usp000ec3f@2006.20:D=0.231;usp000f787@2007.22:D=0.237,usp000dsnt,2005.44,0.2111,usp000abph,2001.21,usp000f787,2007.224,True,False,False,False,0.2

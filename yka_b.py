@@ -12,6 +12,11 @@ Yellowknife array (YKA), where PKIKP is strong, measures the inner core. This sc
      only family members fetched);
   4. grades the new-event vote F1-Y / F1x-Y of findings/2026-11-17-yka-stageb-prereg.md.
 
+v0.10.1 adds --repick (findings/2026-11-18-yka-pick-amendment.md, Rule A): yka.py's onset
+picker is replaced by the same picker searched within ak135 +/- 2.0 s (yka_repick.py), and
+the pick diagnostics, Rule A bookkeeping and hypothesis H4 of pre-registration 9
+(ykab_grade.py) are written next to the usual outputs. Nothing else changes.
+
 By MV2, Munim, Inc. (made with AI agents). Licence: Apache-2.0.
 """
 import argparse
@@ -21,8 +26,9 @@ import math
 import os
 import sys
 import time
+import traceback
 
-VERSION = "0.9.0"
+VERSION = "0.10.1"
 COMMIT = "7067d4fc2b0a2fdb1378a1c406dd680c8d0b69b1"  # v0.8.0 of munimtechnologies/inner-core-repeaters
 RAW = "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/%s/" % COMMIT
 MODULES = ("model.py", "phases.py", "xcorr.py", "yka.py")
@@ -311,7 +317,7 @@ def grade_all(pairs_path, nboot=2000):
     res["sensitivity"] = {k: grade_vote(cases_from_pairs(rows, k), nboot=300) for k in ("D_c13", "D_c310", "D_full")}
     res["anomaly_event_pairs"] = [
         dict(ev1=r["ev1"], ev2=r["ev2"], t1=round(r["t1"], 3), t2=round(r["t2"], 3), D=r["D"], Dx=r["Dx"],
-             cc_direct=r["cc_ref"], snr_dir1=r["snr_dir1"], snr_dir2=r["snr_dir2"], ok=r["ok"])
+             D_c310=r["D_c310"], cc_direct=r["cc_ref"], snr_dir1=r["snr_dir1"], snr_dir2=r["snr_dir2"], ok=r["ok"])
         for r in rows if ANOMALY_EVENT in (r["ev1"], r["ev2"])]
     return res, cases
 
@@ -326,6 +332,42 @@ def write_cases(path, cases):
             w.writerow(c)
 
 
+# ----------------------------------------------------------------------------- re-pick diagnostics
+def match_pick_records(mult_path, records, tol_s=0.01):
+    """Attach the picker's call records to multiplets, in call order.
+
+    yka.py calls pick_onset once per multiplet that reaches the pick (status ok or
+    no-DF-pick), in the order the multiplets are written. The match is accepted only if every
+    ok multiplet's pick_minus_pred_s equals its record's constrained pick (within tol_s).
+    """
+    rows = []
+    if os.path.exists(mult_path):
+        with open(mult_path, newline="") as f:
+            rows = list(csv.DictReader(f))
+    called = [r for r in rows if r.get("status") in ("ok", "no-DF-pick")]
+    out, consistent = [], len(called) == len(records)
+    for r, rec in zip(called, records):
+        d = dict(mult=r["mult"], status=r.get("status"), pick_minus_pred_s=r.get("pick_minus_pred_s"))
+        d.update(rec)
+        if r.get("status") == "ok":
+            a, b = fnum(r.get("pick_minus_pred_s")), fnum(rec.get("pick_constrained_s"))
+            if not (math.isfinite(a) and math.isfinite(b) and abs(a - b) <= tol_s):
+                consistent = False
+        out.append(d)
+    return dict(n_multiplets_called=len(called), n_records=len(records), consistent=consistent,
+                rows=out if consistent else [], raw=[] if consistent else records)
+
+
+def write_pick_diag(path, diag):
+    keys = ["mult", "status", "pick_minus_pred_s", "pick_constrained_s", "pick_original_s", "envelope_onset_s",
+            "envelope_max_s", "search_s", "error"]
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
+        w.writeheader()
+        for r in diag["rows"]:
+            w.writerow(r)
+
+
 # ----------------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -334,6 +376,9 @@ def main():
     ap.add_argument("--tables-dir", default=".")
     ap.add_argument("--nboot", type=int, default=2000)
     ap.add_argument("--time-budget-min", type=float, default=150.0)
+    ap.add_argument("--repick", action="store_true",
+                    help="Rule A: pick the stack onset within ak135 +/- 2.0 s (yka_repick.py)")
+    ap.add_argument("--no-fetch-v1", action="store_true", help="do not fetch the published v1 tables for grading")
     ap.add_argument("--grade-only", default="", help="grade an existing yka_pairs.csv and stop")
     args = ap.parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
@@ -341,6 +386,7 @@ def main():
         res, cases = grade_all(args.grade_only, nboot=args.nboot)
         print(json.dumps(clean(res), indent=1))
         return
+    here = os.path.dirname(os.path.abspath(__file__))
     mod_dir = os.path.join(args.data_dir, "mods_" + COMMIT[:7])
     fetched = os.path.join(args.out_dir, "inputs")  # kept with the outputs for reproducibility
     os.makedirs(fetched, exist_ok=True)
@@ -364,7 +410,18 @@ def main():
         len(with_new), "ILAR ok pairs", n_il)
 
     sys.path.insert(0, mod_dir)
+    if here not in sys.path:
+        sys.path.append(here)
     import yka  # noqa: E402  (v0.2.0, pinned commit)
+
+    records = None
+    if args.repick:
+        import xcorr  # noqa: E402  (pinned commit)
+        import yka_repick  # noqa: E402  (this folder)
+
+        records = []
+        yka.pick_onset = yka_repick.constrained_picker(xcorr.pick_onset, yka_repick.REPICK_S, record=records)
+        log("re-pick: onset searched within ak135 +/- %.1f s" % yka_repick.REPICK_S)
 
     sys.argv = ["yka.py", "--data-dir", args.data_dir, "--out-dir", args.out_dir,
                 "--min-mag-old", "4.3", "--min-mag-new", "4.3", "--new-from", "2024-07-01",
@@ -374,8 +431,12 @@ def main():
     yka.main()
 
     res, cases = grade_all(os.path.join(args.out_dir, "yka_pairs.csv"), nboot=args.nboot)
-    res.update(version=VERSION, commit=COMMIT, n_families_read=len(fams), n_merged=len(merged),
-               n_members=len(members), n_merged_with_new=len(with_new), n_ilar_ok_pairs=n_il)
+    res.update(version=VERSION, commit=COMMIT, repick=bool(args.repick), n_families_read=len(fams),
+               n_merged=len(merged), n_members=len(members), n_merged_with_new=len(with_new), n_ilar_ok_pairs=n_il)
+    if records is not None:
+        diag = match_pick_records(os.path.join(args.out_dir, "yka_multiplets.csv"), records)
+        write_pick_diag(os.path.join(args.out_dir, "yka_pick_diagnostics.csv"), diag)
+        res["pick_diagnostics"] = {k: v for k, v in diag.items() if k != "rows"}
     try:
         with open(os.path.join(args.out_dir, "yka_predictions.json")) as f:
             res["yka_predictions"] = json.load(f)
@@ -386,6 +447,20 @@ def main():
         json.dump(clean(res), f, indent=1)
     log("F1-Y:", json.dumps(clean(res["F1_Y"])))
     log("F1x-Y:", json.dumps(clean(res["F1x_Y"])))
+    try:
+        import model  # noqa: E402  (pinned commit, already imported by yka)
+        import ykab_grade  # noqa: E402  (this folder)
+
+        g = ykab_grade.run(args.out_dir, model=model, yka_b=sys.modules[__name__], nboot=1000,
+                           fetch_v1=not args.no_fetch_v1)
+        log("Rule A (this run):", json.dumps(ykab_grade.clean({k: v for k, v in g["v2_rule_a"].items()
+                                                               if k not in ("invalid", "valid")})))
+        log("H4 (this run):", json.dumps(ykab_grade.clean(g["H4_v2_primary"])))
+        if "H4_v1_as_written" in g:
+            log("H4 (v1 as written):", json.dumps(ykab_grade.clean(g["H4_v1_as_written"])))
+    except Exception:
+        traceback.print_exc()
+        log("grading step failed; yka_b_summary.json is complete")
     log("done")
 
 
