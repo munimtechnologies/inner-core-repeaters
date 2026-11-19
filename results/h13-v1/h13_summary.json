@@ -1,0 +1,387 @@
+{
+ "version": "0.15.0",
+ "started": "2026-11-19T10:01:20Z",
+ "tables": {
+  "yka": [
+   "f65c966adf2cce3a22ffd9e4629c842959121407",
+   "results/ykab-v2/yka_pairs.csv"
+  ],
+  "ilar": [
+   "7067d4fc2b0a2fdb1378a1c406dd680c8d0b69b1",
+   "results/ilar-v1/pairs.csv"
+  ]
+ },
+ "stations": [
+  "IU.QSPA",
+  "GT.VNDA",
+  "IU.LCO",
+  "GT.DBIC",
+  "GT.PLCA",
+  "GT.LPAZ",
+  "GT.LBTB",
+  "IU.LSZ"
+ ],
+ "rules": {
+  "S_MAX": 0.3333333333333333,
+  "MIN_ST": 2,
+  "MIN_STATION_PAIRS": 20,
+  "CAL_RHO": 0.15,
+  "RHO_MIN": 0.1,
+  "RHO_NONE_P95": 0.2,
+  "FRAC": 0.9,
+  "MIN_V": 40,
+  "MIN_FAM": 4,
+  "MIN_CROSS": 10,
+  "NBOOT": 1000,
+  "EDGE_S": 0.25,
+  "TURN": 2008.5,
+  "RATIO": 2.5
+ },
+ "prereg_public_at_start": true,
+ "prereg_wait_min": 0.0,
+ "n_ok_rows": {
+  "yka": 1650,
+  "ilar": 136
+ },
+ "catalog_events": 7366,
+ "n_events": 291,
+ "events_unlocated": [],
+ "n_families": 83,
+ "stations_run": [
+  {
+   "station": "IU.QSPA",
+   "n_events_needed": 291,
+   "n_traces": 271,
+   "stopped_time_budget": false,
+   "n_family_ok": 81,
+   "n_pairs": 1405,
+   "coords_from_service": true
+  },
+  {
+   "station": "GT.VNDA",
+   "n_events_needed": 291,
+   "n_traces": 264,
+   "stopped_time_budget": false,
+   "n_family_ok": 79,
+   "n_pairs": 1281,
+   "coords_from_service": true
+  },
+  {
+   "station": "IU.LCO",
+   "n_events_needed": 291,
+   "n_traces": 271,
+   "stopped_time_budget": false,
+   "n_family_ok": 72,
+   "n_pairs": 550,
+   "coords_from_service": true
+  },
+  {
+   "station": "GT.DBIC",
+   "n_events_needed": 291,
+   "n_traces": 267,
+   "stopped_time_budget": false,
+   "n_family_ok": 77,
+   "n_pairs": 392,
+   "coords_from_service": true
+  },
+  {
+   "station": "GT.PLCA",
+   "n_events_needed": 291,
+   "n_traces": 269,
+   "stopped_time_budget": false,
+   "n_family_ok": 76,
+   "n_pairs": 772,
+   "coords_from_service": true
+  },
+  {
+   "station": "GT.LPAZ",
+   "n_events_needed": 291,
+   "n_traces": 264,
+   "stopped_time_budget": false,
+   "n_family_ok": 78,
+   "n_pairs": 1125,
+   "coords_from_service": true
+  },
+  {
+   "station": "GT.LBTB",
+   "n_events_needed": 291,
+   "n_traces": 273,
+   "stopped_time_budget": false,
+   "n_family_ok": 73,
+   "n_pairs": 423,
+   "coords_from_service": true
+  },
+  {
+   "station": "IU.LSZ",
+   "n_events_needed": 291,
+   "n_traces": 207,
+   "stopped_time_budget": false,
+   "n_family_ok": 61,
+   "n_pairs": 341,
+   "coords_from_service": true
+  }
+ ],
+ "stations_scored": [
+  "GT.DBIC",
+  "GT.LBTB",
+  "GT.LPAZ",
+  "GT.PLCA",
+  "GT.VNDA",
+  "IU.LCO",
+  "IU.LSZ",
+  "IU.QSPA"
+ ],
+ "n_pairs_scored": 1394,
+ "grade": {
+  "primary": {
+   "metric": "D",
+   "s_max": 0.3333333333333333,
+   "include_m0324": false,
+   "n_pairs": 1614,
+   "n_scored": 1324,
+   "n_families_scored": 48,
+   "calibration": {
+    "rho": 0.4198826600991728,
+    "p05": 0.2930845045555384,
+    "p95": 0.7026952082593579,
+    "passed": true
+   },
+   "clock": {
+    "n_pairs": 328,
+    "n_families": 42,
+    "n_cross": 96,
+    "testable": true,
+    "rho_B": 0.12651797149019148,
+    "rho_M": 0.1575493725434452,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.27,
+    "frac_M_gt_B": 0.73,
+    "p05_B": 0.032884157048087,
+    "p95_B": 0.20084569206409003,
+    "p05_M": 0.0614890653761621,
+    "p95_M": 0.2548085846890706,
+    "decision": "inconclusive"
+   },
+   "decision": "inconclusive",
+   "diagnostic_sep_rho": {
+    "scored": 0.2630527170634105,
+    "verified": 0.030961687436790154
+   }
+  },
+  "decision": "inconclusive",
+  "secondary_ilar_D": {
+   "metric": "D",
+   "s_max": 0.3333333333333333,
+   "include_m0324": false,
+   "n_pairs": 130,
+   "n_scored": 118,
+   "n_families_scored": 32,
+   "calibration": {
+    "rho": 0.5412663109572382,
+    "p05": 0.1342953223745775,
+    "p95": 0.6145339652448657,
+    "passed": true
+   },
+   "clock": {
+    "n_pairs": 67,
+    "n_families": 28,
+    "n_cross": 20,
+    "testable": true,
+    "rho_B": 0.13556548806768298,
+    "rho_M": 0.14075345199138,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.419,
+    "frac_M_gt_B": 0.581,
+    "p05_B": -0.15575293424570627,
+    "p95_B": 0.34620772287171714,
+    "p05_M": -0.052176259686186825,
+    "p95_M": 0.3789898427716711,
+    "decision": "inconclusive"
+   },
+   "decision": "inconclusive",
+   "diagnostic_sep_rho": {
+    "scored": 0.3290677418294567,
+    "verified": -0.05423417671003272
+   }
+  },
+  "secondary_yka_D_c310": {
+   "metric": "D_c310",
+   "s_max": 0.3333333333333333,
+   "include_m0324": false,
+   "n_pairs": 1614,
+   "n_scored": 1324,
+   "n_families_scored": 48,
+   "calibration": {
+    "rho": 0.5755768968010018,
+    "p05": 0.43933709832037954,
+    "p95": 0.7652489676749357,
+    "passed": true
+   },
+   "clock": {
+    "n_pairs": 328,
+    "n_families": 42,
+    "n_cross": 96,
+    "testable": true,
+    "rho_B": 0.17371851069950983,
+    "rho_M": 0.14826215856481087,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.659,
+    "frac_M_gt_B": 0.341,
+    "p05_B": 0.05715186377866083,
+    "p95_B": 0.2855616045676267,
+    "p05_M": 0.027824568183540687,
+    "p95_M": 0.28555835343252145,
+    "decision": "inconclusive"
+   },
+   "decision": "inconclusive",
+   "diagnostic_sep_rho": {
+    "scored": 0.2812720536832415,
+    "verified": 0.08235762609152819
+   }
+  },
+  "sensitivity": {
+   "yka_D_S_le_0.25": {
+    "metric": "D",
+    "s_max": 0.25,
+    "include_m0324": false,
+    "n_pairs": 1614,
+    "n_scored": 1324,
+    "n_families_scored": 48,
+    "calibration": {
+     "rho": 0.4198826600991728,
+     "p05": 0.2930845045555384,
+     "p95": 0.7026952082593579,
+     "passed": true
+    },
+    "clock": {
+     "n_pairs": 236,
+     "n_families": 36,
+     "n_cross": 64,
+     "testable": true,
+     "rho_B": 0.21912382969593777,
+     "rho_M": 0.20038618322248444,
+     "n_boot": 1000,
+     "frac_B_gt_M": 0.682,
+     "frac_M_gt_B": 0.318,
+     "p05_B": 0.09538125402256022,
+     "p95_B": 0.30381358538828984,
+     "p05_M": 0.041201412712387545,
+     "p95_M": 0.30860758039148495,
+     "decision": "inconclusive"
+    },
+    "decision": "inconclusive",
+    "diagnostic_sep_rho": {
+     "scored": 0.2630527170634105,
+     "verified": 0.0025581214879466098
+    }
+   },
+   "yka_D_S_le_0.5": {
+    "metric": "D",
+    "s_max": 0.5,
+    "include_m0324": false,
+    "n_pairs": 1614,
+    "n_scored": 1324,
+    "n_families_scored": 48,
+    "calibration": {
+     "rho": 0.4198826600991728,
+     "p05": 0.2930845045555384,
+     "p95": 0.7026952082593579,
+     "passed": true
+    },
+    "clock": {
+     "n_pairs": 536,
+     "n_families": 45,
+     "n_cross": 145,
+     "testable": true,
+     "rho_B": 0.08594795562208796,
+     "rho_M": 0.08500394700647028,
+     "n_boot": 1000,
+     "frac_B_gt_M": 0.481,
+     "frac_M_gt_B": 0.519,
+     "p05_B": 0.030470564905266208,
+     "p95_B": 0.1539869054032207,
+     "p05_M": 0.01601791247182317,
+     "p95_M": 0.19217165472945974,
+     "decision": "none"
+    },
+    "decision": "none",
+    "diagnostic_sep_rho": {
+     "scored": 0.2630527170634105,
+     "verified": 0.08250681438212039
+    }
+   },
+   "yka_D_with_m0324": {
+    "metric": "D",
+    "s_max": 0.3333333333333333,
+    "include_m0324": true,
+    "n_pairs": 1650,
+    "n_scored": 1360,
+    "n_families_scored": 49,
+    "calibration": {
+     "rho": 0.4621973510866378,
+     "p05": 0.31820055044427886,
+     "p95": 0.7327014990720218,
+     "passed": true
+    },
+    "clock": {
+     "n_pairs": 364,
+     "n_families": 43,
+     "n_cross": 110,
+     "testable": true,
+     "rho_B": 0.12259745236083966,
+     "rho_M": 0.12505427324854473,
+     "n_boot": 1000,
+     "frac_B_gt_M": 0.494,
+     "frac_M_gt_B": 0.506,
+     "p05_B": 0.04027208064694133,
+     "p95_B": 0.18902624920415112,
+     "p05_M": 0.03747111948105668,
+     "p95_M": 0.2204614346915428,
+     "decision": "inconclusive"
+    },
+    "decision": "inconclusive",
+    "diagnostic_sep_rho": {
+     "scored": 0.2704799082478365,
+     "verified": 0.008034306913509903
+    }
+   },
+   "yka_D_c13": {
+    "metric": "D_c13",
+    "s_max": 0.3333333333333333,
+    "include_m0324": false,
+    "n_pairs": 1614,
+    "n_scored": 1324,
+    "n_families_scored": 48,
+    "calibration": {
+     "rho": 0.2810011891493583,
+     "p05": 0.14726011422877777,
+     "p95": 0.6059946366350568,
+     "passed": true
+    },
+    "clock": {
+     "n_pairs": 328,
+     "n_families": 42,
+     "n_cross": 96,
+     "testable": true,
+     "rho_B": 0.10532129135462738,
+     "rho_M": 0.16988222139548295,
+     "n_boot": 1000,
+     "frac_B_gt_M": 0.124,
+     "frac_M_gt_B": 0.876,
+     "p05_B": 0.020300693659874365,
+     "p95_B": 0.17488390214750818,
+     "p05_M": 0.08009142249041636,
+     "p95_M": 0.23754445699868057,
+     "decision": "inconclusive"
+    },
+    "decision": "inconclusive",
+    "diagnostic_sep_rho": {
+     "scored": 0.23472349146434215,
+     "verified": 0.04206451604127318
+    }
+   }
+  }
+ },
+ "finished": "2026-11-19T10:21:44Z",
+ "minutes": 20.4
+}
