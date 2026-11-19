@@ -1,0 +1,10 @@
+{
+ "patch": "prereg16-addendum-T",
+ "addendum": "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/main/findings/2026-11-19-prereg16-addendum-taup-fix.md",
+ "sha256_before": "be478e24cadcaf478b22a39450feb43fb02297416da0f00b2a2505329599908e",
+ "sha256_after": "f06f13336920028fe058888e460634f0e715e32faba70e5b6152f020e607688a",
+ "replaced": [
+  "phase_list=[\"PKIKP\", \"PKP\"]",
+  "max((a.time for a in arr if a.name == \"PKP\"), default=NAN)"
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-19T16:26:50Z",
+ "model": "ak135",
+ "input_commit": "d0186eece9f9bae982a55a3302a0773cf8627d98",
+ "centroid": [
+  -59.0365,
+  -25.6939
+ ],
+ "constants": {
+  "thr_km": 250.0,
+  "thr_alt": [
+   150.0,
+   400.0
+  ],
+  "f_sep_min": 0.75,
+  "upper_ic_km": 300.0
+ },
+ "n_events": 134,
+ "source_depth_km": 41.91,
+ "source_depth_from": "median catalogue depth",
+ "icb_depth_km": 5153.5,
+ "icb_radius_km": 1217.5,
+ "station_service": "https://service.earthscope.org",
+ "n_candidates": 12,
+ "predicted_chosen": [
+  "IC.HIA",
+  "IC.MDJ",
+  "II.ERM",
+  "IU.BILL",
+  "IU.MAJO",
+  "IU.PET",
+  "IU.TIXI",
+  "IU.YAK",
+  "IU.YSS",
+  "IU.ADK"
+ ],
+ "predicted_chosen_classes": {
+  "IC.HIA": "separate",
+  "IC.MDJ": "separate",
+  "II.ERM": "separate",
+  "IU.BILL": "separate",
+  "IU.MAJO": "separate",
+  "IU.PET": "separate",
+  "IU.TIXI": "separate",
+  "IU.YAK": "separate",
+  "IU.YSS": "separate",
+  "IU.ADK": "separate"
+ },
+ "f_sep_predicted_unweighted": 1.0,
+ "references": {
+  "IM.ILAR": {
+   "dist": 152.7826602249568,
+   "az": 307.13691473662635,
+   "entry_lat": -29.839836233398437,
+   "entry_lon": -59.29446877678306,
+   "exit_lat": 40.69552203190982,
+   "exit_lon": -96.99703391731357,
+   "bottom_below_icb_km": 283.7914710412051,
+   "ic_path_km": 1544.0693931814783,
+   "upper_ic_frac": 1.0,
+   "mean_axis_dist_km": 950.771575241963
+  },
+  "CN.YKA": {
+   "dist": 139.1168008295081,
+   "az": 315.12895894732145,
+   "entry_lat": -14.124894755434978,
+   "entry_lon": -60.553796931136986,
+   "exit_lat": 18.889635916254043,
+   "exit_lon": -73.83940224841629,
+   "bottom_below_icb_km": 59.73506765348793,
+   "ic_path_km": 742.6339382579052,
+   "upper_ic_frac": 1.0,
+   "mean_axis_dist_km": 1160.8450569180495
+  }
+ },
+ "predicted_chosen_median_upper_ic_frac": 0.36071490681669194,
+ "predicted_chosen_median_bottom_below_icb_km": 598.964840906362,
+ "predicted_chosen_median_mean_axis_dist_km": 590.5107397814512,
+ "finished": "2026-11-19T16:26:51Z"
+}
