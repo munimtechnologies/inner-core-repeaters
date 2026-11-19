@@ -1,0 +1,356 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-19T19:09:02Z",
+ "yka_table": [
+  "f65c966adf2cce3a22ffd9e4629c842959121407",
+  "results/ykab-v2/yka_pairs.csv"
+ ],
+ "h13_files": [
+  "results/h13-v1/h13_pairs_scored.csv",
+  "results/h13-v1/mantlep3_pairs.csv",
+  "results/h13-v1/mantlep3_families.csv"
+ ],
+ "prereg_public_at_start": true,
+ "prereg_wait_min": 0.0,
+ "n_yka_ok_rows": 1650,
+ "n_scores": 1600,
+ "reproduction": {
+  "clock": {
+   "n_pairs": 328,
+   "n_families": 42,
+   "n_cross": 96,
+   "testable": true,
+   "rho_B": 0.12651797149019148,
+   "rho_M": 0.1575493725434452,
+   "n_boot": 1000,
+   "frac_B_gt_M": 0.27,
+   "frac_M_gt_B": 0.73,
+   "p05_B": 0.032884157048087,
+   "p95_B": 0.20084569206409003,
+   "p05_M": 0.0614890653761621,
+   "p95_M": 0.2548085846890706,
+   "decision": "inconclusive"
+  },
+  "expected": {
+   "n_pairs": 328,
+   "n_families": 42,
+   "n_cross": 96,
+   "rho_B": 0.12651797149019148,
+   "rho_M": 0.1575493725434452,
+   "frac_B_gt_M": 0.27
+  },
+  "reproduced": true
+ },
+ "verified_by_generation": {
+  "same-legacy": 23,
+  "cross": 149,
+  "same-new": 156
+ },
+ "P17_1_time_signal_same_gen": {
+  "n_pairs": 179,
+  "n_families": 31,
+  "n_cross_turn": 14,
+  "rho_M": 0.028209151967861404,
+  "rho_B": 0.025137572447848013,
+  "n_boot": 1000,
+  "p05_M": -0.08954945398208382,
+  "p95_M": 0.106835097608303,
+  "decision": "no-time-signal"
+ },
+ "P17_2_clock_same_gen": {
+  "n_pairs": 179,
+  "n_families": 31,
+  "n_cross": 14,
+  "testable": true,
+  "rho_B": 0.025137572447848013,
+  "rho_M": 0.028209151967861404,
+  "n_boot": 1000,
+  "frac_B_gt_M": 0.476,
+  "frac_M_gt_B": 0.524,
+  "p05_B": -0.06357164895583457,
+  "p95_B": 0.10921457857048388,
+  "p05_M": -0.08954945398208382,
+  "p95_M": 0.106835097608303,
+  "decision": "none"
+ },
+ "headline": "no-time-signal",
+ "secondary": {
+  "time_signal_same-legacy": {
+   "n_pairs": 23,
+   "n_families": 9,
+   "n_cross_turn": 14,
+   "rho_M": -0.3191699604743083,
+   "rho_B": -0.2658102766798419,
+   "n_boot": 1000,
+   "p05_M": -0.6254256526674233,
+   "p95_M": 0.0008904719501335708,
+   "decision": "untestable"
+  },
+  "time_signal_same-new": {
+   "n_pairs": 156,
+   "n_families": 30,
+   "n_cross_turn": 0,
+   "rho_M": 0.06739580534526086,
+   "rho_B": 0.06739580534526086,
+   "n_boot": 1000,
+   "p05_M": -0.032481201603756414,
+   "p95_M": 0.16909546308419196,
+   "decision": "no-time-signal"
+  },
+  "time_signal_cross": {
+   "n_pairs": 149,
+   "n_families": 28,
+   "n_cross_turn": 82,
+   "rho_M": -0.053705786323235985,
+   "rho_B": 0.022564846725920552,
+   "n_boot": 1000,
+   "p05_M": -0.15551943972053045,
+   "p95_M": 0.10008513028444047,
+   "decision": "no-time-signal"
+  },
+  "clock_same_legacy": {
+   "n_pairs": 23,
+   "n_families": 9,
+   "n_cross": 14,
+   "testable": false,
+   "rho_B": -0.2658102766798419,
+   "rho_M": -0.3191699604743083,
+   "n_boot": 1000,
+   "frac_B_gt_M": 0.648,
+   "frac_M_gt_B": 0.351,
+   "p05_B": -0.4538310412573674,
+   "p95_B": 0.03239289446185998,
+   "p05_M": -0.6254256526674233,
+   "p95_M": 0.0008904719501335708,
+   "decision": "untestable"
+  },
+  "cross_gen_indicator_rho_all_V": 0.18880245085965358,
+  "bins_D": [
+   {
+    "key": "D",
+    "dM_lo": 0.0,
+    "dM_hi": 3.0,
+    "n_same": 86,
+    "n_cross_gen": 0,
+    "median_same": 0.023061357533696314,
+    "median_cross_gen": null
+   },
+   {
+    "key": "D",
+    "dM_lo": 3.0,
+    "dM_hi": 6.0,
+    "n_same": 56,
+    "n_cross_gen": 9,
+    "median_same": 0.022976156325516583,
+    "median_cross_gen": 0.026629094589663782
+   },
+   {
+    "key": "D",
+    "dM_lo": 6.0,
+    "dM_hi": 10.0,
+    "n_same": 33,
+    "n_cross_gen": 23,
+    "median_same": 0.03538022644847061,
+    "median_cross_gen": 0.0655043075304883
+   },
+   {
+    "key": "D",
+    "dM_lo": 10.0,
+    "dM_hi": 15.0,
+    "n_same": 4,
+    "n_cross_gen": 63,
+    "median_same": 0.03442170176925696,
+    "median_cross_gen": 0.035889923010589464
+   },
+   {
+    "key": "D",
+    "dM_lo": 15.0,
+    "dM_hi": 30.0,
+    "n_same": 0,
+    "n_cross_gen": 54,
+    "median_same": null,
+    "median_cross_gen": 0.03151711966576137
+   }
+  ],
+  "time_signal_same_gen_D_c310": {
+   "n_pairs": 179,
+   "n_families": 31,
+   "n_cross_turn": 14,
+   "rho_M": 0.03730462620048961,
+   "rho_B": 0.031048479902914653,
+   "n_boot": 1000,
+   "p05_M": -0.10674316455152877,
+   "p95_M": 0.15769282457122968,
+   "decision": "no-time-signal"
+  },
+  "clock_same_gen_D_c310": {
+   "n_pairs": 179,
+   "n_families": 31,
+   "n_cross": 14,
+   "testable": true,
+   "rho_B": 0.031048479902914653,
+   "rho_M": 0.03730462620048961,
+   "n_boot": 1000,
+   "frac_B_gt_M": 0.44,
+   "frac_M_gt_B": 0.56,
+   "p05_B": -0.08713168179004828,
+   "p95_B": 0.15127002103219545,
+   "p05_M": -0.10674316455152877,
+   "p95_M": 0.15769282457122968,
+   "decision": "none"
+  },
+  "bins_D_c310": [
+   {
+    "key": "D_c310",
+    "dM_lo": 0.0,
+    "dM_hi": 3.0,
+    "n_same": 86,
+    "n_cross_gen": 0,
+    "median_same": 0.10470767213791221,
+    "median_cross_gen": null
+   },
+   {
+    "key": "D_c310",
+    "dM_lo": 3.0,
+    "dM_hi": 6.0,
+    "n_same": 56,
+    "n_cross_gen": 9,
+    "median_same": 0.12344691387064821,
+    "median_cross_gen": 0.08522513863530667
+   },
+   {
+    "key": "D_c310",
+    "dM_lo": 6.0,
+    "dM_hi": 10.0,
+    "n_same": 33,
+    "n_cross_gen": 23,
+    "median_same": 0.13134664542670904,
+    "median_cross_gen": 0.17278001030575896
+   },
+   {
+    "key": "D_c310",
+    "dM_lo": 10.0,
+    "dM_hi": 15.0,
+    "n_same": 4,
+    "n_cross_gen": 63,
+    "median_same": 0.1702031816562995,
+    "median_cross_gen": 0.16829220982869408
+   },
+   {
+    "key": "D_c310",
+    "dM_lo": 15.0,
+    "dM_hi": 30.0,
+    "n_same": 0,
+    "n_cross_gen": 54,
+    "median_same": null,
+    "median_cross_gen": 0.15745679204492452
+   }
+  ]
+ },
+ "S17_locks": {
+  "n_family_stations_ok": 597,
+  "n_locked": 185,
+  "locked_by_station": {
+   "GT.DBIC": 26,
+   "GT.LBTB": 41,
+   "GT.LPAZ": 15,
+   "GT.PLCA": 24,
+   "GT.VNDA": 7,
+   "IU.LCO": 28,
+   "IU.LSZ": 32,
+   "IU.QSPA": 12
+  },
+  "stations_used_all": [
+   "GT.DBIC",
+   "GT.LBTB",
+   "GT.LPAZ",
+   "GT.PLCA",
+   "GT.VNDA",
+   "IU.LCO",
+   "IU.LSZ",
+   "IU.QSPA"
+  ],
+  "stations_used_unlocked": [
+   "GT.DBIC",
+   "GT.LBTB",
+   "GT.LPAZ",
+   "GT.PLCA",
+   "GT.VNDA",
+   "IU.LCO",
+   "IU.LSZ",
+   "IU.QSPA"
+  ],
+  "rescored_all": {
+   "calibration": {
+    "n": 1324,
+    "rho": 0.4198826600991728,
+    "p05": 0.2930845045555384,
+    "p95": 0.7026952082593579
+   },
+   "clock": {
+    "n_pairs": 328,
+    "n_families": 42,
+    "n_cross": 96,
+    "testable": true,
+    "rho_B": 0.12651797149019148,
+    "rho_M": 0.1575493725434452,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.27,
+    "frac_M_gt_B": 0.73,
+    "p05_B": 0.032884157048087,
+    "p95_B": 0.20084569206409003,
+    "p05_M": 0.0614890653761621,
+    "p95_M": 0.2548085846890706,
+    "decision": "inconclusive"
+   },
+   "time_signal_same_gen": {
+    "n_pairs": 179,
+    "n_families": 31,
+    "n_cross_turn": 14,
+    "rho_M": 0.028209151967861404,
+    "rho_B": 0.025137572447848013,
+    "n_boot": 1000,
+    "p05_M": -0.08954945398208382,
+    "p95_M": 0.106835097608303,
+    "decision": "no-time-signal"
+   }
+  },
+  "rescored_unlocked": {
+   "calibration": {
+    "n": 665,
+    "rho": 0.6730787812905759,
+    "p05": 0.5328382781803315,
+    "p95": 0.7519844273856691
+   },
+   "clock": {
+    "n_pairs": 188,
+    "n_families": 34,
+    "n_cross": 51,
+    "testable": true,
+    "rho_B": 0.24406048686399123,
+    "rho_M": 0.22412395003133426,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.641,
+    "frac_M_gt_B": 0.359,
+    "p05_B": 0.09647687834531199,
+    "p95_B": 0.35910268293646347,
+    "p05_M": 0.04557625081731875,
+    "p95_M": 0.3707990023788162,
+    "decision": "inconclusive"
+   },
+   "time_signal_same_gen": {
+    "n_pairs": 107,
+    "n_families": 25,
+    "n_cross_turn": 7,
+    "rho_M": 0.06398048551107977,
+    "rho_B": 0.052822351535100606,
+    "n_boot": 1000,
+    "p05_M": -0.13128120980076372,
+    "p95_M": 0.16237330849723333,
+    "decision": "no-time-signal"
+   }
+  }
+ },
+ "finished": "2026-11-19T19:09:17Z",
+ "minutes": 0.3
+}
