@@ -1,5 +1,9 @@
 """Tests for patch_nea.py (addendum T to pre-registration 16).
-Part of inner-core-repeaters by MV2, Munim, Inc. (made with AI agents). Licence: Apache-2.0."""
+Part of inner-core-repeaters by MV2, Munim, Inc. (made with AI agents). Licence: Apache-2.0.
+
+2026-11-19 (results of icr-nea-v3): the TauP test's upper bound on PKPab - PKIKP was a wrong
+hand guess (60 s); ak135 gives about 95 s at 179.5 deg. The bound is now 120 s, and the test
+also checks that the separation grows with distance. patch_nea.py itself is unchanged."""
 import importlib.util
 import unittest
 
@@ -75,13 +79,16 @@ class TestTauP(unittest.TestCase):
         from obspy.taup import TauPyModel
 
         m = TauPyModel("ak135")
+        seps = []
         for dist in (156.0, 165.0, 175.0, 179.5):
             arr = m.get_travel_times(source_depth_in_km=20.0, distance_in_degree=dist, phase_list=["PKIKP", "PKP"])
             tdf = next((a.time for a in arr if a.name == "PKIKP"), float("nan"))
             tab = patch_nea.ab_time(arr)
             self.assertTrue(tdf == tdf and tab == tab, "missing phase at %.1f deg" % dist)
             self.assertGreater(tab - tdf, 0.0)
-            self.assertLess(tab - tdf, 60.0)
+            self.assertLess(tab - tdf, 120.0)
+            seps.append(tab - tdf)
+        self.assertEqual(seps, sorted(seps))
 
 
 if __name__ == "__main__":
