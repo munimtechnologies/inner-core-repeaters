@@ -1,0 +1,100 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-19T10:53:41Z",
+ "bands": [
+  [
+   "0.5-1",
+   0.5,
+   1.0
+  ],
+  [
+   "1-2",
+   1.0,
+   2.0
+  ],
+  [
+   "2-4",
+   2.0,
+   4.0
+  ]
+ ],
+ "main_band": "1-2",
+ "windows": {
+  "noise": [
+   -90.0,
+   -15.0
+  ],
+  "sig": [
+   -5.0,
+   15.0
+  ],
+  "pick": [
+   -15.0,
+   30.0
+  ],
+  "pick_k": 4.0
+ },
+ "filter": "4-pole Butterworth, zero phase (mantlep2 used causal)",
+ "gcmt_files": {
+  "jan76_dec20.ndk": "https, 23016960 bytes, 952 in box",
+  "NEW_MONTHLY/2022/mar22.ndk": "https, 93150 bytes, 12 in box",
+  "NEW_MONTHLY/2024/mar24.ndk": "https, 76545 bytes, 3 in box",
+  "NEW_MONTHLY/2025/dec25.ndk": "https, 85860 bytes, 4 in box",
+  "NEW_QUICK/qcmt.ndk": "https, 181845 bytes, 9 in box"
+ },
+ "n_events_with_gcmt": 3,
+ "n_candidates": 42,
+ "skipped_time_budget": [],
+ "analysis": {
+  "R_radiation": {
+   "n_rows": 97,
+   "rho_rows_absA_logsnr": -0.07200715337681464,
+   "n_stations": 35,
+   "rho_stations": -0.18627450980392157,
+   "n_good": 50,
+   "n_bad": 47,
+   "median_absA_good": 0.45065,
+   "median_absA_bad": 0.5722
+  },
+  "n_stations": 40,
+  "failing_stations": [
+   "II.ABPO",
+   "II.ASCN",
+   "II.JTS",
+   "II.MSEY",
+   "II.RPN",
+   "II.SACV",
+   "II.SHEL",
+   "II.SUR",
+   "IU.FURI",
+   "IU.KMBO",
+   "IU.KOWA",
+   "IU.NWAO",
+   "IU.OTAV",
+   "IU.PAYG",
+   "IU.PTCN",
+   "IU.PTGA",
+   "IU.RCBR",
+   "IU.SDV",
+   "IU.SJG"
+  ],
+  "F_band_rescues": [],
+  "L_location_rescues": [
+   "IU.KOWA",
+   "IU.PTGA"
+  ],
+  "X_response_changes": [],
+  "D_depth_phase": {
+   "n_clear": 92,
+   "median_t_pick": 0.4,
+   "n_late": 19,
+   "frac_late": 0.20652173913043478,
+   "late_median_abs_minus_pP": 7.12,
+   "late_median_abs_minus_sP": 11.100000000000001,
+   "late_median_abs_minus_P": 2.85,
+   "rho_tpick_pP_clear": -0.3564750246211342
+  }
+ },
+ "finished": "2026-11-19T10:58:26Z",
+ "minutes": 4.8
+}
