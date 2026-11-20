@@ -1,0 +1,27 @@
+{
+ "version": "0.1.0",
+ "started_utc": "2026-11-19T23:12:32Z",
+ "plan_public_at_start": true,
+ "n_elements": 19,
+ "errors": {},
+ "decision_rule": {
+  "negligible_if_p95_below": 0.005,
+  "material_if_median_above": 0.02,
+  "band": [
+   1.0,
+   2.0
+  ]
+ },
+ "main": {
+  "D_noise_median_over_elements": 8.08448734691547e-05,
+  "D_noise_p95_max_over_elements": 0.00010893293563136728,
+  "D_ricker_max": 6.371097453594654e-05,
+  "D_raw_noise_median_over_elements": 8.084485924547691e-05,
+  "amp_dev_max_pct": 2.2633791415991533,
+  "resid_phase_rms_deg_max": 1.1538695121260357e-13,
+  "delay_s_min": -1.4999999931922412e-08,
+  "delay_s_max": -1.4999999921520467e-08
+ },
+ "verdict": "negligible",
+ "finished_utc": "2026-11-19T23:12:43Z"
+}

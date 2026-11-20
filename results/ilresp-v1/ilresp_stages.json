@@ -1,0 +1,4486 @@
+{
+ "IL01": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 364.359,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL02": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 372.807,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL03": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 396.56,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL04": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 377.017,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL05": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 392.743,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL06": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 384.518,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL07": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 400.889,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL08": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 408.925,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL09": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 383.714,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL10": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 391.487,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL11": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 396.132,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL12": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 351.738,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL13": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 413.065,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL14": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 396.132,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL15": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 423.058,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL16": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 417.289,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL17": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 381.72,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL18": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 400.016,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ },
+ "IL19": {
+  "before": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 371.45,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 8,
+    "delay": 0.00039063,
+    "correction": 0.00039063,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 5120.0,
+    "factor": 2,
+    "delay": 0.0011719,
+    "correction": 0.0011719,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 2560.0,
+    "factor": 2,
+    "delay": 0.0023437,
+    "correction": 0.0023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1280.0,
+    "factor": 2,
+    "delay": 0.0046875,
+    "correction": 0.0046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 640.0,
+    "factor": 2,
+    "delay": 0.009375,
+    "correction": 0.009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 320.0,
+    "factor": 2,
+    "delay": 0.01875,
+    "correction": 0.01875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 160.0,
+    "factor": 2,
+    "delay": 0.0375,
+    "correction": 0.0375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 80.0,
+    "factor": 2,
+    "delay": 0.075,
+    "correction": 0.075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40.0,
+    "factor": 2,
+    "delay": 1.225,
+    "correction": 1.225,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ],
+  "after": [
+   {
+    "stage": 1,
+    "type": "PolesZerosResponseStage",
+    "fs_in": null,
+    "factor": null,
+    "delay": null,
+    "correction": null,
+    "gain": 416.343,
+    "ntaps": null
+   },
+   {
+    "stage": 2,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 40960.0,
+    "factor": 1,
+    "delay": 0.0,
+    "correction": 0.0,
+    "gain": 43341100.0,
+    "ntaps": null
+   },
+   {
+    "stage": 3,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 204800.0,
+    "factor": 8,
+    "delay": 7.8125e-05,
+    "correction": 7.8125e-05,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 4,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 25600.0,
+    "factor": 2,
+    "delay": 0.00023437,
+    "correction": 0.00023437,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 5,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 12800.0,
+    "factor": 2,
+    "delay": 0.00046875,
+    "correction": 0.00046875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 6,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 6400.0,
+    "factor": 2,
+    "delay": 0.0009375,
+    "correction": 0.0009375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 7,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 3200.0,
+    "factor": 2,
+    "delay": 0.001875,
+    "correction": 0.001875,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 8,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 1600.0,
+    "factor": 2,
+    "delay": 0.00375,
+    "correction": 0.00375,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 9,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 800.0,
+    "factor": 2,
+    "delay": 0.0075,
+    "correction": 0.0075,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 10,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 400.0,
+    "factor": 2,
+    "delay": 0.015,
+    "correction": 0.015,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 11,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 200.0,
+    "factor": 2,
+    "delay": 0.25,
+    "correction": 0.25,
+    "gain": 1.0,
+    "ntaps": null
+   },
+   {
+    "stage": 12,
+    "type": "CoefficientsTypeResponseStage",
+    "fs_in": 100.0,
+    "factor": 5,
+    "delay": 1.5,
+    "correction": 1.5,
+    "gain": 1.0,
+    "ntaps": null
+   }
+  ]
+ }
+}
