@@ -1,0 +1,223 @@
+{
+ "version": "0.1.0",
+ "turn": 2008.5,
+ "rate": 2.5,
+ "mkar_centre": [
+  46.7698,
+  82.2983
+ ],
+ "gate": [
+  143.0,
+  165.0
+ ],
+ "era": [
+  "2000-08-28T00:00:00",
+  "2025-08-15T00:00:00"
+ ],
+ "era_years": [
+  2000.655737704918,
+  2025.6191780821919
+ ],
+ "near_yr": 2.0,
+ "far_yr": 4.0,
+ "need": {
+  "pairs": 60,
+  "near": 15,
+  "far": 15
+ },
+ "n_catalogue": 9030,
+ "reproduce_pilot": {
+  "got": {
+   "n_events": 2237,
+   "pairs": 172,
+   "straddling": 24,
+   "straddling_m55": 2,
+   "events_in_straddling": 45
+  },
+  "expected": {
+   "n_events": 2237,
+   "pairs": 172,
+   "straddling": 24,
+   "straddling_m55": 2,
+   "events_in_straddling": 45
+  },
+  "ok": true
+ },
+ "n_eligible": 7685,
+ "eligible_m5.0": {
+  "n": 1939,
+  "before": 395,
+  "after": 1544
+ },
+ "eligible_m5.5": {
+  "n": 558,
+  "before": 130,
+  "after": 428
+ },
+ "definitions": {
+  "main": {
+   "name": "main",
+   "km": 10.0,
+   "dm": 0.3,
+   "dz": 20.0,
+   "min_mag": 5.0
+  },
+  "pilot-proxy": {
+   "name": "pilot-proxy",
+   "km": 5.0,
+   "dm": 0.2,
+   "dz": 10.0,
+   "min_mag": 5.0
+  },
+  "loose-20km": {
+   "name": "loose-20km",
+   "km": 20.0,
+   "dm": 0.3,
+   "dz": 20.0,
+   "min_mag": 5.0
+  },
+  "main-m5.5": {
+   "name": "main-m5.5",
+   "km": 10.0,
+   "dm": 0.3,
+   "dz": 20.0,
+   "min_mag": 5.5
+  }
+ },
+ "main": {
+  "pairs": 202,
+  "near": 94,
+  "far": 24,
+  "events": 277,
+  "median_abs_r": 2.075691106599038,
+  "after_year_counts": {
+   "2008": 3,
+   "2009": 13,
+   "2010": 35,
+   "2011": 28,
+   "2012": 10,
+   "2013": 1,
+   "2014": 16,
+   "2015": 25,
+   "2016": 8,
+   "2017": 15,
+   "2018": 10,
+   "2019": 5,
+   "2020": 7,
+   "2021": 9,
+   "2022": 6,
+   "2023": 7,
+   "2024": 3,
+   "2025": 1
+  },
+  "r_bins": {
+   "-8..-6": 6,
+   "-6..-4": 11,
+   "-4..-2": 53,
+   "-2..0": 53,
+   "0..2": 41,
+   "2..4": 31,
+   "4..6": 7
+  }
+ },
+ "pilot-proxy": {
+  "pairs": 23,
+  "near": 16,
+  "far": 1,
+  "events": 43,
+  "median_abs_r": 1.2010603120243104,
+  "after_year_counts": {
+   "2010": 5,
+   "2011": 6,
+   "2012": 1,
+   "2014": 2,
+   "2015": 4,
+   "2016": 2,
+   "2017": 1,
+   "2018": 1,
+   "2020": 1
+  },
+  "r_bins": {
+   "-8..-6": 1,
+   "-4..-2": 4,
+   "-2..0": 11,
+   "0..2": 5,
+   "2..4": 2
+  }
+ },
+ "loose-20km": {
+  "pairs": 735,
+  "near": 358,
+  "far": 100,
+  "events": 653,
+  "median_abs_r": 2.072159684274311,
+  "after_year_counts": {
+   "2008": 20,
+   "2009": 42,
+   "2010": 124,
+   "2011": 72,
+   "2012": 28,
+   "2013": 14,
+   "2014": 47,
+   "2015": 114,
+   "2016": 40,
+   "2017": 50,
+   "2018": 21,
+   "2019": 23,
+   "2020": 31,
+   "2021": 23,
+   "2022": 19,
+   "2023": 35,
+   "2024": 24,
+   "2025": 8
+  },
+  "r_bins": {
+   "-8..-6": 21,
+   "-6..-4": 49,
+   "-4..-2": 172,
+   "-2..0": 183,
+   "0..2": 175,
+   "2..4": 105,
+   "4..6": 27,
+   "6..8": 3
+  }
+ },
+ "main-m5.5": {
+  "pairs": 16,
+  "near": 9,
+  "far": 2,
+  "events": 29,
+  "median_abs_r": 1.6264515157281494,
+  "after_year_counts": {
+   "2008": 1,
+   "2009": 1,
+   "2010": 1,
+   "2011": 3,
+   "2012": 1,
+   "2015": 3,
+   "2018": 1,
+   "2020": 3,
+   "2022": 1,
+   "2023": 1
+  },
+  "r_bins": {
+   "-6..-4": 1,
+   "-4..-2": 2,
+   "-2..0": 1,
+   "0..2": 8,
+   "2..4": 3,
+   "4..6": 1
+  }
+ },
+ "decision": "mkar-multiplet-pilot",
+ "decision_reason": "202 candidate pairs (need 60), 94 near (need 15), 24 far (need 15)",
+ "forecasts": {
+  "G1_pairs_ge_60": true,
+  "G2_near_ge_15": true,
+  "G3_decision": "mkar-multiplet-pilot",
+  "G4_median_abs_r_le_4": true,
+  "G5_proxy_le_half_of_pilot": false
+ },
+ "catalogue": "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/main/results/chilepilot-v2/chile_catalogue.csv",
+ "plan_public_at_start": true
+}
