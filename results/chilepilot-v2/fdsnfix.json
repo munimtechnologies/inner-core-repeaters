@@ -1,0 +1,27 @@
+{
+ "version": "0.1.0",
+ "sha": "3df9ac8dec3a46d75b9be75265f7a9a7938acd7f",
+ "files": {
+  "chilepilot.py": {
+   "sha256": "283835a9591c783190eade1ce5001a294826fa95afc54759f9968cbcedaed8f3",
+   "bytes": 28986
+  },
+  "test_chilepilot.py": {
+   "sha256": "3f2a4e3ea029dab7943b4b945452e4a5a38dc1773003ec68766def4288ac8507",
+   "bytes": 7788
+  }
+ },
+ "args": [
+  "--data-dir",
+  "/data",
+  "--out-dir",
+  "/out",
+  "--wait-min",
+  "30"
+ ],
+ "started": "2026-11-20T06:59:23Z",
+ "probe": {
+  "ok": true,
+  "message": "1 trace(s), 400 samples"
+ }
+}

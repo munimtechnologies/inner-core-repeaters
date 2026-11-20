@@ -1,0 +1,568 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-20T06:59:24Z",
+ "constants": {
+  "box": {
+   "minlatitude": -42.0,
+   "maxlatitude": -18.0,
+   "minlongitude": -76.0,
+   "maxlongitude": -66.0
+  },
+  "max_depth": 300.0,
+  "start": "1995-01-01",
+  "end": "2026-11-20",
+  "bins": [
+   [
+    4.5,
+    5.0
+   ],
+   [
+    5.0,
+    5.5
+   ],
+   [
+    5.5,
+    6.0
+   ],
+   [
+    6.0,
+    9.9
+   ]
+  ],
+  "per_side": 6,
+  "turn": 2008.5,
+  "dist_range": [
+   143.0,
+   165.0
+  ],
+  "arrays": {
+   "MKAR": [
+    "KZ.MK01",
+    "KZ.MK02",
+    "KZ.MK03",
+    "KZ.MK04",
+    "KZ.MK05",
+    "KZ.MK06",
+    "KZ.MK07",
+    "KZ.MK08",
+    "KZ.MK09"
+   ],
+   "KKAR": [
+    "KZ.KK01",
+    "KZ.KK02",
+    "KZ.KK03",
+    "KZ.KK04",
+    "KZ.KK05",
+    "KZ.KK06",
+    "KZ.KK07",
+    "KZ.KK08",
+    "KZ.KK09"
+   ],
+   "KNET": [
+    "KN.AAK",
+    "KN.AML",
+    "KN.CHM",
+    "KN.EKS2",
+    "KN.KBK",
+    "KN.KZA",
+    "KN.TKM2",
+    "KN.UCH",
+    "KN.ULHL",
+    "KN.USP"
+   ]
+  },
+  "bands": {
+   "primary": [
+    1.0,
+    2.0
+   ],
+   "alt": [
+    0.6,
+    1.6
+   ]
+  },
+  "sig": [
+   -3.0,
+   7.0
+  ],
+  "coda": [
+   1.0,
+   6.0
+  ],
+  "noise": [
+   -45.0,
+   -10.0
+  ],
+  "null": [
+   -58.0,
+   -48.0
+  ],
+  "snr_req": 3.0,
+  "min_el": 3,
+  "min_beams": 4,
+  "pairs": {
+   "km": 5.0,
+   "dm": 0.2,
+   "dz": 10.0,
+   "min_mag": 5.0
+  }
+ },
+ "errors": {},
+ "plan_public_at_start": true,
+ "catalogue_n": 9030,
+ "catalogue_bins": [
+  {
+   "bin": "4.5-5.0",
+   "n": 6793,
+   "before_turn": 1869,
+   "after_turn": 4924
+  },
+  {
+   "bin": "5.0-5.5",
+   "n": 1559,
+   "before_turn": 401,
+   "after_turn": 1158
+  },
+  {
+   "bin": "5.5-6.0",
+   "n": 449,
+   "before_turn": 162,
+   "after_turn": 287
+  },
+  {
+   "bin": "6.0-9.9",
+   "n": 229,
+   "before_turn": 75,
+   "after_turn": 154
+  }
+ ],
+ "close_pairs": {
+  "n_events": 2237,
+  "pairs": 172,
+  "straddling": 24,
+  "straddling_m55": 2,
+  "events_in_straddling": 45
+ },
+ "n_events": 48,
+ "client": "https://service.earthscope.org",
+ "inventory_channel_epochs": {
+  "KZ.MK01": 1,
+  "KZ.MK02": 1,
+  "KZ.MK03": 1,
+  "KZ.MK04": 1,
+  "KZ.MK05": 1,
+  "KZ.MK06": 1,
+  "KZ.MK07": 1,
+  "KZ.MK08": 1,
+  "KZ.MK09": 1,
+  "KZ.KK01": 1,
+  "KZ.KK02": 1,
+  "KZ.KK03": 1,
+  "KZ.KK04": 1,
+  "KZ.KK05": 1,
+  "KZ.KK06": 1,
+  "KZ.KK07": 1,
+  "KZ.KK08": 1,
+  "KZ.KK09": 1,
+  "KN.AAK": 4,
+  "KN.AML": 4,
+  "KN.CHM": 4,
+  "KN.EKS2": 4,
+  "KN.KBK": 4,
+  "KN.KZA": 4,
+  "KN.TKM2": 4,
+  "KN.UCH": 4,
+  "KN.ULHL": 4,
+  "KN.USP": 4
+ },
+ "status_counts": {
+  "MKAR few-epochs": 11,
+  "KKAR few-epochs": 12,
+  "KNET ok": 28,
+  "KNET nodata": 10,
+  "MKAR ok": 32,
+  "KKAR out-of-range": 13,
+  "KNET out-of-range": 10,
+  "KKAR ok": 20,
+  "MKAR nodata": 5,
+  "KKAR nodata": 3
+ },
+ "arrays": {
+  "MKAR": {
+   "verdict_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 8,
+      "median": 2.8870801108052238,
+      "frac_ge": 0.5,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 8,
+      "median": 5.966113677404666,
+      "frac_ge": 0.625,
+      "passes": true
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 8,
+      "median": 40.98896351095311,
+      "frac_ge": 1.0,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 33.704686903853265,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.0-5.5",
+    "verdict": "testable-from-M5.0"
+   },
+   "verdict_alt": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 8,
+      "median": 1.9655293456856668,
+      "frac_ge": 0.25,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 8,
+      "median": 4.296600077635208,
+      "frac_ge": 0.625,
+      "passes": true
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 8,
+      "median": 36.66569821531735,
+      "frac_ge": 0.875,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 23.767894858715426,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.0-5.5",
+    "verdict": "testable-from-M5.0"
+   },
+   "verdict_coda_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 8,
+      "median": 3.7448364088630557,
+      "frac_ge": 0.625,
+      "passes": true
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 8,
+      "median": 7.945821606522767,
+      "frac_ge": 0.75,
+      "passes": true
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 8,
+      "median": 31.429321020600426,
+      "frac_ge": 1.0,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 39.8413625628358,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "4.5-5.0",
+    "verdict": "testable-from-M4.5"
+   },
+   "availability": {
+    "before": {
+     "n": 24,
+     "with_beam": 12,
+     "frac": 0.5
+    },
+    "after": {
+     "n": 24,
+     "with_beam": 20,
+     "frac": 0.8333333333333334
+    }
+   },
+   "beam_gain_frac": 0.9375,
+   "beam_gain_n": 32,
+   "dist_min": 143.74794096919894,
+   "dist_max": 160.20842355887567,
+   "null_median": 0.9409737780557264
+  },
+  "KKAR": {
+   "verdict_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 5,
+      "median": 1.9184980400383609,
+      "frac_ge": 0.4,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 4,
+      "median": 1.8286268721406147,
+      "frac_ge": 0.25,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 5,
+      "median": 16.611742554588382,
+      "frac_ge": 1.0,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 6,
+      "median": 54.089871209300064,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "verdict_alt": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 5,
+      "median": 2.977734949553236,
+      "frac_ge": 0.4,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 4,
+      "median": 1.6285974010400948,
+      "frac_ge": 0.25,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 5,
+      "median": 26.188467806306477,
+      "frac_ge": 1.0,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 6,
+      "median": 56.4044298300047,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "verdict_coda_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 5,
+      "median": 2.469375929854095,
+      "frac_ge": 0.4,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 4,
+      "median": 2.150386048245763,
+      "frac_ge": 0.25,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 5,
+      "median": 18.201386398217405,
+      "frac_ge": 1.0,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 6,
+      "median": 46.04074655900775,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "availability": {
+    "before": {
+     "n": 18,
+     "with_beam": 6,
+     "frac": 0.3333333333333333
+    },
+    "after": {
+     "n": 17,
+     "with_beam": 14,
+     "frac": 0.8235294117647058
+    }
+   },
+   "beam_gain_frac": 1.0,
+   "beam_gain_n": 20,
+   "dist_min": 138.44237511520555,
+   "dist_max": 152.45376357697566,
+   "null_median": 1.0939878560376135
+  },
+  "KNET": {
+   "verdict_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 6,
+      "median": 1.2434372790543011,
+      "frac_ge": 0.16666666666666666,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 7,
+      "median": 1.444589980652178,
+      "frac_ge": 0.42857142857142855,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 7,
+      "median": 14.098095441631271,
+      "frac_ge": 0.7142857142857143,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 9.42576803675706,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "verdict_alt": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 6,
+      "median": 1.101160344410065,
+      "frac_ge": 0.0,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 7,
+      "median": 1.4945333244783536,
+      "frac_ge": 0.2857142857142857,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 7,
+      "median": 7.469138503955237,
+      "frac_ge": 0.8571428571428571,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 16.238498526606993,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "verdict_coda_primary": {
+    "table": [
+     {
+      "bin": "4.5-5.0",
+      "n": 6,
+      "median": 1.2222149945430993,
+      "frac_ge": 0.16666666666666666,
+      "passes": false
+     },
+     {
+      "bin": "5.0-5.5",
+      "n": 7,
+      "median": 1.8068021948766004,
+      "frac_ge": 0.42857142857142855,
+      "passes": false
+     },
+     {
+      "bin": "5.5-6.0",
+      "n": 7,
+      "median": 7.701508219662569,
+      "frac_ge": 0.7142857142857143,
+      "passes": true
+     },
+     {
+      "bin": "6.0-9.9",
+      "n": 8,
+      "median": 11.017536342783341,
+      "frac_ge": 1.0,
+      "passes": true
+     }
+    ],
+    "first_bin": "5.5-6.0",
+    "verdict": "testable-from-M5.5"
+   },
+   "availability": {
+    "before": {
+     "n": 17,
+     "with_beam": 15,
+     "frac": 0.8823529411764706
+    },
+    "after": {
+     "n": 21,
+     "with_beam": 13,
+     "frac": 0.6190476190476191
+    }
+   },
+   "beam_gain_frac": 0.6071428571428571,
+   "beam_gain_n": 28,
+   "dist_min": 141.51413487192403,
+   "dist_max": 155.5962760489683,
+   "null_median": 1.1422143067309323
+  }
+ },
+ "decision": {
+  "best_array": "KNET",
+  "decision": "close-chile-path",
+  "reason": "M5.5 floor, too few M5.5 pairs"
+ },
+ "forecasts": {
+  "F1_some_array_avail_ge_0p7_both": false,
+  "F2_best_verdict": "testable-from-M5.0",
+  "F3_beam_gain_frac": 0.8375,
+  "F4_null_median": 1.0631887660628823,
+  "F5_straddling_pairs": 24
+ },
+ "finished": "2026-11-20T07:02:04Z"
+}
