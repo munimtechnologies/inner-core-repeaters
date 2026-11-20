@@ -1,0 +1,1706 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-20T05:58:42Z",
+ "constants": {
+  "bins": [
+   [
+    4.5,
+    5.0
+   ],
+   [
+    5.0,
+    5.5
+   ],
+   [
+    5.5,
+    6.0
+   ],
+   [
+    6.0,
+    9.9
+   ]
+  ],
+  "per_bin": 15,
+  "stations": [
+   "IC.HIA",
+   "IC.MDJ",
+   "II.ERM",
+   "IU.BILL",
+   "IU.MAJO",
+   "IU.PET",
+   "IU.TIXI",
+   "IU.YAK",
+   "IU.YSS",
+   "IU.ADK"
+  ],
+  "bands": {
+   "primary": [
+    0.6,
+    1.6
+   ],
+   "alt": [
+    1.0,
+    2.0
+   ]
+  },
+  "sig_df": [
+   -3.0,
+   7.0
+  ],
+  "sig_ab": [
+   -3.0,
+   7.0
+  ],
+  "noise": [
+   -45.0,
+   -10.0
+  ],
+  "null": [
+   -58.0,
+   -48.0
+  ],
+  "snr_req": 3.0,
+  "min_n": 3,
+  "min_sta_pass": 3,
+  "radius_km": 300.0,
+  "centroid": [
+   -59.0365,
+   -25.6939
+  ],
+  "start": "1990-01-01",
+  "end": "2026-11-19"
+ },
+ "errors": {},
+ "plan_public_at_start": true,
+ "catalogue_n": 3725,
+ "catalogue_bins": [
+  {
+   "bin": "4.5-5.0",
+   "n": 2582,
+   "before_turn": 372,
+   "after_turn": 2210
+  },
+  {
+   "bin": "5.0-5.5",
+   "n": 882,
+   "before_turn": 192,
+   "after_turn": 690
+  },
+  {
+   "bin": "5.5-6.0",
+   "n": 192,
+   "before_turn": 71,
+   "after_turn": 121
+  },
+  {
+   "bin": "6.0-9.9",
+   "n": 69,
+   "before_turn": 28,
+   "after_turn": 41
+  }
+ ],
+ "n_events": 60,
+ "client": "https://service.earthscope.org",
+ "status_counts": {
+  "no-epoch": 66,
+  "ok": 501,
+  "nodata": 27,
+  "primary:gappy;alt:gappy": 6
+ },
+ "results": {
+  "primary": {
+   "n_rows": 501,
+   "null_median": 0.9637684082765771,
+   "null_frac_ge_req": 0.0,
+   "df_slope_fe": 0.26200205399273613,
+   "df_slope_n": 501,
+   "ab_slope_fe": 0.34974228720069556,
+   "ab_slope_n": 450,
+   "df_station_fit": {
+    "IC.HIA": {
+     "n": 50,
+     "a": -1.6060319556251903,
+     "b": 0.34349904139349635,
+     "m_req": 6.064509530780584
+    },
+    "IC.MDJ": {
+     "n": 51,
+     "a": -1.6277757574174117,
+     "b": 0.35221613467406787,
+     "m_req": 5.976151586822944
+    },
+    "II.ERM": {
+     "n": 52,
+     "a": -0.5711613506217089,
+     "b": 0.11369522560074882,
+     "m_req": 9.220111045141962
+    },
+    "IU.ADK": {
+     "n": 40,
+     "a": -0.9285299061491389,
+     "b": 0.18466287562576172,
+     "m_req": 7.6119856582191305
+    },
+    "IU.BILL": {
+     "n": 47,
+     "a": -1.576408294295834,
+     "b": 0.3385298853234411,
+     "m_req": 6.066021459386062
+    },
+    "IU.MAJO": {
+     "n": 56,
+     "a": -1.1060149844490819,
+     "b": 0.22273548323390252,
+     "m_req": 7.107696610271279
+    },
+    "IU.PET": {
+     "n": 51,
+     "a": -1.0981581986517641,
+     "b": 0.21782272901094699,
+     "m_req": 7.2319333272711805
+    },
+    "IU.TIXI": {
+     "n": 49,
+     "a": -1.11832430006476,
+     "b": 0.23250446326450042,
+     "m_req": 6.861999689741098
+    },
+    "IU.YAK": {
+     "n": 51,
+     "a": -1.4455785576140239,
+     "b": 0.3006206031559848,
+     "m_req": 6.395768593864617
+    },
+    "IU.YSS": {
+     "n": 54,
+     "a": -1.4963716654832582,
+     "b": 0.3133806562944599,
+     "m_req": 6.29743055470718
+    }
+   },
+   "ab_station_fit": {
+    "IC.HIA": {
+     "n": 50,
+     "a": -2.3120376752009246,
+     "b": 0.5360110374410737,
+     "m_req": 5.203547567296528
+    },
+    "IC.MDJ": {
+     "n": 51,
+     "a": -1.85049349166714,
+     "b": 0.3915368130723317,
+     "m_req": 5.944817112144201
+    },
+    "II.ERM": {
+     "n": 52,
+     "a": -0.47147229983771444,
+     "b": 0.09785812551053191,
+     "m_req": 9.693559421954033
+    },
+    "IU.ADK": {
+     "n": 40,
+     "a": -1.558264021519705,
+     "b": 0.3226971072951373,
+     "m_req": 6.307417173026635
+    },
+    "IU.BILL": {
+     "n": 47,
+     "a": -1.2915547806294048,
+     "b": 0.2737539667929364,
+     "m_req": 6.460823403106588
+    },
+    "IU.MAJO": {
+     "n": 56,
+     "a": -2.0627053156990995,
+     "b": 0.42622388335093236,
+     "m_req": 5.958902514919818
+    },
+    "IU.PET": {
+     "n": 1,
+     "a": null,
+     "b": null,
+     "m_req": null
+    },
+    "IU.TIXI": {
+     "n": 49,
+     "a": -1.443580987704455,
+     "b": 0.3302977714414468,
+     "m_req": 5.815062675240023
+    },
+    "IU.YAK": {
+     "n": 51,
+     "a": -2.0701916073201425,
+     "b": 0.44629538830845933,
+     "m_req": 5.707683585292208
+    },
+    "IU.YSS": {
+     "n": 54,
+     "a": -1.6205208758752634,
+     "b": 0.33300937797546887,
+     "m_req": 6.299048223048688
+    }
+   },
+   "df_bin_table": [
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 0.951544171012967,
+     "frac_ge": 0.07692307692307693,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.MDJ",
+     "n": 14,
+     "median": 0.9769666243104977,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.1194915402695043,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.ADK",
+     "n": 12,
+     "median": 0.8525812791801376,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.BILL",
+     "n": 13,
+     "median": 0.9282338369480073,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.9652755184449722,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.PET",
+     "n": 13,
+     "median": 0.9039363560758045,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 0.9638027325610428,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 0.9783080226836033,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 0.9969561100338838,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 1.1610723913818335,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.MDJ",
+     "n": 13,
+     "median": 1.2486871747895796,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "II.ERM",
+     "n": 12,
+     "median": 0.8573853300781392,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.ADK",
+     "n": 11,
+     "median": 1.003018841304299,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 1.1242662018667247,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.8921860434878663,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.PET",
+     "n": 14,
+     "median": 0.9294164564515126,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.TIXI",
+     "n": 11,
+     "median": 0.8872197839492072,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YAK",
+     "n": 14,
+     "median": 0.9640499751259726,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.0675623340500504,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 2.0334609340126764,
+     "frac_ge": 0.3076923076923077,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 3.0846105707138927,
+     "frac_ge": 0.5,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.1208407281183443,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.ADK",
+     "n": 8,
+     "median": 1.1687296073590563,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.BILL",
+     "n": 10,
+     "median": 1.5907480028708405,
+     "frac_ge": 0.2,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 1.100245187061699,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.PET",
+     "n": 13,
+     "median": 1.2093112275922473,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 1.4380111481345184,
+     "frac_ge": 0.15384615384615385,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 2.377560037002683,
+     "frac_ge": 0.23076923076923078,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.6213742078135556,
+     "frac_ge": 0.14285714285714285,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 7.564048960529398,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 6.669855539582851,
+     "frac_ge": 0.5833333333333334,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "II.ERM",
+     "n": 14,
+     "median": 1.3982409572804615,
+     "frac_ge": 0.21428571428571427,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.ADK",
+     "n": 9,
+     "median": 2.601595226819283,
+     "frac_ge": 0.4444444444444444,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 4.962734226612948,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 3.1270425583308423,
+     "frac_ge": 0.5,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.PET",
+     "n": 11,
+     "median": 2.4810232203340683,
+     "frac_ge": 0.45454545454545453,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.TIXI",
+     "n": 12,
+     "median": 2.295017435412564,
+     "frac_ge": 0.4166666666666667,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YAK",
+     "n": 11,
+     "median": 3.1875218198793145,
+     "frac_ge": 0.5454545454545454,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 6.844873442945751,
+     "frac_ge": 0.5384615384615384,
+     "usable": true
+    }
+   ],
+   "ab_bin_table": [
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 0.9840370666847916,
+     "frac_ge": 0.07692307692307693,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.MDJ",
+     "n": 14,
+     "median": 0.8165329286760159,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 0.9691805037375663,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.ADK",
+     "n": 12,
+     "median": 0.9773462326510518,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.BILL",
+     "n": 13,
+     "median": 0.8866509753057754,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.8927827351921331,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 1.0463252918809485,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 0.9894397255452743,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 0.952088206917968,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 1.5737204018783937,
+     "frac_ge": 0.25,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.MDJ",
+     "n": 13,
+     "median": 1.167254756059368,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "II.ERM",
+     "n": 12,
+     "median": 1.0311225028200393,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.ADK",
+     "n": 11,
+     "median": 0.90663390206402,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 1.2284844179415497,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.9723982369134363,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.PET",
+     "n": 1,
+     "median": 1.0377043746889367,
+     "frac_ge": 0.0,
+     "usable": false
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.TIXI",
+     "n": 11,
+     "median": 1.2232768484494299,
+     "frac_ge": 0.09090909090909091,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YAK",
+     "n": 14,
+     "median": 1.3535038825497518,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.039448351144015,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 9.130234216761584,
+     "frac_ge": 0.9230769230769231,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 2.2767315490581064,
+     "frac_ge": 0.4166666666666667,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.12784206854175,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.ADK",
+     "n": 8,
+     "median": 2.1292862705016766,
+     "frac_ge": 0.25,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.BILL",
+     "n": 10,
+     "median": 1.5073967019849999,
+     "frac_ge": 0.2,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 2.0528801422223637,
+     "frac_ge": 0.21428571428571427,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 4.870134645466673,
+     "frac_ge": 0.5384615384615384,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 3.946612791670326,
+     "frac_ge": 0.6153846153846154,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.5631065244369058,
+     "frac_ge": 0.14285714285714285,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 15.518302331242225,
+     "frac_ge": 0.9166666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 5.583750885657866,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "II.ERM",
+     "n": 14,
+     "median": 1.1014169049724303,
+     "frac_ge": 0.14285714285714285,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.ADK",
+     "n": 9,
+     "median": 4.889789242212884,
+     "frac_ge": 0.5555555555555556,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 6.162398466701976,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 6.86963034326078,
+     "frac_ge": 0.6428571428571429,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.TIXI",
+     "n": 12,
+     "median": 6.504406880149734,
+     "frac_ge": 0.5833333333333334,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YAK",
+     "n": 11,
+     "median": 5.359799607041859,
+     "frac_ge": 0.7272727272727273,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 4.266773136001857,
+     "frac_ge": 0.5384615384615384,
+     "usable": true
+    }
+   ],
+   "df_verdict": {
+    "first_bin": "6.0-9.9",
+    "verdict": "testable-from-M6.0",
+    "stations_passing": {
+     "4.5-5.0": [],
+     "5.0-5.5": [],
+     "5.5-6.0": [
+      "IC.MDJ"
+     ],
+     "6.0-9.9": [
+      "IC.HIA",
+      "IC.MDJ",
+      "IU.BILL",
+      "IU.MAJO",
+      "IU.YAK",
+      "IU.YSS"
+     ]
+    }
+   }
+  },
+  "alt": {
+   "n_rows": 501,
+   "null_median": 0.9933265091258924,
+   "null_frac_ge_req": 0.0,
+   "df_slope_fe": 0.15316716665309704,
+   "df_slope_n": 501,
+   "ab_slope_fe": 0.2897572520400176,
+   "ab_slope_n": 450,
+   "df_station_fit": {
+    "IC.HIA": {
+     "n": 50,
+     "a": -0.49898586552075885,
+     "b": 0.09996221442723267,
+     "m_req": 9.764760873229521
+    },
+    "IC.MDJ": {
+     "n": 51,
+     "a": -1.3565654495631556,
+     "b": 0.28615200824545256,
+     "m_req": 6.408086092165171
+    },
+    "II.ERM": {
+     "n": 52,
+     "a": -0.19449299143509982,
+     "b": 0.036786592784667865,
+     "m_req": 18.25703864682683
+    },
+    "IU.ADK": {
+     "n": 40,
+     "a": -0.693730144314045,
+     "b": 0.1353186684652848,
+     "m_req": 8.652548922575914
+    },
+    "IU.BILL": {
+     "n": 47,
+     "a": -1.2375662940403,
+     "b": 0.26051367448253565,
+     "m_req": 6.5819483455748955
+    },
+    "IU.MAJO": {
+     "n": 56,
+     "a": -0.661684337756479,
+     "b": 0.13073134003268014,
+     "m_req": 8.711037400759936
+    },
+    "IU.PET": {
+     "n": 51,
+     "a": -0.7399263947165365,
+     "b": 0.14722723392487927,
+     "m_req": 8.266457346180811
+    },
+    "IU.TIXI": {
+     "n": 49,
+     "a": -0.6055329922346173,
+     "b": 0.1276894954485309,
+     "m_req": 8.4788043303897
+    },
+    "IU.YAK": {
+     "n": 51,
+     "a": -0.6840075466167208,
+     "b": 0.14409508184624864,
+     "m_req": 8.058073783360094
+    },
+    "IU.YSS": {
+     "n": 54,
+     "a": -0.8110506513187676,
+     "b": 0.1655017828014514,
+     "m_req": 7.7834322037716035
+    }
+   },
+   "ab_station_fit": {
+    "IC.HIA": {
+     "n": 50,
+     "a": -1.6360961427996743,
+     "b": 0.3669505071650316,
+     "m_req": 5.758862179658856
+    },
+    "IC.MDJ": {
+     "n": 51,
+     "a": -1.5543988952754164,
+     "b": 0.33298889461643755,
+     "m_req": 6.100864571880518
+    },
+    "II.ERM": {
+     "n": 52,
+     "a": -0.3210461226765616,
+     "b": 0.05988350553116301,
+     "m_req": 13.328668225357358
+    },
+    "IU.ADK": {
+     "n": 40,
+     "a": -1.4575799994618932,
+     "b": 0.3240005940265444,
+     "m_req": 5.971289219374244
+    },
+    "IU.BILL": {
+     "n": 47,
+     "a": -1.113863470615193,
+     "b": 0.23874831399885704,
+     "m_req": 6.66385742662238
+    },
+    "IU.MAJO": {
+     "n": 56,
+     "a": -2.1691435990611665,
+     "b": 0.4548679817066508,
+     "m_req": 5.817654704673044
+    },
+    "IU.PET": {
+     "n": 1,
+     "a": null,
+     "b": null,
+     "m_req": null
+    },
+    "IU.TIXI": {
+     "n": 49,
+     "a": -1.2612524105957044,
+     "b": 0.30011346673586403,
+     "m_req": 5.792388073159492
+    },
+    "IU.YAK": {
+     "n": 51,
+     "a": -1.5365228407498575,
+     "b": 0.33202190442564267,
+     "m_req": 6.0647929206745514
+    },
+    "IU.YSS": {
+     "n": 54,
+     "a": -0.983032892263586,
+     "b": 0.20671246341723293,
+     "m_req": 7.063696706260239
+    }
+   },
+   "df_bin_table": [
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 0.9788401439750727,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.MDJ",
+     "n": 14,
+     "median": 0.9429379644153544,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 0.912732182393656,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.ADK",
+     "n": 12,
+     "median": 0.928286772939628,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.BILL",
+     "n": 13,
+     "median": 1.0257860487782755,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.9116105642369442,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.PET",
+     "n": 13,
+     "median": 1.0353509568651345,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 0.9788606816862181,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 0.9908907787732163,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 1.001096342558335,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 0.9560297233047053,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.MDJ",
+     "n": 13,
+     "median": 1.029896025074493,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "II.ERM",
+     "n": 12,
+     "median": 1.0069124486665169,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.ADK",
+     "n": 11,
+     "median": 0.8031100195886706,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 1.1583600674054062,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.9491259499503162,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.PET",
+     "n": 14,
+     "median": 0.8385957770166981,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.TIXI",
+     "n": 11,
+     "median": 0.9543790054289202,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YAK",
+     "n": 14,
+     "median": 1.0279161883038288,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 0.954201615177187,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 0.9659368585961079,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 1.8614328393641357,
+     "frac_ge": 0.16666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.0137275482585835,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.ADK",
+     "n": 8,
+     "median": 1.242868865247417,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.BILL",
+     "n": 10,
+     "median": 1.2137311148107515,
+     "frac_ge": 0.3,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 1.0404820527232088,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.PET",
+     "n": 13,
+     "median": 1.2043395087874522,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 1.195547088002833,
+     "frac_ge": 0.15384615384615385,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 1.334382803700875,
+     "frac_ge": 0.15384615384615385,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.3583567339314584,
+     "frac_ge": 0.07142857142857142,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 2.0518320729788053,
+     "frac_ge": 0.08333333333333333,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 4.416129520403443,
+     "frac_ge": 0.5833333333333334,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "II.ERM",
+     "n": 14,
+     "median": 1.0744959606529596,
+     "frac_ge": 0.07142857142857142,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.ADK",
+     "n": 9,
+     "median": 1.948838659209887,
+     "frac_ge": 0.3333333333333333,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 3.5763040299120368,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 1.542124204513967,
+     "frac_ge": 0.2857142857142857,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.PET",
+     "n": 11,
+     "median": 1.6056143321673253,
+     "frac_ge": 0.2727272727272727,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.TIXI",
+     "n": 12,
+     "median": 1.4320096951290124,
+     "frac_ge": 0.16666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YAK",
+     "n": 11,
+     "median": 1.3431264748633018,
+     "frac_ge": 0.18181818181818182,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 1.934090134207741,
+     "frac_ge": 0.46153846153846156,
+     "usable": true
+    }
+   ],
+   "ab_bin_table": [
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 0.9187294361941346,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IC.MDJ",
+     "n": 14,
+     "median": 0.93335819680027,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.0550279394739757,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.ADK",
+     "n": 12,
+     "median": 1.0043788627746875,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.BILL",
+     "n": 13,
+     "median": 0.977461964639569,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 0.8788137878993076,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 1.082749843793948,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 0.9480894545796809,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "4.5-5.0",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 0.9909479850634727,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 1.3933075544001015,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IC.MDJ",
+     "n": 13,
+     "median": 1.284856951396997,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "II.ERM",
+     "n": 12,
+     "median": 0.8778944395024584,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.ADK",
+     "n": 11,
+     "median": 1.175019499543713,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 1.1559606719068252,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 1.1661972326382408,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.PET",
+     "n": 1,
+     "median": 1.2376076832969247,
+     "frac_ge": 0.0,
+     "usable": false
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.TIXI",
+     "n": 11,
+     "median": 0.9473756625174802,
+     "frac_ge": 0.2727272727272727,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YAK",
+     "n": 14,
+     "median": 1.227049227484049,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.0-5.5",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.0597054031395494,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.HIA",
+     "n": 13,
+     "median": 3.6400122637293184,
+     "frac_ge": 0.6923076923076923,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 1.9171474487152222,
+     "frac_ge": 0.3333333333333333,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "II.ERM",
+     "n": 13,
+     "median": 1.099295491823546,
+     "frac_ge": 0.0,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.ADK",
+     "n": 8,
+     "median": 5.767436170886636,
+     "frac_ge": 0.75,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.BILL",
+     "n": 10,
+     "median": 1.5240784617284318,
+     "frac_ge": 0.3,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 2.963803078562049,
+     "frac_ge": 0.42857142857142855,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.TIXI",
+     "n": 13,
+     "median": 4.200235217360787,
+     "frac_ge": 0.5384615384615384,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YAK",
+     "n": 13,
+     "median": 3.085615738012362,
+     "frac_ge": 0.5384615384615384,
+     "usable": true
+    },
+    {
+     "bin": "5.5-6.0",
+     "station": "IU.YSS",
+     "n": 14,
+     "median": 1.460715727610159,
+     "frac_ge": 0.07142857142857142,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.HIA",
+     "n": 12,
+     "median": 7.747472900112157,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IC.MDJ",
+     "n": 12,
+     "median": 4.369017882131851,
+     "frac_ge": 0.6666666666666666,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "II.ERM",
+     "n": 14,
+     "median": 0.971796552592007,
+     "frac_ge": 0.07142857142857142,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.ADK",
+     "n": 9,
+     "median": 6.314201754123945,
+     "frac_ge": 0.5555555555555556,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.BILL",
+     "n": 12,
+     "median": 4.044527353720702,
+     "frac_ge": 0.75,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.MAJO",
+     "n": 14,
+     "median": 7.793682868034683,
+     "frac_ge": 0.7857142857142857,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.PET",
+     "n": 0,
+     "median": null,
+     "frac_ge": null,
+     "usable": false
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.TIXI",
+     "n": 12,
+     "median": 8.857827792550593,
+     "frac_ge": 0.5833333333333334,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YAK",
+     "n": 11,
+     "median": 3.3691068560212716,
+     "frac_ge": 0.5454545454545454,
+     "usable": true
+    },
+    {
+     "bin": "6.0-9.9",
+     "station": "IU.YSS",
+     "n": 13,
+     "median": 2.8327775518981055,
+     "frac_ge": 0.46153846153846156,
+     "usable": true
+    }
+   ],
+   "df_verdict": {
+    "first_bin": null,
+    "verdict": "none",
+    "stations_passing": {
+     "4.5-5.0": [],
+     "5.0-5.5": [],
+     "5.5-6.0": [],
+     "6.0-9.9": [
+      "IC.MDJ",
+      "IU.BILL"
+     ]
+    }
+   }
+  }
+ },
+ "forecasts": {
+  "F1_lowest_bin_no_station_passes": true,
+  "F2_verdict": "testable-from-M6.0",
+  "F3_df_slope_fe": 0.26200205399273613,
+  "F4_null_median": 0.9637684082765771,
+  "F5_ab_beats_df": true
+ },
+ "finished": "2026-11-20T06:02:57Z"
+}

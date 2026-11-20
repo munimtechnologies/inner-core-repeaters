@@ -1,0 +1,27 @@
+{
+ "version": "0.1.0",
+ "sha": "3f2fe5814d42c27b0bbc1171633bd80d1a236a16",
+ "files": {
+  "snrpilot.py": {
+   "sha256": "58db9738c8b19e5bd39d8f98a3f43339df6b06f8ad5f2c350aae20c665005131",
+   "bytes": 23712
+  },
+  "test_snrpilot.py": {
+   "sha256": "7c6dc9be4b4a2e4d257faf32ac3f4e0528727728494c0e2cac9d258c3aa3da80",
+   "bytes": 5598
+  }
+ },
+ "args": [
+  "--data-dir",
+  "/data",
+  "--out-dir",
+  "/out",
+  "--wait-min",
+  "30"
+ ],
+ "started": "2026-11-20T05:58:40Z",
+ "probe": {
+  "ok": true,
+  "message": "1 trace(s), 400 samples"
+ }
+}
