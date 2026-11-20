@@ -1,0 +1,38 @@
+network,station,channel,sensor,sample_rate,start,end,note
+KZ,MK01,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK02,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK03,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK04,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK05,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK06,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK07,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK08,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK09,SHZ,Geotech GS-21,40,2000-08-28,,single epoch
+KZ,MK32,SHZ,Geotech GS-13,40,2000-08-28,2011-08-07T23:59:59,ends at the MKAR sensor change; exclude
+KZ,MKAR,BHZ,Geotech KS-54000,40,2000-08-28,2011-08-07,broadband; exclude from beams
+KZ,MKAR,BHZ,CMG3-TB,40,2011-08-08,,broadband; exclude from beams
+KZ,KK01,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK02,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK03,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK04,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK05,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK06,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK07,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK08,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KK09,SHZ,Geotech GS-21,40,2001-12-11,,single epoch
+KZ,KKAR,BHZ,Geotech KS-54000,40,2001-12-11,2018-09-19,broadband; exclude from beams
+KZ,KKAR,BHZ,CMG3-TB,40,2018-09-20,,broadband; exclude from beams
+KN,AML,BHZ,STS-2 / RT72A-02,20,1991-09-07,1995-01-06,old digitiser
+KN,AML,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995
+KN,CHM,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-09-14)
+KN,EKS2,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-09-14)
+KN,KBK,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-09-14)
+KN,KZA,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-09-14)
+KN,USP,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-09-14)
+KN,UCH,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1991-12-09)
+KN,TKM2,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1994-09-20)
+KN,ULHL,BHZ,STS-2 / RT72A-08,40,1995-01-06,,single epoch since 1995 (old epoch from 1994-09-11)
+KN,AAK,BHZ,STS-2 / RT72A-08,40,1995-01-05,,single epoch since 1995 (old epoch from 1991-09-01)
+KN,NRPT,BHZ,STS-2 / RT72A-08,40,1999-08-08,,single epoch
+KN,BGK2,BHZ,STS-2 / RT72A-02,20,1991-09-01,1993-09-10,ended 1993; not usable
+KN,TKM,BHZ,STS-2 / RT72A-02,20,1991-09-01,1994-08-29,ended 1994; not usable
