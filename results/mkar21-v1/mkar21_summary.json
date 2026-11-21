@@ -1,0 +1,114 @@
+{
+ "version": "0.1.0",
+ "mkar20": {
+  "file": "mkar20.py",
+  "commit": "a7f1ceb06c422297020938e08805f2d5d81ce929",
+  "sha256": "eb17fe9f30ad0b499a254bae8c3962d0156940b6577025ce0215aab628b32b34"
+ },
+ "min_mag": 4.5,
+ "plan": "findings/2026-11-20-prereg21-mkar-m45-plan.md",
+ "mkar20_main_rc": 0,
+ "plan_public_at_start": true,
+ "primary_decision": "none",
+ "n_rows": 12567,
+ "n_rows_new": 12093,
+ "n_rows_both_m5": 474,
+ "n_events_with_mag": 2868,
+ "n_events_below_5": 2413,
+ "verified_by_kind": {
+  "straddle": 85,
+  "before": 12,
+  "after": 190
+ },
+ "n_verified": 287,
+ "extras": {
+  "N_new_pairs": {
+   "metric": "D",
+   "s_max": 0.3333333333333333,
+   "include_m0324": false,
+   "n_pairs": 4265,
+   "n_scored": 761,
+   "n_families_scored": 54,
+   "calibration": {
+    "rho": 0.2953420287503138,
+    "p05": 0.06116920743231873,
+    "p95": 0.3478392142557016,
+    "passed": true
+   },
+   "clock": {
+    "n_pairs": 257,
+    "n_families": 17,
+    "n_cross": 70,
+    "testable": true,
+    "rho_B": 0.10343803728169397,
+    "rho_M": 0.09691572029680572,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.625,
+    "frac_M_gt_B": 0.375,
+    "p05_B": -0.08914680824793185,
+    "p95_B": 0.21142472471991153,
+    "p05_M": -0.14960629921259844,
+    "p95_M": 0.20934286212306083,
+    "decision": "inconclusive"
+   },
+   "decision": "inconclusive",
+   "diagnostic_sep_rho": {
+    "scored": -0.021083617919362543,
+    "verified": -0.00846360057913311
+   }
+  },
+  "O_both_m5": {
+   "metric": "D",
+   "s_max": 0.3333333333333333,
+   "include_m0324": false,
+   "n_pairs": 223,
+   "n_scored": 178,
+   "n_families_scored": 50,
+   "calibration": {
+    "rho": 0.35057773011462745,
+    "p05": 0.024293940592466465,
+    "p95": 0.4977004364695671,
+    "passed": true
+   },
+   "clock": {
+    "n_pairs": 30,
+    "n_families": 7,
+    "n_cross": 15,
+    "testable": false,
+    "rho_B": -0.17953281423804227,
+    "rho_M": -0.20978865406006675,
+    "n_boot": 1000,
+    "frac_B_gt_M": 0.657,
+    "frac_M_gt_B": 0.167,
+    "p05_B": -0.7796610169491526,
+    "p95_B": 0.14782608695652175,
+    "p05_M": -0.8238993710691824,
+    "p95_M": 0.11801242236024845,
+    "decision": "untestable"
+   },
+   "decision": "untestable",
+   "diagnostic_sep_rho": {
+    "scored": 0.0028948995083671212,
+    "verified": -0.07586206896551724
+   }
+  },
+  "L_long_span_control": {
+   "span_yr": 0.5,
+   "n_pairs": 6,
+   "n_families": 3,
+   "rho": -0.3142857142857143,
+   "p05": -0.7777777777777778,
+   "p95": 1.0,
+   "passed": false
+  },
+  "replication": "n/a"
+ },
+ "forecasts": {
+  "H1_primary_testable": true,
+  "H2_primary_decision": "none",
+  "H3_new_pairs_testable": true,
+  "H4_long_span_control_passes": false,
+  "H5_verified_ge_80": true,
+  "H6_calibration_passes": true
+ }
+}
