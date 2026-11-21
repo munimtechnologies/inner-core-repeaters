@@ -88,6 +88,14 @@ class TestSignal(unittest.TestCase):
         x[150] = 10.0
         self.assertAlmostEqual(m.snr(x, 0, 100, 140, 160), 10.0, places=9)
 
+    def test_shift_left(self):
+        b = np.arange(6, dtype=float)
+        self.assertEqual(list(m.shift_left(b, 2)), [2.0, 3.0, 4.0, 5.0, 0.0, 0.0])
+        self.assertEqual(list(m.shift_left(b, -2)), [0.0, 0.0, 0.0, 1.0, 2.0, 3.0])
+        self.assertEqual(list(m.shift_left(b, 0)), list(b))
+        self.assertEqual(list(m.shift_left(b, 9)), [0.0] * 6)
+        self.assertEqual(list(m.shift_left(b, -9)), [0.0] * 6)
+
 
 class TestRotation(unittest.TestCase):
     def test_rotate_to_ne_roundtrip(self):
@@ -141,6 +149,38 @@ class TestRotation(unittest.TestCase):
             d, cc = m.orient_pair(a1, a2, b1, b2, 90.0, daz_b, 30.0, 0.1)
             self.assertAlmostEqual(d, -3.0, delta=0.15)
             self.assertGreater(cc, 0.99)
+
+
+class TestCoarseAlignment(unittest.TestCase):
+    """Amendment 1: a 1.3 s origin-time offset (beyond the 0.6 s fine search) must not
+    hide a 0.16 s SKS advance relative to transverse S."""
+
+    def test_measure_pair_with_origin_offset(self):
+        sr = 50.0
+        nn = 6000                    # 120 s
+        tb = 0.0
+        t_sks, t_s = 30.0, 70.0
+        w = 0.25 * sr
+
+        def comps(shift_all, sks_extra):
+            r = (wavelet(nn, (t_sks + shift_all + sks_extra) * sr, w, 0.8 / sr)
+                 + 0.6 * wavelet(nn, (t_s + shift_all) * sr, w, 0.7 / sr))
+            t = wavelet(nn, (t_s + 1.0 + shift_all) * sr, w, 0.6 / sr)
+            n, e = rt_to_ne(r, t, 0.0)
+            return {"1": dict(x=n, off=0.0, sr=sr), "2": dict(x=e, off=0.0, sr=sr),
+                    "Z": dict(x=0.1 * r, off=0.0, sr=sr)}
+        A = comps(0.0, 0.0)
+        B = comps(1.3, -0.16)
+        wins = {"SKS_R": ("R", t_sks - 2.0, t_sks + 3.0),
+                "S_T": ("T", t_s + 1.0 - 3.0, t_s + 1.0 + 10.0)}
+        rows = m.measure_sdv_pair(A, B, {"meta": (0.0, 90.0, 0.0, 90.0)}, 0.0, wins, tb,
+                                  m.PARAMS)
+        lag = {r["window"]: r for r in rows}
+        self.assertFalse(lag["S_T"]["edge"])
+        self.assertFalse(lag["SKS_R"]["edge"])
+        self.assertAlmostEqual(lag["S_T"]["lag_s"], 1.3, delta=0.02)
+        self.assertAlmostEqual(lag["SKS_R"]["lag_s"] - lag["S_T"]["lag_s"], -0.16, delta=0.02)
+        self.assertTrue(lag["S_T"]["coarse_ok"])
 
 
 class TestLocation(unittest.TestCase):
@@ -210,6 +250,7 @@ class TestConstants(unittest.TestCase):
         self.assertIn(m.PARTNER, ids)
         self.assertEqual(len(ids), len(set(ids)))
         self.assertGreater(m.PARAMS["reproduce_s"], m.PARAMS["explain_s"])
+        self.assertGreater(m.PARAMS["coarse_maxlag_s"], m.PARAMS["maxlag_body_s"])
         self.assertEqual(m.META_STEP["00"], -3.0)
 
     def test_jsonable(self):

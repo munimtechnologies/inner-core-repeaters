@@ -7,7 +7,11 @@ robust to the station's 2009-09-18 sensor re-orientation, and does the source
 cluster hold a third member that dates the change?
 
 Plan: findings/2026-11-21-prereg23-sdv-ulvz-plan.md (written and published before
-this code downloads any waveform).
+this code downloads any waveform). Amendment 1 (0.1.1, also before any waveform):
+findings/2026-11-21-prereg23-amendment-1.md - body-wave lags are measured after a
+coarse alignment of the two events on the transverse S window (+/- 5 s), because a
+catalogue origin-time difference larger than the 0.6 s fine search would otherwise
+push every lag to the edge. Decision rules are unchanged.
 
 Claim under test: Zhang & Wen 2025, Nat. Commun. 16:8754 (doi 10.1038/s41467-025-63814-3):
 for the Aleutian doublet 2000-07-07 / 2009-12-17 recorded at IU.SDV (Venezuela,
@@ -44,9 +48,10 @@ import urllib.request
 
 import numpy as np
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 REPO_RAW = "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/main/"
 PLAN_PATH = "findings/2026-11-21-prereg23-sdv-ulvz-plan.md"
+AMEND_PATH = "findings/2026-11-21-prereg23-amendment-1.md"
 BASE = "https://service.earthscope.org"
 USGS = "https://earthquake.usgs.gov"
 R_EARTH = 6371.0
@@ -78,6 +83,7 @@ PARAMS = dict(
     pre_filt_body=(0.1, 0.2, 7.0, 9.0),
     pre_filt_lp=(0.003, 0.005, 0.5, 1.0),
     maxlag_body_s=0.6,
+    coarse_maxlag_s=5.0,      # amendment 1: coarse S_T alignment before the fine lags
     maxlag_p_s=3.0,
     maxlag_lp_s=10.0,
     peak_search_s=5.0,
@@ -133,6 +139,21 @@ def hilbert(x):
         h[0] = 1.0
         h[1:(n + 1) // 2] = 2.0
     return np.imag(np.fft.ifft(X * h))
+
+
+def shift_left(b, s):
+    """c[i] = b[i + s] (zeros where i + s is outside b). s may be negative."""
+    b = np.asarray(b, float)
+    s = int(s)
+    c = np.zeros_like(b)
+    n = len(b)
+    if s >= 0:
+        if s < n:
+            c[:n - s] = b[s:]
+    else:
+        if -s < n:
+            c[-s:] = b[:n + s]
+    return c
 
 
 def rotate_to_ne(c1, c2, az1, az2):
@@ -343,11 +364,11 @@ def fetch_url(url, tries=3, timeout=60):
     raise RuntimeError("fetch failed %s: %s" % (url, err))
 
 
-def check_plan(wait_min):
+def check_plan(wait_min, plan_path=PLAN_PATH):
     deadline = time.time() + wait_min * 60
     while True:
         try:
-            data = fetch_url(REPO_RAW + PLAN_PATH, tries=1)
+            data = fetch_url(REPO_RAW + plan_path, tries=1)
             return True, sha256(data)
         except Exception:  # noqa: BLE001
             if time.time() > deadline:
@@ -562,23 +583,31 @@ def sdv_event(D, E, tb, te):
 
 def measure_sdv_pair(A, B, rots, baz, wins, tb, P):
     """A, B: processed body-wave dicts (comps '1','2','Z'). rots: name -> (azA1, azA2,
-    azB1, azB2). wins: name -> (comp, t1, t2). Returns list of row dicts."""
+    azB1, azB2). wins: name -> (comp, t1, t2), must include 'S_T'. Returns list of row
+    dicts. Amendment 1: per rotation, B is first aligned to A on the S_T window
+    (+/- coarse_maxlag_s, integer samples); every fine lag (+/- maxlag_body_s) is then
+    measured on the shifted B and reported as the total lag (coarse + fine)."""
     rows = []
     sr = A["Z"]["sr"]
     offA = float(np.mean([A[c]["off"] for c in ("1", "2", "Z")]))
     offB = float(np.mean([B[c]["off"] for c in ("1", "2", "Z")]))
     ml = int(P["maxlag_body_s"] * sr)
+    idx = lambda t: int(round((t - tb - offA) * sr))  # noqa: E731
     for rname, (a1, a2, b1, b2) in rots.items():
         RA, TA = to_rt(A["1"]["x"], A["2"]["x"], a1, a2, baz)
         RB, TB = to_rt(B["1"]["x"], B["2"]["x"], b1, b2, baz)
-        comps = {"R": (RA, RB), "T": (TA, TB), "Z": (A["Z"]["x"], B["Z"]["x"])}
+        _, tT1, tT2 = wins["S_T"]
+        kc, _, edc = window_lag(TA, TB, idx(tT1), idx(tT2), int(P["coarse_maxlag_s"] * sr))
+        sh = int(round(kc)) if (np.isfinite(kc) and not edc) else 0
+        comps = {"R": (RA, shift_left(RB, sh)), "T": (TA, shift_left(TB, sh)),
+                 "Z": (A["Z"]["x"], shift_left(B["Z"]["x"], sh))}
         for wname, (comp, t1, t2) in wins.items():
             a, b = comps[comp]
-            i1 = int(round((t1 - tb - offA) * sr))
-            i2 = int(round((t2 - tb - offA) * sr))
-            k, cc, edge = window_lag(a, b, i1, i2, ml)
+            k, cc, edge = window_lag(a, b, idx(t1), idx(t2), ml)
             rows.append(dict(rotation=rname, window=wname, comp=comp, t1=round(t1, 3),
-                             t2=round(t2, 3), lag_s=k / sr + offB - offA, cc=cc, edge=edge))
+                             t2=round(t2, 3), lag_s=(k + sh) / sr + offB - offA, cc=cc,
+                             edge=edge, coarse_s=sh / sr, coarse_ok=bool(np.isfinite(kc)
+                                                                         and not edc)))
     return rows
 
 
@@ -599,6 +628,10 @@ def run(args):
     summary["plan_public_at_start"] = ok
     summary["plan_sha256"] = psha
     log("plan public:", ok, psha[:16])
+    ok2, asha = check_plan(args.wait_min, AMEND_PATH)
+    summary["amendment_public_at_start"] = ok2
+    summary["amendment_sha256"] = asha
+    log("amendment 1 public:", ok2, asha[:16])
 
     D = Data(args.data_dir)
     model = TauPyModel("iasp91")
@@ -770,6 +803,7 @@ def run(args):
         res["x_uncorrected"] = {rot: get(rot, "SKS_R", "dt_vs_ST") for rot in rots}
         res["cc_ST_meta"] = get("meta", "S_T", "cc")
         res["cc_SKS_R"] = {rot: get(rot, "SKS_R", "cc") for rot in rots}
+        res["coarse_s"] = {rot: get(rot, "S_T", "coarse_s") for rot in rots}
         res["x_Z"] = get("meta", "SKS_Z")
         res["x_postSKS"] = {rot: get(rot, "postSKS_R") for rot in rots}
         res["x_S_R_early"] = {rot: get(rot, "S_R_early") for rot in rots}
