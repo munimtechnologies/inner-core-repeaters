@@ -1,0 +1,62 @@
+{
+ "contract": "mv2-compete-result-v1",
+ "name": "sdv-exit27-v1",
+ "id": "9ca20622882f",
+ "field": "earth-planets",
+ "run": "20261121T232241Z-earth-planets",
+ "kind": "compete",
+ "status": "ok",
+ "reason": "",
+ "host": "dell",
+ "image": "python:3.12",
+ "started_at": "2026-11-22T23:01:26.871946+00:00",
+ "finished_at": "2026-11-22T23:18:22.151765+00:00",
+ "duration_seconds": 1015,
+ "limits": {
+  "cpu": 1.0,
+  "memory_gb": 1.0,
+  "timeout_minutes": 420.0
+ },
+ "peak_memory_gb": 0.23,
+ "network": {
+  "setup": true,
+  "run": true
+ },
+ "steps": [
+  {
+   "step": "setup-01-pip",
+   "cmd": "pip install numpy scipy matplotlib obspy requests",
+   "exit": 0,
+   "seconds": 41
+  },
+  {
+   "step": "run-01-python",
+   "cmd": "python sdvexit27.py --data-dir /data --out-dir /out --wait-min 120 --time-budget-min 240",
+   "exit": 0,
+   "seconds": 753
+  },
+  {
+   "step": "run-02-python",
+   "cmd": "python -m unittest -v test_sdvexit27",
+   "exit": 0,
+   "seconds": 1
+  }
+ ],
+ "out_files": [
+  "plots/sdvexit27.png",
+  "sdvexit27_candidates.csv",
+  "sdvexit27_members.csv",
+  "sdvexit27_rows.csv",
+  "sdvexit27_summary.json"
+ ],
+ "out_files_total": 5,
+ "out_skipped": [],
+ "upload_skipped": [],
+ "summary_tail": "[run-02-python stderr] ique_and_doublet (test_sdvexit27.TestCatalogue.test_greedy_unique_and_doublet) ... ok\ntest_iso_epoch (test_sdvexit27.TestCatalogue.test_iso_epoch) ... ok\ntest_parse_usgs_csv (test_sdvexit27.TestCatalogue.test_parse_usgs_csv) ... ok\ntest_classify_pair (test_sdvexit27.TestClasses.test_classify_pair) ... ok\ntest_grade_class (test_sdvexit27.TestGrades.test_grade_class) ... ok\ntest_grade_pair (test_sdvexit27.TestGrades.test_grade_pair) ... ok\ntest_pair_lags_recovers_shifts (test_sdvexit27.TestLags.test_pair_lags_recovers_shifts) ... ok\ntest_station_x (test_sdvexit27.TestLags.test_station_x) ... ok\ntest_window_lag_edge_and_snr (test_sdvexit27.TestLags.test_window_lag_edge_and_snr) ... ok\ntest_arc_km_and_cmb (test_sdvexit27.TestSphere.test_arc_km_and_cmb) ... ok\ntest_azimuth_axes (test_sdvexit27.TestSphere.test_azimuth_axes) ... ok\ntest_dest_point_roundtrip (test_sdvexit27.TestSphere.test_dest_point_roundtrip) ... ok\ntest_hav_vec_matches_scalar_and_dateline (test_sdvexit27.TestSphere.test_hav_vec_matches_scalar_and_dateline) ... ok\ntest_wrap180 (test_sdvexit27.TestSphere.test_wrap180) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.014s\n\nOK\n",
+ "paths": {
+  "workdir": "/work (copy of E:\\MV2-Pursuit\\work\\20261121T232241Z-earth-planets\\sdv27)",
+  "out": "/out -> out/",
+  "data": "/data (docker volume mv2c-data-sdvexit27, kept for later jobs)"
+ },
+ "note": ""
+}
