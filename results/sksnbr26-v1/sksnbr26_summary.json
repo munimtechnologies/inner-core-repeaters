@@ -1,0 +1,116 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-22T11:32:36Z",
+ "params": {
+  "dist_range": [
+   85.0,
+   125.0
+  ],
+  "entry_nb_km": 100.0,
+  "exit_nb_km": 100.0,
+  "control_min_km": 300.0,
+  "report_km": 300.0,
+  "max_controls": 40,
+  "min_s_sks_sep_s": 10.0,
+  "min_skks_sep_s": 6.0,
+  "peak_search_s": 5.0,
+  "maxlag_s": 0.6,
+  "sks_cc_min": 0.8,
+  "sks_snr_min": 5.0,
+  "ref_cc_min": 0.9,
+  "changed_s": 0.08,
+  "stable_s": 0.04,
+  "z_agree_s": 0.04,
+  "g0_tol_s": 0.01,
+  "ctrl_min_n": 5,
+  "ctrl_false_max": 0.2
+ },
+ "errors": [],
+ "code_sha256": "5d02ee73d1b75fc096c578979ef22adb700cfe5c1edf15f843cf2ff1cc45024e",
+ "sdv23": {
+  "commit": "dbbd91d3f26f9dc2165cbf59a5c05f7d82d8521d",
+  "sha256": "121c14d8bfc8173a49b61e67fafa55a7d996b9d480a17b298de9edf2289b1d03",
+  "version": "0.1.1"
+ },
+ "plan_public_at_start": true,
+ "plan_sha256": "300acb55bec25b386f3cf25d208e0a138fddc29644373c941f6b0390bdcb2b0e",
+ "p23_x_meta": 0.028437543808901112,
+ "cmb_depth_km": 2889.0,
+ "membership": {
+  "cand": "E2009a",
+  "n_stations": 30,
+  "n_measured": 25,
+  "n_cc090": 13,
+  "n_cc095": 12,
+  "member": true,
+  "strict": true,
+  "reloc": {
+   "dt0": -2.08790131032322,
+   "dxN": -0.5468916733414629,
+   "dxE": 0.21866006362563153,
+   "rms": 0.04107305188913193,
+   "n": 13
+  }
+ },
+ "n_candidates": 63,
+ "sdv_geometry": {
+  "dist": 94.81051068846885,
+  "az": 69.1480449102727,
+  "baz": 323.76362921940995,
+  "tP": 798.5140867657893,
+  "tS": 1469.9463909270949,
+  "tSKS": 1431.271079499253,
+  "tSKKS": 1452.3866396267476,
+  "pP": 0.04114384714119533,
+  "pS": 0.07832129089813901,
+  "pSKS": 0.04868030660820994,
+  "entry": [
+   54.315890633679786,
+   -151.30637951922785
+  ],
+  "exit": [
+   22.848616513802593,
+   -81.63464677571352
+  ],
+  "entry_ang": 17.45185261512563,
+  "exit_ang": 77.31047674550027
+ },
+ "primary": {
+  "n_usable": 0,
+  "n_ctrl": 0,
+  "ctrl_false_rate": NaN,
+  "controls_quiet": false,
+  "grades": [],
+  "grade": "untestable",
+  "gates": {
+   "G0_p23_reproduced": true,
+   "G1_member_relocated": true
+  },
+  "x_sdv_vs_ST": 0.028437543808901112,
+  "x_p23": 0.028437543808901112,
+  "entry_neighbours": [
+   {
+    "net": "VE",
+    "sta": "FUNV",
+    "d_entry_km": 75.49782766442137,
+    "d_exit_km": 249.9379893234874,
+    "x": null,
+    "xz": null,
+    "ref": null,
+    "grade": "unusable",
+    "status": "error: RuntimeError('nodata E2000a')"
+   }
+  ]
+ },
+ "secondary_exit": {
+  "n_usable": 0,
+  "n_ctrl": 0,
+  "ctrl_false_rate": NaN,
+  "controls_quiet": false,
+  "grades": [],
+  "grade": "untestable"
+ },
+ "n_measured": 44,
+ "finished": "2026-11-22T11:34:03Z",
+ "runtime_min": 1.5
+}
