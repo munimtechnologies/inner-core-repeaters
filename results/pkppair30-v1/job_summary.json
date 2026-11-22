@@ -1,0 +1,61 @@
+{
+ "contract": "mv2-compete-result-v1",
+ "name": "pkp-pair30-v1",
+ "id": "3790bfcd81f0",
+ "field": "earth-planets",
+ "run": "20261122T130757Z-earth-planets",
+ "kind": "compete",
+ "status": "ok",
+ "reason": "",
+ "host": "blade",
+ "image": "python:3.12",
+ "started_at": "2026-11-22T16:13:42.540221+00:00",
+ "finished_at": "2026-11-22T17:33:36.328345+00:00",
+ "duration_seconds": 4793,
+ "limits": {
+  "cpu": 1.0,
+  "memory_gb": 1.0,
+  "timeout_minutes": 420.0
+ },
+ "peak_memory_gb": 0.04,
+ "network": {
+  "setup": true,
+  "run": true
+ },
+ "steps": [
+  {
+   "step": "setup-01-pip",
+   "cmd": "pip install numpy obspy requests",
+   "exit": 0,
+   "seconds": 22
+  },
+  {
+   "step": "run-01-python",
+   "cmd": "python -m unittest -v test_pkppair30",
+   "exit": 0,
+   "seconds": 0
+  },
+  {
+   "step": "run-02-python",
+   "cmd": "python pkppair30.py --out-dir /out --wait-min 360",
+   "exit": 0,
+   "seconds": 4500
+  }
+ ],
+ "out_files": [
+  "mururoa_shafts_1977_1996.csv",
+  "pkppair30_events.csv",
+  "pkppair30_summary.json",
+  "zhou2026_table_s1_used.csv"
+ ],
+ "out_files_total": 4,
+ "out_skipped": [],
+ "upload_skipped": [],
+ "summary_tail": "[run-02-python stdout] 16:16:10 [pkppair30] inputs not on main yet; waiting\n16:27:06 [pkppair30] inputs not on main yet; waiting\n16:37:06 [pkppair30] inputs not on main yet; waiting\n16:47:06 [pkppair30] inputs not on main yet; waiting\n16:57:06 [pkppair30] inputs not on main yet; waiting\n17:11:05 [pkppair30] inputs not on main yet; waiting\n17:21:05 [pkppair30] inputs not on main yet; waiting\n17:31:08 [pkppair30] done graded {'observable': 'PKiKP_PP', 'reading': 'R+C', 'grade': 'R:does-not-explain / C:does-not-explain', 'distance_correction': 'not-stated'}\n",
+ "paths": {
+  "workdir": "/work (copy of E:\\MV2-Pursuit\\work\\20261122T130757Z-earth-planets\\pkp30)",
+  "out": "/out -> out/",
+  "data": "/data (docker volume mv2c-data-pkp30, kept for later jobs)"
+ },
+ "note": ""
+}

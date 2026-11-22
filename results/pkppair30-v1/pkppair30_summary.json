@@ -1,0 +1,224 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-22T16:16:10Z",
+ "errors": [],
+ "zhou_reported": {
+  "E1982_83": -0.125,
+  "E1988_90": -0.15,
+  "E1995": 0.175
+ },
+ "params": {
+  "pair_tol_deg": 0.05,
+  "sign_min_s": 0.02,
+  "explain_rms_s": 0.05,
+  "partly_frac": 0.75,
+  "g0_min_matched": 14,
+  "src_depth_km": 0.6,
+  "ref": [
+   -21.835,
+   -138.91
+  ],
+  "brvk": [
+   53.0581,
+   70.2828
+  ]
+ },
+ "code_sha256": "746ecb2ca91f8a10cd02290108f4ad031b919dc745a82f01d0076d4c2159b368",
+ "plan_public_at_start": true,
+ "plan_sha256": "9472eaf1a0b6e1e44ac668e7cc67b3c32958c4d0fbad53bf5b8a0f3647d634fc",
+ "s1_sha256": "aba1276badf760c877b5ffa6d76e66159656d6d96750810d9b38b0e76d61dfcd",
+ "methods": {
+  "distance_correction": "not-stated",
+  "quote": "",
+  "status_of_this_entry": "Our copy of the paper's Methods sentence on distance correction was lost: the browser report that copied Table S1 was cut off before that part. We have NOT confirmed that the paper is silent on it. Under the pre-registered plan (findings/2026-11-22-prereg30-pkp-position-plan.md), anything other than an explicit statement of 'none' or 'catalogue-1D' counts as not-stated, so both readings (R and C) are the headline, written R:<grade> / C:<grade>. If the sentence is found later, it will be quoted in the results note as report-only context; the headline will not be changed to one reading after the grades are known.",
+  "coordinate_source_per_table_s1_caption": "Hypocenter parameters before 1990 are from Marshall et al. (1993); after 1990 from the ISC Bulletin (Table S1 caption, as copied). The plan's text names the CMR/Yang et al. (2002) database; that was our error before we read the caption. The code does not depend on it.",
+  "table_s1_note": "Stars in the date column mark the 18 tests that formed Zhou's 112 pairs (differential epicentral distance < 0.05 deg). The 5 unstarred tests were used only in the closest-pair (< 2 km) analysis. The table is transcribed verbatim with the stars kept.",
+  "transcribed_from": "Zhou (2026), JGR Solid Earth 131, e2026JB033798, Supporting Information Table S1, doi:10.1029/2026JB033798 (CC BY 4.0); copied through a browser on 2026-11-22.",
+  "made_with": "AI agents working in MV2's name (MV2, Munim, Inc.); no human expert has checked the transcription."
+ },
+ "shafts_sha256": "28cf089e95564f1dbc2922fdb4d6c42b2f696a62b3ba7539aa26a0bf6700e0f6",
+ "n_s1": 23,
+ "n_matched": 23,
+ "n_pairs": 117,
+ "pairs_vs_zhou_112": 5,
+ "years": {
+  "1977": 1,
+  "1978": 1,
+  "1980": 1,
+  "1982": 1,
+  "1983": 2,
+  "1984": 3,
+  "1985": 2,
+  "1987": 1,
+  "1988": 3,
+  "1989": 2,
+  "1990": 1,
+  "1991": 3,
+  "1995": 2
+ },
+ "gates": {
+  "G0_matched": true,
+  "G1_epochs_present": true
+ },
+ "observables": {
+  "PKiKP_PP": {
+   "R": {
+    "year_terms": {
+     "1977": 0.0,
+     "1978": 0.07520856650478784,
+     "1980": 0.19500571460835012,
+     "1982": 0.05721915011340187,
+     "1983": 0.03911670129584337,
+     "1984": 0.056048013937467875,
+     "1985": 0.08496148789794863,
+     "1987": 0.08099551995230035,
+     "1988": 0.08100925982906745,
+     "1989": 0.0888446010864139,
+     "1990": 0.043453068329976544,
+     "1991": 0.08535677965728002,
+     "1995": -0.028555124499696702
+    },
+    "epochs": {
+     "E1982_83": 0.0451508509016962,
+     "E1988_90": 0.07736167499833445,
+     "E1995": -0.028555124499696702
+    },
+    "grade": "does-not-explain",
+    "signs_match": 0,
+    "rms_res": 0.2017253347423228,
+    "rms_zhou": 0.15138251770487457,
+    "rim_only_epochs": {
+     "E1982_83": null,
+     "E1988_90": 0.08823865731824299,
+     "E1995": null
+    }
+   },
+   "C": {
+    "year_terms": {
+     "1977": 0.0,
+     "1978": -0.06291417567096529,
+     "1980": 0.0843383399897622,
+     "1982": -0.11473285244127462,
+     "1983": -0.09876901061788551,
+     "1984": -0.059875196841076166,
+     "1985": -0.09090333699169517,
+     "1987": -0.12390646006500752,
+     "1988": -0.16371008962334171,
+     "1989": -0.11837481757201007,
+     "1990": -0.2346463348970446,
+     "1991": -0.1900950201278157,
+     "1995": -0.23466401757831748
+    },
+    "epochs": {
+     "E1982_83": -0.10409029122568188,
+     "E1988_90": -0.160421039818515,
+     "E1995": -0.23466401757831748
+    },
+    "grade": "does-not-explain",
+    "signs_match": 2,
+    "rms_res": 0.23690393361749956,
+    "rms_zhou": 0.15138251770487457,
+    "rim_only_epochs": {
+     "E1982_83": null,
+     "E1988_90": -0.18311331518543755,
+     "E1995": null
+    }
+   },
+   "pair_catalogue_dT_abs_s": {
+    "n": 117,
+    "median": 0.07271444307548336,
+    "p90": 0.14698618261991217,
+    "max": 0.19168920877086748
+   },
+   "headline": {
+    "reading": "R+C",
+    "grade": "R:does-not-explain / C:does-not-explain",
+    "distance_correction": "not-stated"
+   }
+  },
+  "PKIKP_PP": {
+   "R": {
+    "year_terms": {
+     "1977": 0.0,
+     "1978": 0.08052232041958961,
+     "1980": 0.2087674067995044,
+     "1982": 0.061262622797954205,
+     "1983": 0.041881292358244615,
+     "1984": 0.06000870865368614,
+     "1985": 0.09096362412976465,
+     "1987": 0.08671780309692032,
+     "1988": 0.08673243765853514,
+     "1989": 0.0951209412957317,
+     "1990": 0.04652424365309757,
+     "1991": 0.09138738132214472,
+     "1995": -0.030573838924036062
+    },
+    "epochs": {
+     "E1982_83": 0.048341735838147805,
+     "E1988_90": 0.08282723987002773,
+     "E1995": -0.030573838924036062
+    },
+    "grade": "does-not-explain",
+    "signs_match": 0,
+    "rms_res": 0.205358616618866,
+    "rms_zhou": 0.15138251770487457,
+    "rim_only_epochs": {
+     "E1982_83": null,
+     "E1988_90": 0.09447212013242277,
+     "E1995": null
+    }
+   },
+   "C": {
+    "year_terms": {
+     "1977": 0.0,
+     "1978": -0.06737710603959181,
+     "1980": 0.09026533165274964,
+     "1982": -0.12285317780795912,
+     "1983": -0.10576178131179856,
+     "1984": -0.0641197996720975,
+     "1985": -0.09733360775260262,
+     "1987": -0.13267394011894856,
+     "1988": -0.17528332261439758,
+     "1989": -0.12675107501997812,
+     "1990": -0.2512234579209502,
+     "1991": -0.20352552189882372,
+     "1995": -0.25125601633911854
+    },
+    "epochs": {
+     "E1982_83": -0.11145891347718541,
+     "E1988_90": -0.17176259596734986,
+     "E1995": -0.25125601633911854
+    },
+    "grade": "does-not-explain",
+    "signs_match": 2,
+    "rms_res": 0.24654354792662989,
+    "rms_zhou": 0.15138251770487457,
+    "rim_only_epochs": {
+     "E1982_83": null,
+     "E1988_90": -0.19605590976607365,
+     "E1995": null
+    }
+   },
+   "pair_catalogue_dT_abs_s": {
+    "n": 117,
+    "median": 0.07784197347837107,
+    "p90": 0.1573600555050689,
+    "max": 0.20521432822170027
+   },
+   "headline": {
+    "reading": "R+C",
+    "grade": "R:does-not-explain / C:does-not-explain",
+    "distance_correction": "not-stated"
+   }
+  }
+ },
+ "primary": {
+  "observable": "PKiKP_PP",
+  "reading": "R+C",
+  "grade": "R:does-not-explain / C:does-not-explain",
+  "distance_correction": "not-stated"
+ },
+ "status": "graded",
+ "finished": "2026-11-22T17:31:08Z",
+ "runtime_min": 74.98
+}
