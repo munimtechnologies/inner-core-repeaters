@@ -1,0 +1,9 @@
+{
+ "distance_correction": "not-stated",
+ "quote": "",
+ "status_of_this_entry": "Our copy of the paper's Methods sentence on distance correction was lost: the browser report that copied Table S1 was cut off before that part. We have NOT confirmed that the paper is silent on it. Under the pre-registered plan (findings/2026-11-22-prereg30-pkp-position-plan.md), anything other than an explicit statement of 'none' or 'catalogue-1D' counts as not-stated, so both readings (R and C) are the headline, written R:<grade> / C:<grade>. If the sentence is found later, it will be quoted in the results note as report-only context; the headline will not be changed to one reading after the grades are known.",
+ "coordinate_source_per_table_s1_caption": "Hypocenter parameters before 1990 are from Marshall et al. (1993); after 1990 from the ISC Bulletin (Table S1 caption, as copied). The plan's text names the CMR/Yang et al. (2002) database; that was our error before we read the caption. The code does not depend on it.",
+ "table_s1_note": "Stars in the date column mark the 18 tests that formed Zhou's 112 pairs (differential epicentral distance < 0.05 deg). The 5 unstarred tests were used only in the closest-pair (< 2 km) analysis. The table is transcribed verbatim with the stars kept.",
+ "transcribed_from": "Zhou (2026), JGR Solid Earth 131, e2026JB033798, Supporting Information Table S1, doi:10.1029/2026JB033798 (CC BY 4.0); copied through a browser on 2026-11-22.",
+ "made_with": "AI agents working in MV2's name (MV2, Munim, Inc.); no human expert has checked the transcription."
+}
