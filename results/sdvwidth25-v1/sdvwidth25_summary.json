@@ -1,0 +1,141 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-22T04:22:38Z",
+ "params": {
+  "onset_fracs": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "onset_back_s": 3.0,
+  "s_min": 0.7,
+  "s_max": 1.4,
+  "s_step": 0.005,
+  "stretch_maxlag_s": 0.3,
+  "coarse_p_s": 3.0,
+  "p23_tol_s": 0.005,
+  "sks_cc_min": 0.8,
+  "onset_adv_s": 0.1,
+  "onset_none_s": 0.05,
+  "w_broad": 1.05,
+  "w_narrow": 0.95,
+  "w_same": 0.03,
+  "ref_cc_min": 0.9,
+  "glob_cc_min": 0.9,
+  "glob_min_n": 5,
+  "src_tol_ref": 0.03,
+  "src_tol_glob": 0.05,
+  "path_excess": 0.05,
+  "nboot": 2000,
+  "seed": 25
+ },
+ "errors": [],
+ "code_sha256": "4ab55d198ad960d05d99e4d890036b6625f9c9a315180b36709b380c3804a360",
+ "sdv23": {
+  "commit": "dbbd91d3f26f9dc2165cbf59a5c05f7d82d8521d",
+  "sha256": "121c14d8bfc8173a49b61e67fafa55a7d996b9d480a17b298de9edf2289b1d03",
+  "version": "0.1.1"
+ },
+ "plan_public_at_start": true,
+ "plan_sha256": "7f780251cf0bdb989ad09337f0de592738262550d3e293277d4ce85252cda2b2",
+ "p23": {
+  "x_meta": 0.028437543808901112,
+  "delta": 0.5500000000004341
+ },
+ "geometry": {
+  "dist_deg": 94.81051068846885,
+  "dist_km": 10552.085384896478,
+  "az_src": 69.1480449102727,
+  "baz": 323.76362921940995,
+  "tP": 798.5140867657893,
+  "tS": 1469.9463909270949,
+  "tSKS": 1431.271079499253
+ },
+ "windows": {
+  "SKS_R": [
+   "R",
+   1429.918,
+   1434.918
+  ],
+  "postSKS_R": [
+   "R",
+   1436.918,
+   1442.918
+  ],
+  "SKS_Z": [
+   "Z",
+   1432.063,
+   1437.063
+  ],
+  "S_T": [
+   "T",
+   1472.578,
+   1485.578
+  ],
+  "S_R_early": [
+   "R",
+   1471.343,
+   1474.843
+  ],
+  "S_R_mid": [
+   "R",
+   1474.843,
+   1478.343
+  ],
+  "P_Z": [
+   "Z",
+   800.758,
+   805.758
+  ],
+  "S_T_pulse": [
+   "T",
+   1473.578,
+   1478.578
+  ]
+ },
+ "membership": {
+  "cand": "E2009a",
+  "n_stations": 30,
+  "n_measured": 25,
+  "n_cc090": 13,
+  "n_cc095": 12,
+  "member": true,
+  "strict": true,
+  "reloc": {
+   "dt0": -2.08790131032322,
+   "dxN": -0.5468916733414629,
+   "dxE": 0.21866006362563153,
+   "rms": 0.04107305188913193,
+   "n": 13
+  }
+ },
+ "primary": {
+  "gates": {
+   "G0_p23_reproduced": true,
+   "G1_sks_cc": true,
+   "G2_onsets": false
+  },
+  "x_meta_ours": 0.028437543808901112,
+  "x_meta_p23": 0.028437543808901112,
+  "x_onset20": NaN,
+  "x_onset10": NaN,
+  "x_onset30": NaN,
+  "x_onset20_naive": NaN,
+  "x_onset20_vs_PZ": NaN,
+  "onset_grade": "untestable",
+  "s_R": 1.04,
+  "width_grade": "untestable",
+  "s_ref": 1.0125,
+  "n_ref": 2,
+  "s_glob": 1.0,
+  "s_glob_5_95": [
+   0.9975,
+   1.015
+  ],
+  "n_glob": 12,
+  "source_grade": "untestable",
+  "headline": "untestable"
+ },
+ "finished": "2026-11-22T04:23:11Z",
+ "runtime_min": 0.6
+}
