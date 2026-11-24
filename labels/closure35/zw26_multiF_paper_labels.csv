@@ -1,0 +1,5 @@
+channel,event_i,event_j,label,source
+YKAR,2005-06-10,2012-12-03,changed,"Zhang & Wen 2026 Fig. 5: region R1 changed (YKAR)"
+YKAR,2005-06-10,2022-05-19,same,"Zhang & Wen 2026 Fig. 5: R1 'recovered to the state on 2005/06/10' (YKAR)"
+ILAR,2005-06-10,2012-12-03,same,"Zhang & Wen 2026: 'no changes in region R2' (ILAR)"
+ILAR,2012-12-03,2022-05-19,changed,"Zhang & Wen 2026 Fig. 5: R2 'exhibited new changes' (ILAR)"
