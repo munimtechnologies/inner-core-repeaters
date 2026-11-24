@@ -1,0 +1,797 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-24T20:53:31Z",
+ "errors": [],
+ "note": "feasibility scan; grades nothing",
+ "geometry": {
+  "dist_deg": 141.65543350319996,
+  "az_to_brvk": 331.8122494661039,
+  "baz_at_brvk": 46.85240736009259,
+  "fangataufa_dist_deg": 142.0867890273503,
+  "fangataufa_az": 331.6713522805144,
+  "arrivals_iasp91": [
+   {
+    "phase": "PKIKP",
+    "time": 1172.6194592138122,
+    "p_s_per_deg": 1.769696152307139,
+    "incident": 5.29642780018492
+   },
+   {
+    "phase": "PKiKP",
+    "time": 1175.9557330712864,
+    "p_s_per_deg": 2.054366732917054,
+    "incident": 6.151461218863302
+   },
+   {
+    "phase": "PP",
+    "time": 1356.8622873118268,
+    "p_s_per_deg": 6.088378736431031,
+    "incident": 18.51626257242331
+   },
+   {
+    "phase": "SKP",
+    "time": 1391.0706980757254,
+    "p_s_per_deg": 2.6344482481899454,
+    "incident": 7.898264386780343
+   },
+   {
+    "phase": "PPP",
+    "time": 1543.2699466307272,
+    "p_s_per_deg": 7.802558824293529,
+    "incident": 24.015675534254868
+   },
+   {
+    "phase": "PPP",
+    "time": 2070.60810875265,
+    "p_s_per_deg": 5.945078785753801,
+    "incident": 18.06520838820732
+   }
+  ],
+  "pkp_near_caustic_iasp91": [
+   {
+    "dist": 140.0,
+    "phases": [
+     "PKIKP@1169.67",
+     "PKiKP@1172.56"
+    ]
+   },
+   {
+    "dist": 140.25,
+    "phases": [
+     "PKIKP@1170.12",
+     "PKiKP@1173.07"
+    ]
+   },
+   {
+    "dist": 140.5,
+    "phases": [
+     "PKIKP@1170.56",
+     "PKiKP@1173.58"
+    ]
+   },
+   {
+    "dist": 140.75,
+    "phases": [
+     "PKIKP@1171.01",
+     "PKiKP@1174.10"
+    ]
+   },
+   {
+    "dist": 141.0,
+    "phases": [
+     "PKIKP@1171.46",
+     "PKiKP@1174.61"
+    ]
+   },
+   {
+    "dist": 141.25,
+    "phases": [
+     "PKIKP@1171.90",
+     "PKiKP@1175.12"
+    ]
+   },
+   {
+    "dist": 141.5,
+    "phases": [
+     "PKIKP@1172.34",
+     "PKiKP@1175.64"
+    ]
+   },
+   {
+    "dist": 141.75,
+    "phases": [
+     "PKIKP@1172.79",
+     "PKiKP@1176.15"
+    ]
+   },
+   {
+    "dist": 142.0,
+    "phases": [
+     "PKIKP@1173.23",
+     "PKiKP@1176.66"
+    ]
+   },
+   {
+    "dist": 142.25,
+    "phases": [
+     "PKIKP@1173.67",
+     "PKiKP@1177.18"
+    ]
+   },
+   {
+    "dist": 142.5,
+    "phases": [
+     "PKIKP@1174.11",
+     "PKiKP@1177.69"
+    ]
+   },
+   {
+    "dist": 142.75,
+    "phases": [
+     "PKIKP@1174.55",
+     "PKiKP@1178.21"
+    ]
+   },
+   {
+    "dist": 143.0,
+    "phases": [
+     "PKIKP@1174.98",
+     "PKiKP@1178.72"
+    ]
+   },
+   {
+    "dist": 143.25,
+    "phases": [
+     "PKIKP@1175.42",
+     "PKiKP@1179.23"
+    ]
+   },
+   {
+    "dist": 143.5,
+    "phases": [
+     "PKIKP@1175.85",
+     "PKiKP@1179.75"
+    ]
+   },
+   {
+    "dist": 143.75,
+    "phases": [
+     "PKIKP@1176.29",
+     "PKiKP@1180.26"
+    ]
+   },
+   {
+    "dist": 144.0,
+    "phases": [
+     "PKIKP@1176.72",
+     "PKiKP@1180.78"
+    ]
+   },
+   {
+    "dist": 144.25,
+    "phases": [
+     "PKIKP@1177.15",
+     "PKiKP@1181.29"
+    ]
+   },
+   {
+    "dist": 144.5,
+    "phases": [
+     "PKIKP@1177.58",
+     "PKiKP@1181.81"
+    ]
+   },
+   {
+    "dist": 144.75,
+    "phases": [
+     "PKIKP@1178.01",
+     "PKP@1176.65",
+     "PKP@1176.68",
+     "PKiKP@1182.32"
+    ]
+   },
+   {
+    "dist": 145.0,
+    "phases": [
+     "PKIKP@1178.43",
+     "PKP@1177.48",
+     "PKP@1177.60",
+     "PKiKP@1182.84"
+    ]
+   },
+   {
+    "dist": 145.25,
+    "phases": [
+     "PKIKP@1178.86",
+     "PKP@1178.30",
+     "PKP@1178.54",
+     "PKiKP@1183.35"
+    ]
+   },
+   {
+    "dist": 145.5,
+    "phases": [
+     "PKIKP@1179.28",
+     "PKP@1179.09",
+     "PKP@1179.48",
+     "PKiKP@1183.87"
+    ]
+   },
+   {
+    "dist": 145.75,
+    "phases": [
+     "PKIKP@1179.71",
+     "PKP@1179.88",
+     "PKP@1180.44",
+     "PKiKP@1184.39"
+    ]
+   },
+   {
+    "dist": 146.0,
+    "phases": [
+     "PKIKP@1180.13",
+     "PKP@1180.65",
+     "PKP@1181.40",
+     "PKiKP@1184.90"
+    ]
+   },
+   {
+    "dist": 146.25,
+    "phases": [
+     "PKIKP@1180.55",
+     "PKP@1181.41",
+     "PKP@1182.37",
+     "PKiKP@1185.42"
+    ]
+   },
+   {
+    "dist": 146.5,
+    "phases": [
+     "PKIKP@1180.96",
+     "PKP@1182.16",
+     "PKP@1183.35",
+     "PKiKP@1185.93"
+    ]
+   },
+   {
+    "dist": 146.75,
+    "phases": [
+     "PKIKP@1181.38",
+     "PKP@1182.91",
+     "PKP@1184.33",
+     "PKiKP@1186.45"
+    ]
+   },
+   {
+    "dist": 147.0,
+    "phases": [
+     "PKIKP@1181.80",
+     "PKP@1183.64",
+     "PKP@1185.32",
+     "PKiKP@1186.97"
+    ]
+   }
+  ],
+  "arrivals_ak135": [
+   {
+    "phase": "PKIKP",
+    "time": 1173.1512858310027,
+    "p_s_per_deg": 1.7907985891405973,
+    "incident": 5.359767910412772
+   },
+   {
+    "phase": "PKiKP",
+    "time": 1175.987557016643,
+    "p_s_per_deg": 2.0496024597866795,
+    "incident": 6.137140516767679
+   },
+   {
+    "phase": "PP",
+    "time": 1356.7834911343764,
+    "p_s_per_deg": 6.0845229366926725,
+    "incident": 18.50411052704937
+   },
+   {
+    "phase": "SKP",
+    "time": 1391.5306490324829,
+    "p_s_per_deg": 2.530076039552816,
+    "incident": 7.5834701474682005
+   },
+   {
+    "phase": "SKP",
+    "time": 1405.9146507767223,
+    "p_s_per_deg": 4.445669267151484,
+    "incident": 13.408311367558841
+   },
+   {
+    "phase": "PPP",
+    "time": 1543.637125888797,
+    "p_s_per_deg": 7.799586809909544,
+    "incident": 24.00595202791675
+   },
+   {
+    "phase": "PPP",
+    "time": 2070.471470384624,
+    "p_s_per_deg": 5.942303464479347,
+    "incident": 18.056484246343363
+   }
+  ],
+  "pkp_near_caustic_ak135": [
+   {
+    "dist": 140.0,
+    "phases": [
+     "PKIKP@1170.17",
+     "PKiKP@1172.60"
+    ]
+   },
+   {
+    "dist": 140.25,
+    "phases": [
+     "PKIKP@1170.62",
+     "PKiKP@1173.11"
+    ]
+   },
+   {
+    "dist": 140.5,
+    "phases": [
+     "PKIKP@1171.07",
+     "PKiKP@1173.62"
+    ]
+   },
+   {
+    "dist": 140.75,
+    "phases": [
+     "PKIKP@1171.52",
+     "PKiKP@1174.13"
+    ]
+   },
+   {
+    "dist": 141.0,
+    "phases": [
+     "PKIKP@1171.97",
+     "PKiKP@1174.64"
+    ]
+   },
+   {
+    "dist": 141.25,
+    "phases": [
+     "PKIKP@1172.42",
+     "PKiKP@1175.16"
+    ]
+   },
+   {
+    "dist": 141.5,
+    "phases": [
+     "PKIKP@1172.87",
+     "PKiKP@1175.67"
+    ]
+   },
+   {
+    "dist": 141.75,
+    "phases": [
+     "PKIKP@1173.32",
+     "PKiKP@1176.18"
+    ]
+   },
+   {
+    "dist": 142.0,
+    "phases": [
+     "PKIKP@1173.77",
+     "PKiKP@1176.69"
+    ]
+   },
+   {
+    "dist": 142.25,
+    "phases": [
+     "PKIKP@1174.21",
+     "PKiKP@1177.21"
+    ]
+   },
+   {
+    "dist": 142.5,
+    "phases": [
+     "PKIKP@1174.66",
+     "PKiKP@1177.72"
+    ]
+   },
+   {
+    "dist": 142.75,
+    "phases": [
+     "PKIKP@1175.10",
+     "PKiKP@1178.23"
+    ]
+   },
+   {
+    "dist": 143.0,
+    "phases": [
+     "PKIKP@1175.54",
+     "PKiKP@1178.75"
+    ]
+   },
+   {
+    "dist": 143.25,
+    "phases": [
+     "PKIKP@1175.99",
+     "PKiKP@1179.26"
+    ]
+   },
+   {
+    "dist": 143.5,
+    "phases": [
+     "PKIKP@1176.43",
+     "PKiKP@1179.77"
+    ]
+   },
+   {
+    "dist": 143.75,
+    "phases": [
+     "PKIKP@1176.86",
+     "PKiKP@1180.28"
+    ]
+   },
+   {
+    "dist": 144.0,
+    "phases": [
+     "PKIKP@1177.30",
+     "PKiKP@1180.80"
+    ]
+   },
+   {
+    "dist": 144.25,
+    "phases": [
+     "PKIKP@1177.74",
+     "PKiKP@1181.31"
+    ]
+   },
+   {
+    "dist": 144.5,
+    "phases": [
+     "PKIKP@1178.17",
+     "PKiKP@1181.83"
+    ]
+   },
+   {
+    "dist": 144.75,
+    "phases": [
+     "PKIKP@1178.61",
+     "PKiKP@1182.34"
+    ]
+   },
+   {
+    "dist": 145.0,
+    "phases": [
+     "PKIKP@1179.04",
+     "PKP@1178.33",
+     "PKiKP@1182.85"
+    ]
+   },
+   {
+    "dist": 145.25,
+    "phases": [
+     "PKIKP@1179.47",
+     "PKP@1179.15",
+     "PKP@1179.23",
+     "PKiKP@1183.37"
+    ]
+   },
+   {
+    "dist": 145.5,
+    "phases": [
+     "PKIKP@1179.90",
+     "PKP@1179.96",
+     "PKP@1180.15",
+     "PKiKP@1183.88"
+    ]
+   },
+   {
+    "dist": 145.75,
+    "phases": [
+     "PKIKP@1180.33",
+     "PKP@1180.74",
+     "PKP@1181.08",
+     "PKiKP@1184.40"
+    ]
+   },
+   {
+    "dist": 146.0,
+    "phases": [
+     "PKIKP@1180.75",
+     "PKP@1181.51",
+     "PKP@1182.03",
+     "PKiKP@1184.91"
+    ]
+   },
+   {
+    "dist": 146.25,
+    "phases": [
+     "PKIKP@1181.18",
+     "PKP@1182.26",
+     "PKP@1182.98",
+     "PKiKP@1185.43"
+    ]
+   },
+   {
+    "dist": 146.5,
+    "phases": [
+     "PKIKP@1181.60",
+     "PKP@1183.00",
+     "PKP@1183.94",
+     "PKiKP@1185.94"
+    ]
+   },
+   {
+    "dist": 146.75,
+    "phases": [
+     "PKIKP@1182.02",
+     "PKP@1183.72",
+     "PKP@1184.91",
+     "PKiKP@1186.45"
+    ]
+   },
+   {
+    "dist": 147.0,
+    "phases": [
+     "PKIKP@1182.44",
+     "PKP@1184.44",
+     "PKP@1185.89",
+     "PKiKP@1186.97"
+    ]
+   }
+  ],
+  "sensitivity": {
+   "iasp91_PKIKP-PP_ms_per_km_along": 38.837289039720744,
+   "iasp91_PKiKP-PP_ms_per_km_along": 36.278144399075025,
+   "iasp91_PPP-PP_ms_per_km_along": -15.414725945617183,
+   "iasp91_PKiKP-PKIKP_ms_per_km_along": -2.5591446406457226,
+   "iasp91_PKIKP-PP_ms_per_km_depth": -8.191569981818247,
+   "iasp91_PKiKP-PP_ms_per_km_depth": -7.934891311879254,
+   "iasp91_PPP-PP_ms_per_km_depth": 6.001351208487904,
+   "iasp91_PKiKP-PKIKP_ms_per_km_depth": 0.25667866993899224,
+   "ak135_PKIKP-PP_ms_per_km_along": 38.611229614986456,
+   "ak135_PKiKP-PP_ms_per_km_along": 36.29456504847271,
+   "ak135_PPP-PP_ms_per_km_along": -15.421977422932565,
+   "ak135_PKiKP-PKIKP_ms_per_km_along": -2.3166645665137438,
+   "ak135_PKIKP-PP_ms_per_km_depth": -8.162018984421593,
+   "ak135_PKiKP-PP_ms_per_km_depth": -7.928780735574037,
+   "ak135_PPP-PP_ms_per_km_depth": 6.000741664502129,
+   "ak135_PKiKP-PKIKP_ms_per_km_depth": 0.23323824884755595
+  }
+ },
+ "catalogues": {
+  "errors": [],
+  "usgs_query": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=1975-01-01&endtime=1997-01-01&minlatitude=-22.6&maxlatitude=-21.4&minlongitude=-139.4&maxlongitude=-138.3&minmagnitude=3.0&orderby=time-asc&limit=2000",
+  "n_usgs": 77,
+  "n_isc": 80,
+  "usgs_distinct_coords": 77,
+  "usgs_top_shared_coords": [
+   [
+    [
+     -22.1,
+     -138.762
+    ],
+    1
+   ],
+   [
+    [
+     -21.932,
+     -138.958
+    ],
+    1
+   ],
+   [
+    [
+     -21.894,
+     -138.959
+    ],
+    1
+   ],
+   [
+    [
+     -22.102,
+     -138.561
+    ],
+    1
+   ],
+   [
+    [
+     -21.903,
+     -138.975
+    ],
+    1
+   ],
+   [
+    [
+     -21.732,
+     -139.046
+    ],
+    1
+   ],
+   [
+    [
+     -21.823,
+     -139.066
+    ],
+    1
+   ],
+   [
+    [
+     -22.041,
+     -138.627
+    ],
+    1
+   ],
+   [
+    [
+     -21.996,
+     -138.88
+    ],
+    1
+   ],
+   [
+    [
+     -21.892,
+     -138.993
+    ],
+    1
+   ]
+  ],
+  "usgs_pairs_within_0p05deg": 350,
+  "usgs_pair_along_km_median_max": [
+   2.1540328577612504,
+   5.236569640111727
+  ],
+  "usgs_pair_implied_PKiKP-PP_ms_median_max": [
+   78.14431505421487,
+   189.97302955978557
+  ],
+  "isc_distinct_coords": 80,
+  "isc_top_shared_coords": [
+   [
+    [
+     -22.128,
+     -138.625
+    ],
+    1
+   ],
+   [
+    [
+     -22.333,
+     -138.673
+    ],
+    1
+   ],
+   [
+    [
+     -21.869,
+     -138.95
+    ],
+    1
+   ],
+   [
+    [
+     -21.932,
+     -138.813
+    ],
+    1
+   ],
+   [
+    [
+     -22.045,
+     -138.629
+    ],
+    1
+   ],
+   [
+    [
+     -21.913,
+     -138.926
+    ],
+    1
+   ],
+   [
+    [
+     -22.091,
+     -138.789
+    ],
+    1
+   ],
+   [
+    [
+     -21.98,
+     -138.982
+    ],
+    1
+   ],
+   [
+    [
+     -22.2,
+     -138.641
+    ],
+    1
+   ],
+   [
+    [
+     -22.169,
+     -138.579
+    ],
+    1
+   ]
+  ],
+  "isc_pairs_within_0p05deg": 220,
+  "isc_pair_along_km_median_max": [
+   2.109346291240693,
+   5.384130102396641
+  ],
+  "isc_pair_implied_PKiKP-PP_ms_median_max": [
+   76.52316934128322,
+   195.32624931815195
+  ],
+  "n_matched": 74,
+  "usgs_vs_isc_along_km_median_p90_max": [
+   6.627717718811813,
+   18.325997494561577,
+   47.75241863692288
+  ]
+ },
+ "brv_zenodo": {
+  "errors": [],
+  "n_files": 2139,
+  "first_t0": "1966-12-18T04:57:30.000",
+  "last_t0": "1993-10-05T02:00:00.020",
+  "n_files_matched": 0,
+  "n_events_with_files": 0,
+  "events_with_files_by_year": {},
+  "tags_years": {}
+ },
+ "ldeo": [
+  {
+   "url": "http://www.ldeo.columbia.edu/res/pi/Monitoring/Data/brv_exp_archive.html",
+   "status": 200,
+   "final_url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Data/brv_exp_archive.html",
+   "verify": true,
+   "bytes": 8330,
+   "saved": "ldeo_0.html"
+  },
+  {
+   "url": "http://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/brv_web/brv_archive_web.html",
+   "status": 200,
+   "final_url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/brv_web/brv_archive_web.html",
+   "verify": true,
+   "bytes": 5686,
+   "saved": "ldeo_1.html"
+  },
+  {
+   "url": "http://www.ldeo.columbia.edu/res/pi/Monitoring/Data/",
+   "status": 200,
+   "final_url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Data/",
+   "verify": true,
+   "bytes": 5261,
+   "saved": "ldeo_2.html"
+  }
+ ],
+ "stations": {
+  "errors": [],
+  "median_stations_by_year": {
+   "1977": 383.0,
+   "1978": 445.0,
+   "1979": 445.0,
+   "1980": 594.0,
+   "1981": 735.0,
+   "1982": 754.0,
+   "1983": 773.0,
+   "1984": 851.5,
+   "1985": 876.0,
+   "1986": 885.5,
+   "1987": 894.0,
+   "1988": 1003.0,
+   "1989": 962.0,
+   "1990": 986.0,
+   "1991": 999.5,
+   "1995": 1310.0,
+   "1996": 1348.0
+  },
+  "n_events_scanned": 77
+ },
+ "finished": "2026-11-24T20:54:43Z",
+ "runtime_min": 1.19
+}
