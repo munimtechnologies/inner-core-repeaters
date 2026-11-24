@@ -1,0 +1,69 @@
+{
+ "contract": "mv2-compete-result-v1",
+ "name": "brv-wave31-v2",
+ "id": "ef88aacb6466",
+ "field": "earth-planets",
+ "run": "20261123T040533Z-earth-planets",
+ "kind": "compete",
+ "status": "ok",
+ "reason": "",
+ "host": "blade",
+ "image": "python:3.12",
+ "started_at": "2026-11-24T11:23:27.071601+00:00",
+ "finished_at": "2026-11-24T14:00:42.792181+00:00",
+ "duration_seconds": 9435,
+ "limits": {
+  "cpu": 1.0,
+  "memory_gb": 1.0,
+  "timeout_minutes": 330.0
+ },
+ "peak_memory_gb": 0.08,
+ "network": {
+  "setup": true,
+  "run": true
+ },
+ "steps": [
+  {
+   "step": "setup-01-pip",
+   "cmd": "pip install numpy scipy obspy requests unlzw3",
+   "exit": 0,
+   "seconds": 54
+  },
+  {
+   "step": "setup-02-python",
+   "cmd": "python -c \"import urllib.request as u; [u.urlretrieve('https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/v0.32.0/' + f, f) for f in ('brvpkp31_core.py', 'test_brvpkp31.py')]\"",
+   "exit": 0,
+   "seconds": 1
+  },
+  {
+   "step": "run-01-python",
+   "cmd": "python -m unittest -v test_brvpkp31 test_brvpkp31_despike",
+   "exit": 0,
+   "seconds": 1
+  },
+  {
+   "step": "run-02-python",
+   "cmd": "python brvpkp31.py --data-dir /data --out-dir /out --wait-min 120 --time-budget-min 150",
+   "exit": 0,
+   "seconds": 9197
+  }
+ ],
+ "out_files": [
+  "brv31_channels.csv",
+  "brv31_files.csv",
+  "brv31_index.html",
+  "brv31_inventory.csv",
+  "brv31_pairs.csv",
+  "brv31_summary.json"
+ ],
+ "out_files_total": 6,
+ "out_skipped": [],
+ "upload_skipped": [],
+ "summary_tail": "[run-02-python stdout] 13:59:35 [brvpkp31] done K: untestable; P3: untestable\n",
+ "paths": {
+  "workdir": "/work (copy of E:\\MV2-Pursuit\\work\\20261123T040533Z-earth-planets\\p31)",
+  "out": "/out -> out/",
+  "data": "/data (docker volume mv2c-data-brv31, kept for later jobs)"
+ },
+ "note": ""
+}

@@ -1,0 +1,303 @@
+{
+ "version": "0.1.1",
+ "started": "2026-11-24T11:26:20Z",
+ "errors": [
+  "time budget reached during downloads"
+ ],
+ "params": {
+  "pair_tol_deg": 0.05,
+  "band_hz": [
+   0.3,
+   1.0
+  ],
+  "fs_grid": 100.0,
+  "win_K": [
+   -3.0,
+   5.0
+  ],
+  "win_PP": [
+   -3.0,
+   7.0
+  ],
+  "win_PPP": [
+   -3.0,
+   7.0
+  ],
+  "win_noise": [
+   -40.0,
+   -10.0
+  ],
+  "win_coarse": [
+   -10.0,
+   30.0
+  ],
+  "coarse_max_s": 8.0,
+  "coarse_fs": 10.0,
+  "env_smooth_s": 1.0,
+  "fine_max_s": 0.6,
+  "cover_before_K_s": 50.0,
+  "cover_after_PP_s": 30.0,
+  "cover_after_PPP_s": 30.0,
+  "cc_min_K": 0.8,
+  "cc_min_PP": 0.8,
+  "cc_min_PPP": 0.7,
+  "snr_min": 3.0,
+  "min_samprate": 4.0,
+  "spike_k": 20.0,
+  "spike_width": 7,
+  "spike_max_run": 3,
+  "clip_frac": 0.98,
+  "clip_run": 3,
+  "sign_min_s": 0.02,
+  "repro_rms_s": 0.05,
+  "partly_frac": 0.75,
+  "chi2_95_3dof": 7.815,
+  "var_floor_s": 0.005,
+  "n_boot": 2000,
+  "boot_seed": 31,
+  "g0_min_pairs": 10,
+  "g1_min_pairs": 10,
+  "min_boot_valid": 20
+ },
+ "zhou_reported": {
+  "E1982_83": -0.125,
+  "E1988_90": -0.15,
+  "E1995": 0.175
+ },
+ "tag_inputs": "v0.31.0",
+ "code_sha256": "0d14ca79776af8d47ca4eb52fb27e061d7864dbf6d9b9e94d31396d1fbdd48d5",
+ "plan_public_at_start": true,
+ "plan_sha256": "baf1b58399e74408b0ea3c6ff5f9e9e6142757cd3e542122769136261e6618a3",
+ "s1_sha256": "aba1276badf760c877b5ffa6d76e66159656d6d96750810d9b38b0e76d61dfcd",
+ "n_events": 23,
+ "n_starred": 18,
+ "ratios": {
+  "core": 0.0,
+  "position": -0.3969220977434828,
+  "time-base": -1.011749573332283
+ },
+ "ref_phases": {
+  "PKIKP": {
+   "t": 1172.6194969396834,
+   "p": 1.7696957785936114
+  },
+  "PKiKP": {
+   "t": 1175.9557768645468,
+   "p": 2.054366784437507
+  },
+  "PP": {
+   "t": 1356.862417094475,
+   "p": 6.08837792187815
+  },
+  "PPP": {
+   "t": 1543.2701129505792,
+   "p": 7.80255829767797
+  }
+ },
+ "runtime_min": 153.25,
+ "index": {
+  "url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Data/Brv_arch_ex/brv_74-96_ex.html",
+  "verify": true,
+  "bytes": 314105
+ },
+ "n_index_links": 762,
+ "n_events_with_records": {
+  "TS": 0,
+  "SS": 0
+ },
+ "n_pairs": {
+  "starred": 81,
+  "all": 117
+ },
+ "variants": {
+  "primary_TS_starred": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 81,
+   "n_measured": 0,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "TS_all23": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 117,
+   "n_measured": 0,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "SS_starred": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 81,
+   "n_measured": 0,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "SS_all23": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 117,
+   "n_measured": 0,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  }
+ },
+ "headline": "K: untestable; P3: untestable",
+ "status": "graded",
+ "finished": "2026-11-24T13:59:35Z",
+ "wrapper_sha256": "b51088cd9c14417efc2d7c6d3dae6dff6c67c895e9ec437807000466d17ca40d",
+ "wrapper_version": "0.1.1"
+}
