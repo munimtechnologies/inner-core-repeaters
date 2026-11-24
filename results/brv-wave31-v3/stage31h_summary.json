@@ -1,0 +1,51 @@
+{
+ "version": "0.1.0",
+ "started": "2026-11-24T22:01:26Z",
+ "errors": [],
+ "master_urls": [
+  "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1977-1988.tar",
+  "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1989-1996.tar"
+ ],
+ "note_path": "findings/2026-11-24-prereg31-data-route-https.md",
+ "code_sha256": "a76a9f1743050174d3403407f59afe2379d3a749b66d22bfe974c7d8fdf75a74",
+ "note_public_at_start": true,
+ "note_sha256": "0af2c273b84f53c4ef5d8d17dde07058c5490a01b0a451d64b34f123ed059598",
+ "runtime_min": 0.1,
+ "core_tag_inputs": "v0.31.0",
+ "n_events": 23,
+ "index": {
+  "url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Data/Brv_arch_ex/brv_74-96_ex.html",
+  "n_links": 762
+ },
+ "masters": [
+  {
+   "url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1977-1988.tar",
+   "http_status": 200,
+   "used": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1977-1988.tar",
+   "verify": true,
+   "bytes": 22609920,
+   "sha256": "d3aedadd374682b0b7546807c1473634449c5832ed3117a8ff8dcdc65706d802",
+   "n_members": 72
+  },
+  {
+   "url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1989-1996.tar",
+   "http_status": 200,
+   "used": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Arch/Brv_archive/FRENCH_1989-1996.tar",
+   "verify": true,
+   "bytes": 20516864,
+   "sha256": "71232ce87b68012d9d84a7125e7f250da07ca38bbccdcd9ce9759b8a7e923fc0",
+   "n_members": 27
+  }
+ ],
+ "n_units": 99,
+ "n_french_units": 99,
+ "unit_systems": [
+  "SS",
+  "TS"
+ ],
+ "n_staged": {
+  "TS": 23,
+  "SS": 17
+ },
+ "status": "done"
+}

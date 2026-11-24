@@ -1,0 +1,317 @@
+{
+ "version": "0.1.1",
+ "started": "2026-11-24T22:01:33Z",
+ "errors": [],
+ "params": {
+  "pair_tol_deg": 0.05,
+  "band_hz": [
+   0.3,
+   1.0
+  ],
+  "fs_grid": 100.0,
+  "win_K": [
+   -3.0,
+   5.0
+  ],
+  "win_PP": [
+   -3.0,
+   7.0
+  ],
+  "win_PPP": [
+   -3.0,
+   7.0
+  ],
+  "win_noise": [
+   -40.0,
+   -10.0
+  ],
+  "win_coarse": [
+   -10.0,
+   30.0
+  ],
+  "coarse_max_s": 8.0,
+  "coarse_fs": 10.0,
+  "env_smooth_s": 1.0,
+  "fine_max_s": 0.6,
+  "cover_before_K_s": 50.0,
+  "cover_after_PP_s": 30.0,
+  "cover_after_PPP_s": 30.0,
+  "cc_min_K": 0.8,
+  "cc_min_PP": 0.8,
+  "cc_min_PPP": 0.7,
+  "snr_min": 3.0,
+  "min_samprate": 4.0,
+  "spike_k": 20.0,
+  "spike_width": 7,
+  "spike_max_run": 3,
+  "clip_frac": 0.98,
+  "clip_run": 3,
+  "sign_min_s": 0.02,
+  "repro_rms_s": 0.05,
+  "partly_frac": 0.75,
+  "chi2_95_3dof": 7.815,
+  "var_floor_s": 0.005,
+  "n_boot": 2000,
+  "boot_seed": 31,
+  "g0_min_pairs": 10,
+  "g1_min_pairs": 10,
+  "min_boot_valid": 20
+ },
+ "zhou_reported": {
+  "E1982_83": -0.125,
+  "E1988_90": -0.15,
+  "E1995": 0.175
+ },
+ "tag_inputs": "v0.31.0",
+ "code_sha256": "0d14ca79776af8d47ca4eb52fb27e061d7864dbf6d9b9e94d31396d1fbdd48d5",
+ "plan_public_at_start": true,
+ "plan_sha256": "baf1b58399e74408b0ea3c6ff5f9e9e6142757cd3e542122769136261e6618a3",
+ "s1_sha256": "aba1276badf760c877b5ffa6d76e66159656d6d96750810d9b38b0e76d61dfcd",
+ "n_events": 23,
+ "n_starred": 18,
+ "ratios": {
+  "core": 0.0,
+  "position": -0.3969220977434828,
+  "time-base": -1.011749573332283
+ },
+ "ref_phases": {
+  "PKIKP": {
+   "t": 1172.6194969396834,
+   "p": 1.7696957785936114
+  },
+  "PKiKP": {
+   "t": 1175.9557768645468,
+   "p": 2.054366784437507
+  },
+  "PP": {
+   "t": 1356.862417094475,
+   "p": 6.08837792187815
+  },
+  "PPP": {
+   "t": 1543.2701129505792,
+   "p": 7.80255829767797
+  }
+ },
+ "runtime_min": 4.74,
+ "index": {
+  "url": "https://www.ldeo.columbia.edu/res/pi/Monitoring/Data/Brv_arch_ex/brv_74-96_ex.html",
+  "verify": true,
+  "bytes": 314105
+ },
+ "n_index_links": 762,
+ "n_events_with_records": {
+  "TS": 23,
+  "SS": 17
+ },
+ "n_pairs": {
+  "starred": 81,
+  "all": 117
+ },
+ "variants": {
+  "primary_TS_starred": {
+   "n_K_usable": 8,
+   "n_P3_usable": 0,
+   "n_pairs": 81,
+   "n_measured": 44,
+   "K_year_terms": {
+    "1977": 0.0,
+    "1978": -0.08275850820768385,
+    "1980": -0.0652538032798701,
+    "1982": -0.15999282228509942,
+    "1984": -0.12695326340767296,
+    "1985": -0.009296949633236552,
+    "1988": -0.05656765971667689
+   },
+   "K_epochs": {
+    "E1982_83": -0.15999282228509942,
+    "E1988_90": -0.05656765971667689,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 8,
+    "ref_in_pairs": true
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": 0.0030292355856137375,
+    "E1988_90": 0.004177504785028968,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "TS_all23": {
+   "n_K_usable": 9,
+   "n_P3_usable": 0,
+   "n_pairs": 117,
+   "n_measured": 74,
+   "K_year_terms": {
+    "1977": 0.0,
+    "1978": -0.07879827026515261,
+    "1980": -0.04149237562468306,
+    "1982": -0.16791329817016162,
+    "1984": -0.14279421517779742,
+    "1985": -0.025137901403361085,
+    "1988": 0.010756385306352895
+   },
+   "K_epochs": {
+    "E1982_83": -0.16791329817016162,
+    "E1988_90": 0.010756385306352895,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 9,
+    "ref_in_pairs": true
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": 0.020501923850987654,
+    "E1988_90": 0.05259016728089332,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "SS_starred": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 81,
+   "n_measured": 30,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  },
+  "SS_all23": {
+   "n_K_usable": 0,
+   "n_P3_usable": 0,
+   "n_pairs": 117,
+   "n_measured": 47,
+   "K_year_terms": {},
+   "K_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "G0": {
+    "passed": false,
+    "n": 0,
+    "ref_in_pairs": false
+   },
+   "K": {
+    "grade": "untestable"
+   },
+   "K_epoch_boot_sd": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "K_in_P3set_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_epochs": {
+    "E1982_83": null,
+    "E1988_90": null,
+    "E1995": null
+   },
+   "P3_year_terms": {},
+   "G1": {
+    "passed": false,
+    "n": 0
+   },
+   "chi2": null,
+   "P3": "untestable",
+   "pair_slope_dP3_on_dK": {
+    "through_zero": null,
+    "tls": null
+   }
+  }
+ },
+ "headline": "K: untestable; P3: untestable",
+ "status": "graded",
+ "finished": "2026-11-24T22:06:17Z",
+ "wrapper_sha256": "b51088cd9c14417efc2d7c6d3dae6dff6c67c895e9ec437807000466d17ca40d",
+ "wrapper_version": "0.1.1"
+}
