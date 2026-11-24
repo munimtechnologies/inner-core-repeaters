@@ -1,0 +1,123 @@
+===== setup-01-pip: pip install numpy scipy matplotlib obspy requests
+Collecting numpy
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting scipy
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting matplotlib
+  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting obspy
+  Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting requests
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib)
+  Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib)
+  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib)
+  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting lxml (from obspy)
+  Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting setuptools (from obspy)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting sqlalchemy>=1.4 (from obspy)
+  Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+Collecting decorator (from obspy)
+  Downloading decorator-5.3.2-py3-none-any.whl.metadata (4.1 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (43 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests)
+  Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+Collecting tzdata (from python-dateutil>=2.7->matplotlib)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting typing-extensions>=4.6.0 (from sqlalchemy>=1.4->obspy)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 9.2 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 10.6 MB/s eta 0:00:00
+Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 12.0 MB/s eta 0:00:00
+Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 11.5 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (257 kB)
+Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 12.9 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 10.8 MB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 13.0 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 11.8 MB/s eta 0:00:00
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading decorator-5.3.2-py3-none-any.whl (11 kB)
+Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 9.0 MB/s eta 0:00:00
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 6.6 MB/s eta 0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: urllib3, tzdata, typing-extensions, setuptools, pyparsing, pillow, packaging, numpy, lxml, kiwisolver, idna, fonttools, decorator, cycler, charset_normalizer, certifi, sqlalchemy, scipy, requests, python-dateutil, contourpy, matplotlib, obspy
+Successfully installed certifi-2026.11.20 charset_normalizer-3.5.3 contourpy-1.4.0 cycler-0.12.1 decorator-5.3.2 fonttools-4.68.0 idna-3.20 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.5.5 obspy-1.5.2 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-4.0.0 requests-2.34.2 scipy-1.18.1 setuptools-84.2.1 sqlalchemy-2.1.9 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0
+
+===== run-01-python: python sdvz24b.py --data-dir /data --out-dir /out --wait-min 120
+21:06:22 [sdvz24b] amendment public: True 03ad21a32fb97ea4
+21:06:24 [sdvz24] plan public: True dbca357179be46b4
+21:06:24 [sdvz24] zip md5 9ba0853da7a537a7a8f1117407675112 True
+21:06:25 [sdvz24] files 12 traces 12
+21:06:25 [sdvz24] dist 94.811 baz 323.764 tSKS 1431.3 tS 1469.9
+21:06:25 [sdvz24] primary sets {'E2000a': 'data_IU.SDV/2000.?.sac', 'E2009a': 'data_IU.SDV/2009.?.sac'}
+21:06:35 [sdvz24] raw E2000a 00 (0.0, 90.0) {'a_hat': 335.4000000000003, 'c': 0.7787556446113469, 'az1_meta': 0.0}
+21:06:43 [sdvz24] raw E2009a 00 (357.0, 87.0) {'a_hat': 332.3000000000046, 'c': 0.6620144182257205, 'az1_meta': 357.0}
+21:06:44 [sdvz24] raw E2009a 10 (343.0, 73.0) {'a_hat': 332.3000000000046, 'c': 0.6620144182257205, 'az1_meta': 357.0}
+21:06:44 [sdvz24] fit E2000a data_IU.SDV/2000.?.sac 00 0.17 1.0 proper
+21:06:46 [sdvz24] fit E2000a data_IU.SDV/2000.?.sac.bp 00 -179.76 0.9792 proper
+21:06:46 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac 00 0.14 1.0 proper
+21:06:46 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac 10 -0.7 0.9993 proper
+21:06:47 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac.bp 00 -178.98 0.9781 proper
+21:06:47 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac.bp 10 179.6 0.9791 proper
+21:06:47 [sdvz24] FRAME metadata-frame rho -3.027729773216379 rz delta nan unresolved nan
+21:06:48 [sdvz24] MEASUREMENT not-reproduced 0.02067200845895334 0.006133724704364019
+21:06:48 [sdvz24b] primary {'E2000a': 'data_IU.SDV/2000.?.sac', 'E2009a': 'data_IU.SDV/2009.?.sac'} metadata-frame -3.027729773216379 misrotated not-reproduced 0.02067200845895334
+21:06:48 [sdvz24] plan public: True dbca357179be46b4
+21:06:48 [sdvz24] zip md5 9ba0853da7a537a7a8f1117407675112 True
+21:06:48 [sdvz24] files 12 traces 12
+21:06:49 [sdvz24] dist 94.811 baz 323.764 tSKS 1431.3 tS 1469.9
+21:06:49 [sdvz24] primary sets {'E2000a': 'data_IU.SDV/!2000.?.sac.bp', 'E2009a': 'data_IU.SDV/!2009.?.sac.bp'}
+21:06:57 [sdvz24] raw E2000a 00 (0.0, 90.0) {'a_hat': 335.4000000000003, 'c': 0.7787556446113469, 'az1_meta': 0.0}
+21:07:05 [sdvz24] raw E2009a 00 (357.0, 87.0) {'a_hat': 332.3000000000046, 'c': 0.6620144182257205, 'az1_meta': 357.0}
+21:07:07 [sdvz24] raw E2009a 10 (343.0, 73.0) {'a_hat': 332.3000000000046, 'c': 0.6620144182257205, 'az1_meta': 357.0}
+21:07:09 [sdvz24] fit E2000a data_IU.SDV/!2000.?.sac.bp 00 -179.76 0.9792 proper
+21:07:09 [sdvz24] fit E2000a data_IU.SDV/2000.?.sac 00 0.17 1.0 proper
+21:07:09 [sdvz24] fit E2009a data_IU.SDV/!2009.?.sac.bp 00 -178.98 0.9781 proper
+21:07:09 [sdvz24] fit E2009a data_IU.SDV/!2009.?.sac.bp 10 179.6 0.9791 proper
+21:07:09 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac 00 0.14 1.0 proper
+21:07:09 [sdvz24] fit E2009a data_IU.SDV/2009.?.sac 10 -0.7 0.9993 proper
+21:07:09 [sdvz24] FRAME metadata-frame rho -2.225856946519116 rz delta nan unresolved nan
+21:07:10 [sdvz24] MEASUREMENT not-reproduced 0.02743052424976522 0.00499477066656806
+21:07:10 [sdvz24b] secondary {'E2000a': 'data_IU.SDV/!2000.?.sac.bp', 'E2009a': 'data_IU.SDV/!2009.?.sac.bp'} metadata-frame -2.225856946519116 misrotated not-reproduced 0.02743052424976522
+21:07:10 [sdvz24b] GRADED {'gate_A1_like_with_like': True, 'frame': 'metadata-frame', 'combined': 'misrotated', 'measurement': 'not-reproduced'}
+21:07:18 [sdvz24b] bp vs plain differential delays {'R_all': np.float64(-0.0022012541148536124), 'R_SKS': np.float64(-0.0019500485533847645), 'R_S': np.float64(-0.0014727739532384154), 'T_all': np.float64(-0.002681610776985033), 'T_SKS': np.float64(0.00041395542918165606), 'T_S': np.float64(-4.364424675207257e-05), 'Z_all': np.float64(0.007804731332842929), 'Z_SKS': np.float64(0.003754569803800789), 'Z_S': np.float64(0.004336641947465136)}
+
+===== run-02-python: python -m unittest -v test_sdvz24b
