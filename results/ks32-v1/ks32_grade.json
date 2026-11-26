@@ -1,0 +1,45 @@
+{
+ "about": "Graded result of pre-registration 32 (Kermadec SKS, Zhou 2022). Values copied (rounded to 4 decimals) from results/ks32-v1/ks32_summary.json and ks32_phases.csv; medians and differences computed from them by hand on 2026-11-26. Made with AI agents working in MV2's name (MV2, Munim, Inc.); no human expert has checked it yet. CC BY 4.0.",
+ "job": "ks-sks32-v1",
+ "code": "ks32.py 0.1.0 (tag v0.33.0), sdv23.py 0.1.1 (tag v0.32.0)",
+ "finished": "2026-11-25T23:21:49Z",
+ "plan": "findings/2026-11-24-prereg32-kermadec-sks-plan.md",
+ "plan_sha256": "71f0bcff4f685152e24a6d61c981c06ff1a772f7b6d38c9ee4bcf142b71a0112",
+ "plan_public_at_start": true,
+ "primary_pair": ["1997-05-03", "2018-09-10"],
+ "stations": ["IU.COLA", "IU.ULN", "CN.INK", "IU.YAK"],
+ "graded": {"T1": "reproduced", "T2": "absent", "joint": "window-content"},
+ "T1_k_stations_at_or_below_minus_0.5_s": 4,
+ "T2_k_stations_at_or_below_minus_0.5_s": 0,
+ "testable_stations": 4,
+ "x_s": {
+  "long_0.01-0.05Hz": {"COLA": -0.9444, "ULN": -1.0636, "INK": -0.9075, "YAK": -0.7526},
+  "mid_0.05-0.20Hz": {"COLA": -0.3014, "ULN": -0.3298, "INK": -0.3729, "YAK": -0.5634},
+  "short_0.10-0.50Hz": {"COLA": -0.0009, "ULN": 0.4149, "INK": -0.4821, "YAK": 0.3561}
+ },
+ "median_x_s": {"long": -0.926, "mid": -0.351, "short": 0.178},
+ "zhou_2022_table_s2_s": {"COLA": -1.05, "ULN": -1.0, "INK": -0.8, "YAK": -1.1},
+ "sks_minus_pdiff_s": {
+  "long": {"COLA": -0.4189, "ULN": -0.5081, "INK": -0.5329, "YAK": -0.7169},
+  "mid": {"COLA": 0.0889, "ULN": -0.3298, "INK": -0.1119, "YAK": -0.2441},
+  "short": {"COLA": 0.2678, "ULN": 0.4149, "INK": -0.2256, "YAK": 0.8011}
+ },
+ "residual_short_minus_long_s": {
+  "SKS": {"COLA": 0.9218, "ULN": 0.9335, "INK": 0.7268, "YAK": 1.6122},
+  "Pdiff": {"COLA": 0.2351, "ULN": 0.0106, "INK": 0.4195, "YAK": 0.0942}
+ },
+ "iasp91_location_correction_of_x_long_s": {"COLA": 0.1697, "ULN": 0.6757, "INK": 0.4397, "YAK": 0.6500},
+ "x_long_uncorrected_s": {"COLA": -1.1141, "ULN": -1.7393, "INK": -1.3472, "YAK": -1.4026},
+ "long_per_reference_spread_s": {"COLA": 0.7568, "ULN": 1.2664, "INK": 1.5930, "YAK": 0.5584},
+ "skks_minus_refs_long_s": {"ULN": 1.0809, "note": "report-only; SKKS failed the SNR gate at COLA, INK and YAK"},
+ "other_pairs": "1997-1999, 1997-2006, 1999-2006, 1999-2018 and 2006-2018: all 20 station-pairs untestable in the long band (14 SKS failed a gate, 6 no passing reference), so the time series asks nothing.",
+ "forecasts_scored": [
+  {"forecast": "T1 reproduced", "p": 0.55, "came_true": true},
+  {"forecast": "T2 absent given T1 reproduced", "p": 0.45, "came_true": true},
+  {"forecast": "joint window-content", "p": 0.25, "came_true": true},
+  {"forecast": "iasp91 correction moves x_long by < 0.2 s at every station", "p": 0.70, "came_true": false},
+  {"forecast": "per-reference x_long agree within 0.3 s at each station", "p": 0.50, "came_true": false},
+  {"forecast": "amendment 1: at least one station's per-reference x_long spread > 0.5 s", "p": 0.55, "came_true": true}
+ ],
+ "pending": "Reading F (amendment 1, ks32f.py 0.1.0 from tag v0.34.0), job ks32f-v1: a joint fit of an SKS-only term and the relative source position to all passing station-reference pairs."
+}

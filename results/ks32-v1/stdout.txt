@@ -1,0 +1,179 @@
+===== setup-01-pip: pip install numpy scipy obspy requests
+Collecting numpy
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting scipy
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting obspy
+  Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting requests
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting matplotlib>=3.3 (from obspy)
+  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting lxml (from obspy)
+  Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting setuptools (from obspy)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting sqlalchemy>=1.4 (from obspy)
+  Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+Collecting decorator (from obspy)
+  Downloading decorator-5.3.2-py3-none-any.whl.metadata (4.1 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (43 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests)
+  Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.3->obspy)
+  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.3->obspy)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib>=3.3->obspy)
+  Downloading fonttools-4.69.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (147 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.3->obspy)
+  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.3->obspy)
+  Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib>=3.3->obspy)
+  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib>=3.3->obspy)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.3->obspy)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting typing-extensions>=4.6.0 (from sqlalchemy>=1.4->obspy)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.3->obspy)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 38.2 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 44.9 MB/s eta 0:00:00
+Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 43.4 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (257 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 21.1 MB/s eta 0:00:00
+Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 10.1 MB/s eta 0:00:00
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading decorator-5.3.2-py3-none-any.whl (11 kB)
+Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 32.5 MB/s eta 0:00:00
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 14.9 MB/s eta 0:00:00
+Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.69.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 23.9 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 20.7 MB/s eta 0:00:00
+Downloading packaging-26.4-py3-none-any.whl (140 kB)
+Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 38.6 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: urllib3, tzdata, typing-extensions, setuptools, pyparsing, pillow, packaging, numpy, lxml, kiwisolver, idna, fonttools, decorator, cycler, charset_normalizer, certifi, sqlalchemy, scipy, requests, python-dateutil, contourpy, matplotlib, obspy
+Successfully installed certifi-2026.11.20 charset_normalizer-3.5.3 contourpy-1.4.0 cycler-0.12.1 decorator-5.3.2 fonttools-4.69.1 idna-3.20 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.5.5 obspy-1.5.2 packaging-26.4 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-4.0.0 requests-2.34.2 scipy-1.18.1 setuptools-84.2.1 sqlalchemy-2.1.9 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0
+
+===== setup-02-python: python -c "import urllib.request as u; u.urlretrieve('https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/v0.32.0/sdv23.py', 'sdv23.py')"
+
+===== run-01-python: python -m unittest -v test_ks32
+
+===== run-02-python: python ks32.py --data-dir /data --out-dir /out --wait-min 120
+23:21:25 [ks32] plan public: True 71f0bcff4f685152
+23:21:27 [ks32] event E1997 IU COLA dist 99.75 loc '' bands 3
+23:21:28 [ks32] event E1997 IU ULN dist 103.26 loc '' bands 3
+23:21:31 [ks32] event E1997 CN INK dist 105.71 loc '' bands 3
+23:21:32 [ks32] event E1997 IU YAK dist 102.36 loc '' bands 3
+23:21:33 [ks32] event E1999 IU COLA dist 99.78 loc '00' bands 3
+23:21:34 [ks32] event E1999 IU ULN dist 103.52 loc '00' bands 3
+23:21:36 [ks32] event E1999 CN INK dist 105.72 loc '' bands 3
+23:21:37 [ks32] event E1999 IU YAK dist 102.56 loc '00' bands 3
+23:21:39 [ks32] event E2006 IU COLA dist 99.75 loc '00' bands 3
+23:21:40 [ks32] event E2006 IU ULN dist 103.31 loc '00' bands 3
+23:21:42 [ks32] event E2006 CN INK dist 105.71 loc '' bands 3
+23:21:43 [ks32] event E2006 IU YAK dist 102.40 loc '00' bands 3
+23:21:44 [ks32] event E2018 IU COLA dist 99.70 loc '00' bands 3
+23:21:45 [ks32] event E2018 IU ULN dist 103.23 loc '00' bands 3
+23:21:47 [ks32] event E2018 CN INK dist 105.66 loc '' bands 3
+23:21:48 [ks32] event E2018 IU YAK dist 102.32 loc '00' bands 3
+23:21:49 [ks32] E1997 E1999 COLA long no-ref nan
+23:21:49 [ks32] E1997 E1999 COLA short no-c nan
+23:21:49 [ks32] E1997 E1999 COLA mid no-c nan
+23:21:49 [ks32] E1997 E1999 ULN long sks-gate nan
+23:21:49 [ks32] E1997 E1999 ULN short no-c nan
+23:21:49 [ks32] E1997 E1999 ULN mid no-c nan
+23:21:49 [ks32] E1997 E1999 INK long no-ref nan
+23:21:49 [ks32] E1997 E1999 INK short no-c nan
+23:21:49 [ks32] E1997 E1999 INK mid no-c nan
+23:21:49 [ks32] E1997 E1999 YAK long sks-gate nan
+23:21:49 [ks32] E1997 E1999 YAK short no-c nan
+23:21:49 [ks32] E1997 E1999 YAK mid no-c nan
+23:21:49 [ks32] E1997 E2006 COLA long sks-gate nan
+23:21:49 [ks32] E1997 E2006 COLA short no-c nan
+23:21:49 [ks32] E1997 E2006 COLA mid no-c nan
+23:21:49 [ks32] E1997 E2006 ULN long sks-gate nan
+23:21:49 [ks32] E1997 E2006 ULN short no-c nan
+23:21:49 [ks32] E1997 E2006 ULN mid no-c nan
+23:21:49 [ks32] E1997 E2006 INK long sks-gate nan
+23:21:49 [ks32] E1997 E2006 INK short no-c nan
+23:21:49 [ks32] E1997 E2006 INK mid no-c nan
+23:21:49 [ks32] E1997 E2006 YAK long sks-gate nan
+23:21:49 [ks32] E1997 E2006 YAK short no-c nan
+23:21:49 [ks32] E1997 E2006 YAK mid no-c nan
+23:21:49 [ks32] E1997 E2018 COLA long ok -0.9444052881734861
+23:21:49 [ks32] E1997 E2018 COLA short ok -0.0008905548568000077
+23:21:49 [ks32] E1997 E2018 COLA mid ok -0.30136967811763826
+23:21:49 [ks32] E1997 E2018 ULN long ok -1.0635771119050808
+23:21:49 [ks32] E1997 E2018 ULN short ok 0.41487429994332237
+23:21:49 [ks32] E1997 E2018 ULN mid ok -0.3298034031116024
+23:21:49 [ks32] E1997 E2018 INK long ok -0.9074805751239401
+23:21:49 [ks32] E1997 E2018 INK short ok -0.4821240850665245
+23:21:49 [ks32] E1997 E2018 INK mid ok -0.3728905669859368
+23:21:49 [ks32] E1997 E2018 YAK long ok -0.7526431558663198
+23:21:49 [ks32] E1997 E2018 YAK short ok 0.356069989413458
+23:21:49 [ks32] E1997 E2018 YAK mid ok -0.56344032618511
+23:21:49 [ks32] E1999 E2006 COLA long sks-gate nan
+23:21:49 [ks32] E1999 E2006 COLA short no-c nan
+23:21:49 [ks32] E1999 E2006 COLA mid no-c nan
+23:21:49 [ks32] E1999 E2006 ULN long no-ref nan
+23:21:49 [ks32] E1999 E2006 ULN short no-c nan
+23:21:49 [ks32] E1999 E2006 ULN mid no-c nan
+23:21:49 [ks32] E1999 E2006 INK long sks-gate nan
+23:21:49 [ks32] E1999 E2006 INK short no-c nan
+23:21:49 [ks32] E1999 E2006 INK mid no-c nan
+23:21:49 [ks32] E1999 E2006 YAK long sks-gate nan
+23:21:49 [ks32] E1999 E2006 YAK short no-c nan
+23:21:49 [ks32] E1999 E2006 YAK mid no-c nan
+23:21:49 [ks32] E1999 E2018 COLA long no-ref nan
+23:21:49 [ks32] E1999 E2018 COLA short no-c nan
+23:21:49 [ks32] E1999 E2018 COLA mid no-c nan
+23:21:49 [ks32] E1999 E2018 ULN long sks-gate nan
+23:21:49 [ks32] E1999 E2018 ULN short no-c nan
+23:21:49 [ks32] E1999 E2018 ULN mid no-c nan
+23:21:49 [ks32] E1999 E2018 INK long no-ref nan
+23:21:49 [ks32] E1999 E2018 INK short no-c nan
+23:21:49 [ks32] E1999 E2018 INK mid no-c nan
+23:21:49 [ks32] E1999 E2018 YAK long no-ref nan
+23:21:49 [ks32] E1999 E2018 YAK short no-c nan
+23:21:49 [ks32] E1999 E2018 YAK mid no-c nan
+23:21:49 [ks32] E2006 E2018 COLA long sks-gate nan
+23:21:49 [ks32] E2006 E2018 COLA short no-c nan
+23:21:49 [ks32] E2006 E2018 COLA mid no-c nan
+23:21:49 [ks32] E2006 E2018 ULN long sks-gate nan
+23:21:49 [ks32] E2006 E2018 ULN short no-c nan
+23:21:49 [ks32] E2006 E2018 ULN mid no-c nan
+23:21:49 [ks32] E2006 E2018 INK long sks-gate nan
+23:21:49 [ks32] E2006 E2018 INK short no-c nan
+23:21:49 [ks32] E2006 E2018 INK mid no-c nan
+23:21:49 [ks32] E2006 E2018 YAK long sks-gate nan
+23:21:49 [ks32] E2006 E2018 YAK short no-c nan
+23:21:49 [ks32] E2006 E2018 YAK mid no-c nan
+23:21:49 [ks32] GRADED T1 reproduced T2 absent joint window-content
+23:21:49 [ks32] done 184 phase rows; 0 errors
