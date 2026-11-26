@@ -1,0 +1,32 @@
+{
+ "study": "inner-core-repeaters pre-registration 32, amendment 1 (reading F)",
+ "job": "ks32f-v1",
+ "code": "ks32f.py 0.1.0 + test_ks32f.py from tag v0.34.0 (11 unit tests passed in the job)",
+ "input": "results/ks32-v1/ks32_phases.csv (sha256 ebbcefced96625c0ffbf3ccbb737ebd1fc74a67a249a663ac8d22d4cbfe0fb49)",
+ "amendment": "findings/2026-11-24-prereg32-amendment-1.md (public at job start: true; sha256 0a78d8b768763d26822f0ea394b3980cf05a44309e5b37757e79bca89f0c51aa)",
+ "finished_utc": "2026-11-26T14:05:07Z",
+ "pair": "E1997 (1997-05-03) = A, E2018 (2018-09-10) = B; u_N, u_E, dh are B relative to A (dh > 0: B deeper)",
+ "grade_rule": "untestable if n<7, <3 stations, cond>100, sigma_X>0.5 or non-finite; core-term if X<=-0.5 and X+2sigma_X<0; no-core-term if X>-0.25; else intermediate. Long band only.",
+ "F": "intermediate",
+ "T1_T2_joint_unchanged": {"T1": "reproduced", "T2": "absent", "joint": "window-content"},
+ "bands": {
+  "long_0.01-0.05Hz_graded": {"grade": "intermediate", "n": 13, "n_stations": 4, "X_s": -0.316, "sigma_X_s": 0.156, "X_plus_2sigma_s": -0.004, "uN_km": -15.94, "sigma_uN_km": 2.58, "uE_km": 2.12, "sigma_uE_km": 2.80, "dh_km": 9.04, "sigma_dh_km": 1.39, "rms_s": 0.148, "cond": 6.38, "dof": 9, "X_fixed_usgs_s": -1.008},
+  "mid_0.05-0.2Hz_report_only": {"grade_if_graded": "intermediate", "n": 10, "n_stations": 4, "X_s": -0.489, "sigma_X_s": 0.322, "uN_km": -7.29, "sigma_uN_km": 4.86, "uE_km": 3.42, "sigma_uE_km": 10.64, "dh_km": 3.52, "sigma_dh_km": 2.82, "rms_s": 0.173, "cond": 10.06, "dof": 6, "X_fixed_usgs_s": -0.531},
+  "short_0.1-0.5Hz_report_only": {"grade_if_graded": "untestable (sigma_X > 0.5)", "n": 9, "n_stations": 4, "X_s": 0.112, "sigma_X_s": 0.505, "uN_km": -10.26, "sigma_uN_km": 7.90, "uE_km": -28.91, "sigma_uE_km": 16.84, "dh_km": 5.09, "sigma_dh_km": 4.43, "rms_s": 0.261, "cond": 9.20, "dof": 5, "X_fixed_usgs_s": -0.094}
+ },
+ "location_comparison_report_only": {
+  "fit_long_band": {"horizontal_km": 16.1, "azimuth_deg": 172.4, "dh_km": 9.04},
+  "usgs_catalogue": {"uN_km": 5.15, "uE_km": 0.87, "dh_km": 6.7},
+  "zhang_wen_2023_preprint": {"horizontal_km": 14.20, "azimuth_text": "204.33 deg (text also says NW)", "uN_km_if_204.33": -12.94, "uE_km_if_204.33": -5.85, "dh_km": 1.45},
+  "yang_et_al_2026_depth_phases": {"dh_km": "5.21 +/- 1.35 (PREM)"}
+ },
+ "post_hoc_descriptive": {
+  "rms_of_13_long_band_values_about_mean_with_usgs_location_s": 0.476,
+  "rms_after_fitting_relative_position_s": 0.148
+ },
+ "forecasts": {
+  "F_outcome": {"core-term": 0.25, "intermediate": 0.15, "no-core-term": 0.30, "untestable": 0.30, "observed": "intermediate"},
+  "fitted_dh_closer_to_1.45_than_6.7": {"p": 0.55, "observed": "no (9.04 km; 2.34 km from 6.7, 7.59 km from 1.45)", "outcome": "failed"},
+  "per_reference_spread_gt_0.5s_at_one_station": {"p": 0.55, "outcome": "true (scored in the P32 results)"}
+ }
+}

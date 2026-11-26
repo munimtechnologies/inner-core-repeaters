@@ -1,0 +1,98 @@
+===== setup-01-pip: pip install numpy obspy
+Collecting numpy
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting obspy
+  Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting scipy>=1.7 (from obspy)
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting matplotlib>=3.3 (from obspy)
+  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting lxml (from obspy)
+  Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting setuptools (from obspy)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting sqlalchemy>=1.4 (from obspy)
+  Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+Collecting decorator (from obspy)
+  Downloading decorator-5.3.2-py3-none-any.whl.metadata (4.1 kB)
+Collecting requests (from obspy)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.3->obspy)
+  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.3->obspy)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib>=3.3->obspy)
+  Downloading fonttools-4.69.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (147 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.3->obspy)
+  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.3->obspy)
+  Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib>=3.3->obspy)
+  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib>=3.3->obspy)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.3->obspy)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting typing-extensions>=4.6.0 (from sqlalchemy>=1.4->obspy)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting charset_normalizer<4,>=2 (from requests->obspy)
+  Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (43 kB)
+Collecting idna<4,>=2.5 (from requests->obspy)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests->obspy)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests->obspy)
+  Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.3->obspy)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 40.6 MB/s eta 0:00:00
+Downloading obspy-1.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 40.7 MB/s eta 0:00:00
+Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 37.1 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 41.6 MB/s eta 0:00:00
+Downloading sqlalchemy-2.1.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 35.9 MB/s eta 0:00:00
+Downloading decorator-5.3.2-py3-none-any.whl (11 kB)
+Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 34.8 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 28.2 MB/s eta 0:00:00
+Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (257 kB)
+Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.69.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 36.4 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 28.6 MB/s eta 0:00:00
+Downloading packaging-26.4-py3-none-any.whl (140 kB)
+Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 38.8 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: urllib3, tzdata, typing-extensions, setuptools, pyparsing, pillow, packaging, numpy, lxml, kiwisolver, idna, fonttools, decorator, cycler, charset_normalizer, certifi, sqlalchemy, scipy, requests, python-dateutil, contourpy, matplotlib, obspy
+Successfully installed certifi-2026.11.20 charset_normalizer-3.5.3 contourpy-1.4.0 cycler-0.12.1 decorator-5.3.2 fonttools-4.69.1 idna-3.20 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.5.5 obspy-1.5.2 packaging-26.4 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-4.0.0 requests-2.34.2 scipy-1.18.1 setuptools-84.2.1 sqlalchemy-2.1.9 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0
+
+===== setup-02-python: python -c "import urllib.request as u; b='https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/v0.34.0/'; u.urlretrieve(b+'ks32f.py', 'ks32f.py'); u.urlretrieve(b+'test_ks32f.py', 
+
+===== run-01-python: python -m unittest -v test_ks32f
+
+===== run-02-python: python ks32f.py --out-dir /out --wait-min 120
+14:05:07 [ks32f] amendment public: True 0a78d8b768763d26
+14:05:07 [ks32f] rows 184 sha ebbcefced96625c0
+14:05:07 [ks32f] COLA dist 99.748 az 13.02 {'SKS': (4.927834828267805, -0.21780957004273205), 'P1': (4.438919899088205, -0.11742049529800624), 'PP': (7.590356022212745, -0.1030267532620428), 'S1': (8.323271184610803, -0.20898591002827516), 'SS': (13.944889036929453, -0.18220144256849835)}
+14:05:07 [ks32f] ULN dist 103.258 az 318.62 {'SKS': (4.635718616859776, -0.21834570352700666), 'P1': (4.438919899089342, -0.11742049529800624), 'PP': (7.464228220621862, -0.10379547354301621), 'S1': (8.323271184610803, -0.20898591002827516), 'SS': (13.75738537878533, -0.18339035958189243)}
+14:05:07 [ks32f] INK dist 105.706 az 15.99 {'SKS': (4.443316565452733, -0.21868018197915262), 'P1': (4.438919899089342, -0.11742049529800624), 'PP': (7.3766426121733275, -0.10431824480474461), 'S1': (8.323271184610803, -0.20898591002827516), 'SS': (13.625234886358157, -0.18421418897673902)}
+14:05:07 [ks32f] YAK dist 102.362 az 338.11 {'SKS': (4.705771795054261, -0.2182202330628229), 'P1': (4.438919899088205, -0.11742049529800624), 'PP': (7.496799685827682, -0.10359880948260525), 'S1': (8.323271184610803, -0.2089859100282183), 'SS': (13.805972712227685, -0.18308475650513856)}
+14:05:07 [ks32f] long intermediate X -0.31640423270622864 +/- 0.15628066478376984 n 13 cond 6.3771928300547245
+14:05:07 [ks32f] short untestable X 0.11177686079303668 +/- 0.5050486210664047 n 9 cond 9.195312451177639
+14:05:07 [ks32f] mid intermediate X -0.4886598851885869 +/- 0.3217109368489783 n 10 cond 10.055472365635714
+14:05:07 [ks32f] done; F = intermediate
