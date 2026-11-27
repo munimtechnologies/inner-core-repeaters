@@ -8,6 +8,14 @@ Pre-registered in findings/2026-11-27-prereg39-wang-source-census.md, written an
 any mantle-P record of a non-M03-24 Wang multiplet member was fetched (the three multiplet-F events
 2005/2012/2022 were measured in zw35g2-v1 and are graded again here as a replication check).
 
+Amendment 1 (findings/2026-11-27-prereg39-amendment1-multiplet-A.md, version 0.2.0, made before
+wsc39-v1 ran and before any data were fetched): Wang et al.'s Table 3 lists multiplet A's events as
+712, 718, 724, 742, 848, 854, 859, but every one of the 21 pairs that the same table lists for
+multiplet A uses event 734 (2008-02-17), never 724 (2004-05-07), and Table 2 assigns 724's only pair
+(P32, 724-746) to no multiplet. 724 is a misprint for 734. Version 0.1.0 copied the misprint, so it
+would have tested an unrelated 2004 event ~130 km away as a member of A. 0.2.0 uses 734. Members of
+every other multiplet were checked against Table 3's own pair lists and agree. Nothing else changed.
+
 Wang, Vidale et al. 2024 (Nature 631:340, Supplementary Data Table 3) list 16 multiplets of
 repeating South Sandwich Islands earthquakes; both camps of the inner-core debate read waveform
 changes between their members. Gate G2 of pre-registration 35 found that the 2012 member of
@@ -48,11 +56,12 @@ import time
 import traceback
 import urllib.request
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 REPO = "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/"
 MANTLEP2_COMMIT = "b4712f0ebbc70b896231620c905ff53a4b8270fe"   # mantlep2.py 0.13.0 (as zw35g2.py)
 PREREG_URL = REPO + "main/findings/2026-11-27-prereg39-wang-source-census.md"
+AMENDMENT_URL = REPO + "main/findings/2026-11-27-prereg39-amendment1-multiplet-A.md"
 
 OLD8 = ("usp000bt5x", "usp000fz4d", "usp000hute", "usc000t4wj", "us7000am0e", "us6000h2wz",
         "us6000mk65", "us6000runq")
@@ -77,12 +86,12 @@ WANG_EVENTS = {
     719: ("usp000by62", "2003-05-26T08:45:21.770", -57.535, -25.989, 73.3, 4.7),
     720: ("usp000c3yx", "2003-08-03T05:38:57.550", -58.915, -25.561, 33.0, 5.0),
     723: ("usp000cqp2", "2004-03-23T06:20:00.030", -56.19, -26.998, 77.5, 4.8),
-    724: ("usp000cucb", "2004-05-07T09:50:31.630", -57.907, -25.535, 71.5, 5.5),
     726: ("usp000djau", "2005-03-16T12:27:06.940", -56.248, -26.778, 70.5, 4.9),
     727: ("usp000djxx", "2005-03-24T06:08:38.490", -55.985, -27.078, 69.9, 5.0),
     729: ("usp000dr5u", "2005-05-19T15:16:40.890", -57.921, -25.549, 52.3, 4.7),
     730: ("usp000dsnt", "2005-06-10T13:08:12.920", -58.706, -25.207, 9.8, 4.7),
     733: ("usp000f787", "2007-03-23T17:12:51.620", -58.653, -25.181, 20.5, 5.0),
+    734: ("usp000fz4d", "2008-02-17T19:32:09.100", -58.986, -25.697, 66.5, 4.9),   # amendment 1
     736: ("usp000gwse", "2009-05-02T22:27:07.920", -58.966, -25.591, 48.6, 4.7),
     737: ("usp000gwuv", "2009-05-05T06:16:07.350", -58.704, -25.115, 36.2, 5.1),
     739: ("usp000h4ph", "2009-12-02T23:14:00.830", -56.156, -26.772, 59.7, 5.4),
@@ -127,9 +136,9 @@ WANG_EVENTS = {
     862: ("us7000j2tv", "2023-01-07T16:18:55.214", -56.2146, -27.033, 62.042, 4.9),
 }
 
-# Wang et al. 2024 Supplementary Data Table 3 (event numbers as printed)
+# Wang et al. 2024 Supplementary Data Table 3 (event numbers as printed, except A: see amendment 1)
 MULTIPLETS = {
-    "A": (712, 718, 724, 742, 848, 854, 859),
+    "A": (712, 718, 734, 742, 848, 854, 859),   # Table 3 prints 724; its own pair list uses 734
     "B": (702, 708, 723, 739, 757, 862),
     "C": (704, 706, 713, 827, 849),
     "D": (807, 810, 825, 833),
@@ -443,8 +452,9 @@ def run(args):
     s = dict(version=VERSION, started=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
              mantlep2_commit=MANTLEP2_COMMIT, hit_q=HIT_Q, min_ref_pairs=MIN_REF_PAIRS,
              min_stations=MIN_STATIONS, graded=GRADED, positive_control=POSITIVE_CONTROL,
-             report_only=REPORT_ONLY, near=NEAR, finished=None)
+             report_only=REPORT_ONLY, near=NEAR, multiplet_A=list(MULTIPLETS["A"]), finished=None)
     s["prereg_public_at_start"] = bool(fetch(PREREG_URL, tries=2, wait=5))
+    s["amendment_public_at_start"] = bool(fetch(AMENDMENT_URL, tries=2, wait=5))
     mp = load_mantlep2("/tmp/wsc39_pinned")
     if mp is None or [e[0] for e in mp.EVENTS] != list(OLD8):
         s["error"] = "mantlep2.py v0.13.0 download failed or its EVENTS differ from M03-24"

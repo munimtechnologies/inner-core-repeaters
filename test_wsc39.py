@@ -1,8 +1,9 @@
 # Copyright 2026 MV2, Munim, Inc.
 # Licensed under the Apache License, Version 2.0 (Apache-2.0). See LICENSE.
 # Made with AI agents working in MV2's name.
-"""Stdlib-only tests for wsc39.py (pre-registration 39). Expected values were derived by hand
-before any code ran; see findings/2026-11-27-prereg39-wang-source-census.md."""
+"""Stdlib-only tests for wsc39.py (pre-registration 39, amendment 1). Expected values were derived by
+hand before any code ran; see findings/2026-11-27-prereg39-wang-source-census.md and
+findings/2026-11-27-prereg39-amendment1-multiplet-A.md."""
 
 import unittest
 
@@ -10,6 +11,9 @@ import wsc39 as w
 
 
 class TestTables(unittest.TestCase):
+    def test_version(self):
+        self.assertEqual(w.VERSION, "0.2.0")
+
     def test_members_match_comcat_table(self):
         members = {m for ms in w.MULTIPLETS.values() for m in ms}
         self.assertEqual(len(members), 65)
@@ -17,6 +21,14 @@ class TestTables(unittest.TestCase):
         self.assertEqual(len(located), 64)
         self.assertEqual(members - {711}, located)
         self.assertIsNone(w.WANG_EVENTS[711])
+
+    def test_amendment_multiplet_A(self):
+        # Table 3's own pair list for A (P40, P52, P102, P104, P124, P129) uses 734, never 724.
+        self.assertIn(734, w.MULTIPLETS["A"])
+        self.assertNotIn(724, w.MULTIPLETS["A"])
+        self.assertNotIn(724, w.WANG_EVENTS)
+        self.assertEqual(w.cid(734), "usp000fz4d")
+        self.assertEqual(w.located("A"), [712, 718, 734, 742, 848, 854, 859])
 
     def test_ids_unique(self):
         ids = [v[0] for v in w.WANG_EVENTS.values() if v]
@@ -32,15 +44,18 @@ class TestTables(unittest.TestCase):
         self.assertEqual(w.located("N"), [707, 809, 756])
 
     def test_pairs(self):
-        self.assertEqual(len(w.member_pairs("A")), 15)   # 21 minus 6 pairs of M03-24 events
+        # A has five M03-24 events (718, 734, 742, 848, 854): 21 pairs minus 10 yardstick pairs.
+        self.assertEqual(len(w.member_pairs("A")), 11)
         self.assertNotIn((718, 742), w.member_pairs("A"))
+        self.assertNotIn((718, 734), w.member_pairs("A"))
         self.assertIn((712, 718), w.member_pairs("A"))
+        self.assertIn((734, 859), w.member_pairs("A"))
         self.assertEqual(len(w.member_pairs("K")), 1)
-        self.assertEqual(sum(len(w.member_pairs(k)) for k in w.MULTIPLETS), 103)
+        self.assertEqual(sum(len(w.member_pairs(k)) for k in w.MULTIPLETS), 99)
 
     def test_old8_overlap(self):
         a = [w.cid(m) for m in w.MULTIPLETS["A"]]
-        self.assertEqual(sum(1 for x in a if x in w.OLD8), 4)
+        self.assertEqual(sum(1 for x in a if x in w.OLD8), 5)
         f = [w.cid(m) for m in (730, 744, 856)]
         self.assertEqual(f, ["usp000dsnt", "usp000jwcf", "us6000hm6g"])
 
@@ -48,8 +63,9 @@ class TestTables(unittest.TestCase):
         km, dd = w.catalogue_sep(730, 744)
         self.assertTrue(26.5 < km < 27.7, km)
         self.assertAlmostEqual(dd, 31.4, places=6)
-        km, _ = w.catalogue_sep(718, 724)
-        self.assertTrue(128.0 < km < 131.0, km)
+        km, dd = w.catalogue_sep(718, 734)
+        self.assertTrue(15.5 < km < 16.6, km)
+        self.assertAlmostEqual(dd, 33.5, places=6)
 
 
 class TestScores(unittest.TestCase):
