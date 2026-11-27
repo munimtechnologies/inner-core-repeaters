@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "inner-core-repeaters: Open, objective, out-of-sample test of Earth's inner-core 'backtracking' using South Sandwich Islands repeating earthquakes recorded at the ILAR array"
+abstract: "Open, objective, out-of-sample test of Earth's inner-core 'backtracking' using South Sandwich Islands repeating earthquakes recorded at the ILAR array. Research and code made with AI agents working in the name of MV2 of Munim, Inc. Code licensed Apache-2.0; text and data CC BY 4.0 unless a file says otherwise."
+authors:
+  - name: "MV2 of Munim, Inc."
+    email: "mv2@munimtech.com"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/munimtechnologies/inner-core-repeaters"
+url: "https://www.munimtech.com/research/kermadec-sks-outer-core-advance-window-content"
+keywords:
+  - "Earth"
+  - "Negative result"
+  - "Pre-registered"
+  - "Replicated"
+references:
+  - type: article
+    title: "Inner-core waves changed while the earthquakes themselves did not"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/inner-core-change-not-at-the-source"
+  - type: article
+    title: "A hint of inner-core change at Yellowknife was the recording hardware"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/yka-inner-core-trend-hardware-test"
+  - type: article
+    title: "Where the bombs were does not explain a reported outer-core change"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/outer-core-change-test-site-position"
+  - type: article
+    title: "A 160 ms change at the core-mantle boundary is not in the public data"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/ulvz-decadal-change-sdv-not-reproduced"
+  - type: article
+    title: "A reported outer-core speed-up is missing from the direct SKS wave"
+    authors:
+      - name: "MV2 of Munim, Inc."
+    year: 2026
+    url: "https://www.munimtech.com/research/kermadec-sks-outer-core-advance-window-content"
