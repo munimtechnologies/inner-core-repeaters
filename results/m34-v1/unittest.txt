@@ -1,0 +1,27 @@
+test_grade_empty (test_m34.TestGrade.test_grade_empty) ... ok
+test_grade_one_member (test_m34.TestGrade.test_grade_one_member) ... ok
+test_max_abs_diff (test_m34.TestHelpers.test_max_abs_diff) ... ok
+test_median_truthy_json (test_m34.TestHelpers.test_median_truthy_json) ... ok
+test_agreeing_member (test_m34.TestMirror.test_agreeing_member) ... ok
+test_brackets (test_m34.TestMirror.test_brackets) ... ok
+test_intermediate_order (test_m34.TestMirror.test_intermediate_order) ... ok
+test_old_members_consistent (test_m34.TestMirror.test_old_members_consistent) ... ok
+test_return_flip_flop (test_m34.TestMirror.test_return_flip_flop) ... ok
+test_robust_flip_flops (test_m34.TestMirror.test_robust_flip_flops) ... ok
+test_single_wang_violation (test_m34.TestMirror.test_single_wang_violation) ... ok
+test_untestable (test_m34.TestMirror.test_untestable) ... ok
+test_decide (test_m34.TestSource.test_decide) ... ok
+test_not_counted (test_m34.TestSource.test_not_counted) ... ok
+test_same_and_different (test_m34.TestSource.test_same_and_different) ... ok
+test_classify (test_m34.TestState.test_classify) ... ok
+test_ok_filter (test_m34.TestState.test_ok_filter) ... ok
+test_state_from_rows (test_m34.TestState.test_state_from_rows) ... ok
+test_candidates (test_m34.TestTime.test_candidates) ... ok
+test_decimal_years (test_m34.TestTime.test_decimal_years) ... ok
+test_equiv_and_boundary (test_m34.TestTime.test_equiv_and_boundary) ... ok
+test_wang_prediction (test_m34.TestTime.test_wang_prediction) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.915s
+
+OK

@@ -1,0 +1,155 @@
+{
+ "version": "0.1.0",
+ "old8": {
+  "n_members": 8,
+  "n_periods": 9801,
+  "n_periodic_ok": 8269,
+  "periodic_intervals": [
+   [
+    2.07,
+    2.11
+   ],
+   [
+    3.27,
+    3.51
+   ],
+   [
+    3.71,
+    3.9
+   ],
+   [
+    17.82,
+    100.0
+   ]
+  ],
+  "continuum_from": 17.82,
+  "band_fractions": {
+   "2-5": 0.1667,
+   "5-7": 0.0,
+   "7-10": 0.0,
+   "10-15": 0.0,
+   "15-18": 0.06,
+   "18-30": 1.0,
+   "30-100": 1.0
+  },
+  "chance_fraction_xy": 0.142857,
+  "symmetric_window": [
+   [
+    2009.079,
+    2014.328
+   ]
+  ],
+  "wide_n_clocks": 39349,
+  "wide_n_ok": 11361,
+  "named": {
+   "wang_vidale_2022_6yr": {
+    "band": [
+     5.5,
+     6.5
+    ],
+    "fraction_compatible": 0.0
+   },
+   "tkalcic_20_30yr": {
+    "band": [
+     20.0,
+     30.0
+    ],
+    "fraction_compatible": 1.0
+   },
+   "wang_vidale_2022_P6.00": false,
+   "wang_2024_turn2008.5_ratio2.5": true,
+   "yang_song_2023_symmetric_turn2009.0": false,
+   "yang_song_2023_symmetric_turn2009.5": true
+  }
+ },
+ "old8_drop_one": {
+  "usp000bt5x": {
+   "periodic_n_ok": 8281,
+   "wide_n_ok": 23289,
+   "symmetric_window": [
+    [
+     2003.0,
+     2014.328
+    ]
+   ],
+   "continuum_from": 17.82
+  },
+  "us7000am0e": {
+   "periodic_n_ok": 8290,
+   "wide_n_ok": 12964,
+   "symmetric_window": [
+    [
+     2009.079,
+     2015.155
+    ]
+   ],
+   "continuum_from": 17.82
+  },
+  "us6000h2wz": {
+   "periodic_n_ok": 8277,
+   "wide_n_ok": 11361,
+   "symmetric_window": [
+    [
+     2009.079,
+     2014.328
+    ]
+   ],
+   "continuum_from": 17.82
+  },
+  "us6000mk65": {
+   "periodic_n_ok": 8284,
+   "wide_n_ok": 11361,
+   "symmetric_window": [
+    [
+     2009.079,
+     2014.328
+    ]
+   ],
+   "continuum_from": 17.82
+  },
+  "us6000runq": {
+   "periodic_n_ok": 8461,
+   "wide_n_ok": 11361,
+   "symmetric_window": [
+    [
+     2009.079,
+     2014.328
+    ]
+   ],
+   "continuum_from": 16.09
+  },
+  "usp000fz4d": {
+   "periodic_n_ok": 8632,
+   "wide_n_ok": 14992,
+   "symmetric_window": [
+    [
+     2009.079,
+     2015.832
+    ]
+   ],
+   "continuum_from": 14.82
+  },
+  "usp000hute": {
+   "periodic_n_ok": 8532,
+   "wide_n_ok": 11361,
+   "symmetric_window": [
+    [
+     2009.079,
+     2014.328
+    ]
+   ],
+   "continuum_from": 17.82
+  },
+  "usc000t4wj": {
+   "periodic_n_ok": 8368,
+   "wide_n_ok": 15059,
+   "symmetric_window": [
+    [
+     2007.179,
+     2014.328
+    ]
+   ],
+   "continuum_from": 17.82
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+  "what": "Grade of pre-registration 34 (M03-24 mirror test) and its amendments 1 and 1b, hand-copied from compete jobs m34-mirror-v1 (m34.py 0.1.0) and clocks34-v1 (clocks34.py 0.1.0). Graded 2026-11-27 by AI agents working in MV2's name (Munim, Inc.); no human expert has checked it. CC BY 4.0.",
+  "jobs": {
+    "m34-mirror-v1": {"host": "dell", "started": "2026-11-26T17:29:43Z", "finished": "2026-11-26T17:48:06Z", "status": "ok", "unit_tests": "pass"},
+    "clocks34-v1": {"host": "dell", "started": "2026-11-26T17:22:34Z", "finished": "2026-11-26T17:28:53Z", "status": "ok", "unit_tests": "pass"}
+  },
+  "prereg_public_at_start": true,
+  "candidates": 31,
+  "membership_mantle_P": {"same": 0, "inconclusive": 0, "different": 22, "untestable_fewer_than_3_stations": 9, "median_q_every_decided_candidate": 1.0},
+  "yka_state": {"new-state": 24, "untestable_too_few_ok_pairs": 7, "X": 0, "Y": 0, "intermediate": 0, "ambiguous": 0,
+                "smallest_min_dX_dY_D_c310": 0.5826, "largest_min_dX_dY_D_c310": 1.3385, "new_state_threshold": 0.098,
+                "s_range": [0.4589, 0.5794]},
+  "confirmed_members": 0,
+  "members_used_in_mirror": 0,
+  "R34_reproduction": {"label": "reproduced", "pairs": 36, "max_abs_diff_D": 0.0, "max_abs_diff_D_c310": 0.0},
+  "R1_wang_clock": "untestable",
+  "R2_one_turn_grid": {"label": "untestable", "baseline_compatible_old8": 1742, "grid_size": 2346},
+  "brackets_unchanged": {"outbound": [2003.2177, 2008.1306], "return": [2014.9392, 2020.5267]},
+  "amendment1": {"R3_periodic": "untestable (no usable new member)", "R4_wide_one_turn": "untestable (no usable new member)", "R5_symmetric_window": "untestable (no usable new member)",
+                 "clocks34_v2": "not filed: its member set would equal the old eight, so its output would equal clocks34-v1"},
+  "amendment1b": {"R6a": "untestable (no usable new member)", "R6b": "untestable (no usable new member)",
+                  "R6a_check_old8_earliest_turn_ratio_le_2": {"hand": 2007.20, "code": 2007.20, "ratio_at_2007.20": 1.9613, "ratio_at_2007.15": 2.0594, "match": true}},
+  "forecasts": [
+    {"forecast": "R34 reproduces", "p": 0.85, "happened": true},
+    {"forecast": "at least one candidate confirmed a member", "p": 0.40, "happened": false},
+    {"forecast": "at least one member with a usable state", "p": 0.30, "happened": false},
+    {"forecast": "R1 testable", "p": 0.30, "happened": false},
+    {"forecast": "amendment 1 and 1b forecasts", "p": null, "happened": "void (conditional on a usable new member)"}
+  ],
+  "clocks34_v1_old8_exploratory": {
+    "periodic_pass": {"n_periods": 9801, "n_pass": 8269, "intervals_yr": [[2.07, 2.11], [3.27, 3.51], [3.71, 3.90], [17.82, 100.0]], "continuum_from_yr": 17.82, "hand_continuum_from_yr": 17.819,
+                      "band_fraction_5.5_6.5": 0.0, "band_fraction_20_30": 1.0, "chance_fraction": 0.142857},
+    "symmetric_turn_window": {"code": [2009.079, 2014.328], "hand": [2009.078, 2014.329], "turn_2009.0": false, "turn_2009.5": true},
+    "symmetric_drop_one": {"without_2014-12-09": [2007.179, 2014.328], "hand_lower_without_2014-12-09": 2007.18, "without_2020-07-11": [2009.079, 2015.155], "hand_upper_without_2020-07-11": 2015.16},
+    "wide_one_turn": {"n_clocks": 39349, "n_compatible": 11361},
+    "turn_2010_ratio_range_grid": [0.7392, 5.4641], "turn_2010_ratio_range_hand": [0.73, 5.63],
+    "wang_2024_clock_turn2008.5_ratio2.5": true,
+    "wang_vidale_2022_6yr": false
+  },
+  "sources": {
+    "m34_summary": "results/m34-v1/m34_summary.json",
+    "m34_candidates": "results/m34-v1/m34_candidates.csv",
+    "clocks34_summary": "results/clocks34-v1/clocks34_summary.json",
+    "prereg": "findings/2026-11-24-prereg34-m0324-mirror-plan.md",
+    "amendment1": "findings/2026-11-24-prereg34-amendment1-clock-families.md",
+    "amendment1b": "findings/2026-11-24-prereg34-amendment1b-wsy-rates.md"
+  }
+}

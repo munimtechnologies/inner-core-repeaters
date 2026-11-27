@@ -1,0 +1,22 @@
+test_decimal_years (test_clocks34.TestDates.test_decimal_years) ... ok
+test_grids (test_clocks34.TestDates.test_grids) ... ok
+test_continuum (test_clocks34.TestHelpers.test_continuum) ... ok
+test_grade_untestable (test_clocks34.TestHelpers.test_grade_untestable) ... ok
+test_intervals (test_clocks34.TestHelpers.test_intervals) ... ok
+test_load_new (test_clocks34.TestHelpers.test_load_new) ... ok
+test_symmetric_edges (test_clocks34.TestOneTurn.test_symmetric_edges) ... ok
+test_symmetric_window_coarse (test_clocks34.TestOneTurn.test_symmetric_window_coarse) ... ok
+test_turn_2005_needs_ratio_above_5_577 (test_clocks34.TestOneTurn.test_turn_2005_needs_ratio_above_5_577) ... ok
+test_turn_2012_ratio_window (test_clocks34.TestOneTurn.test_turn_2012_ratio_window) ... ok
+test_turn_before_2003_impossible (test_clocks34.TestOneTurn.test_turn_before_2003_impossible) ... ok
+test_wang (test_clocks34.TestOneTurn.test_wang) ... ok
+test_allowed_periods (test_clocks34.TestPeriodic.test_allowed_periods) ... ok
+test_chance_fraction (test_clocks34.TestPeriodic.test_chance_fraction) ... ok
+test_excluded_periods (test_clocks34.TestPeriodic.test_excluded_periods) ... ok
+test_intermediate_cases (test_clocks34.TestPeriodic.test_intermediate_cases) ... ok
+test_nested_agrees_with_contiguity (test_clocks34.TestPeriodic.test_nested_agrees_with_contiguity) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.008s
+
+OK
