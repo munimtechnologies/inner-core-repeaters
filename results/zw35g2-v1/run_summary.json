@@ -1,0 +1,100 @@
+{
+ "contract": "mv2-compete-result-v1",
+ "name": "zw35g2-v1",
+ "id": "317009b7ec0d",
+ "field": "earth-planets",
+ "run": "20261124T170538Z-earth-planets",
+ "kind": "compete",
+ "status": "ok",
+ "reason": "",
+ "host": "dell",
+ "image": "python:3.12",
+ "started_at": "2026-11-27T15:18:33.595981+00:00",
+ "finished_at": "2026-11-27T15:32:05.743612+00:00",
+ "duration_seconds": 812,
+ "limits": {
+  "cpu": 1.0,
+  "memory_gb": 1.0,
+  "timeout_minutes": 150.0
+ },
+ "peak_memory_gb": null,
+ "network": {
+  "setup": true,
+  "run": true
+ },
+ "steps": [
+  {
+   "step": "setup-01-pip",
+   "cmd": "pip install -r requirements.txt",
+   "exit": 0,
+   "seconds": 50
+  },
+  {
+   "step": "run-01-python",
+   "cmd": "python -m unittest -v test_zw35g2",
+   "exit": 0,
+   "seconds": 0
+  },
+  {
+   "step": "run-02-python",
+   "cmd": "python zw35g2.py --data-dir /data --out-dir /out --time-budget-min 100",
+   "exit": 0,
+   "seconds": 209
+  }
+ ],
+ "out_files": [
+  "plots/mantlep2_GT_BOSA.png",
+  "plots/mantlep2_GT_CPUP.png",
+  "plots/mantlep2_GT_DBIC.png",
+  "plots/mantlep2_GT_LBTB.png",
+  "plots/mantlep2_GT_LPAZ.png",
+  "plots/mantlep2_GT_PLCA.png",
+  "plots/mantlep2_GT_VNDA.png",
+  "plots/mantlep2_II_ABPO.png",
+  "plots/mantlep2_II_ASCN.png",
+  "plots/mantlep2_II_JTS.png",
+  "plots/mantlep2_II_MBAR.png",
+  "plots/mantlep2_II_MSEY.png",
+  "plots/mantlep2_II_NNA.png",
+  "plots/mantlep2_II_RPN.png",
+  "plots/mantlep2_II_SACV.png",
+  "plots/mantlep2_II_SHEL.png",
+  "plots/mantlep2_II_SUR.png",
+  "plots/mantlep2_II_TAU.png",
+  "plots/mantlep2_IU_CASY.png",
+  "plots/mantlep2_IU_FURI.png",
+  "plots/mantlep2_IU_KMBO.png",
+  "plots/mantlep2_IU_KOWA.png",
+  "plots/mantlep2_IU_LCO.png",
+  "plots/mantlep2_IU_LSZ.png",
+  "plots/mantlep2_IU_LVC.png",
+  "plots/mantlep2_IU_NWAO.png",
+  "plots/mantlep2_IU_OTAV.png",
+  "plots/mantlep2_IU_PAYG.png",
+  "plots/mantlep2_IU_PTCN.png",
+  "plots/mantlep2_IU_PTGA.png",
+  "plots/mantlep2_IU_QSPA.png",
+  "plots/mantlep2_IU_RCBR.png",
+  "plots/mantlep2_IU_SAML.png",
+  "plots/mantlep2_IU_SBA.png",
+  "plots/mantlep2_IU_SDV.png",
+  "plots/mantlep2_IU_SJG.png",
+  "plots/mantlep2_IU_SNZO.png",
+  "plots/mantlep2_IU_TRQA.png",
+  "plots/mantlep2_IU_TSUM.png",
+  "zw35g2_events.csv",
+  "zw35g2_pairs.csv",
+  "zw35g2_station_scores.csv",
+  "zw35g2_summary.json"
+ ],
+ "out_files_total": 43,
+ "out_skipped": [],
+ "upload_skipped": [],
+ "summary_tail": "[run-02-python stderr] NING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;     \n WARNING: FIR normalized: sum[coef]=4.096000E+03;     \n WARNING: FIR normalized: sum[coef]=3.355443E+07;     \n WARNING: FIR normalized: sum[coef]=8.388596E+06;\n[run-02-python stdout] \": null, \"n_ref\": 0, \"ref_median\": null, \"ref_max\": null, \"reason\": \"f_event_not_gated\"}, \"2005-2022\": {\"counted\": false, \"q\": null, \"hit\": null, \"d_pair\": null, \"n_ref\": 0, \"ref_median\": null, \"ref_max\": null, \"reason\": \"f_event_not_gated\"}, \"2012-2022\": {\"counted\": false, \"q\": null, \"hit\": null, \"d_pair\": null, \"n_ref\": 0, \"ref_median\": null, \"ref_max\": null, \"reason\": \"f_event_not_gated\"}}\n{\"pairs\": {\"2005-2012\": {\"decision\": \"S\", \"n_stations\": 7, \"hits\": 6, \"graded\": true, \"stations\": [\"GT.DBIC\", \"GT.LPAZ\", \"GT.PLCA\", \"GT.VNDA\", \"IU.QSPA\", \"IU.TRQA\", \"IU.TSUM\"], \"q\": [0.2857, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], \"median_q\": 1.0}, \"2005-2022\": {\"decision\": \"N\", \"n_stations\": 7, \"hits\": 1, \"graded\": true, \"stations\": [\"GT.DBIC\", \"GT.LPAZ\", \"GT.PLCA\", \"GT.VNDA\", \"IU.QSPA\", \"IU.TRQA\", \"IU.TSUM\"], \"q\": [0.0, 0.0, 1.0, 0.1429, 0.8929, 0.7, 0.2], \"median_q\": 0.2}, \"2012-2022\": {\"decision\": \"S\", \"n_stations\": 7, \"hits\": 5, \"graded\": false, \"stations\": [\"GT.DBIC\", \"GT.LPAZ\", \"GT.PLCA\", \"GT.VNDA\", \"IU.QSPA\", \"IU.TRQA\", \"IU.TSUM\"], \"q\": [0.0, 1.0, 1.0, 1.0, 1.0, 0.9, 1.0], \"median_q\": 1.0}}, \"g2\": {\"p35_grade_in\": null, \"final_grade\": \"untestable (source)\", \"source_status\": \"different source\"}}\n",
+ "paths": {
+  "workdir": "/work (copy of E:\\MV2-Pursuit\\work\\20261124T170538Z-earth-planets\\zw35g2)",
+  "out": "/out -> out/",
+  "data": "/data (docker volume mv2c-data-zw35g2, kept for later jobs)"
+ },
+ "note": ""
+}
