@@ -1,7 +1,9 @@
 # Copyright 2026 MV2, Munim, Inc.
 # Licensed under the Apache License, Version 2.0 (Apache-2.0). See LICENSE.
 # Made with AI agents working in MV2's name. Expected values below were derived by hand.
-"""Tests for gradeq40.py 0.1.0 (pre-registration 40). Standard library only, no network."""
+"""Tests for gradeq40.py 0.1.1 (pre-registration 40). Standard library only, no network."""
+import csv
+import io
 import math
 import unittest
 
@@ -16,6 +18,9 @@ def row(**kw):
 
 
 class TestBasics(unittest.TestCase):
+    def test_version(self):
+        self.assertEqual(g.VERSION, "0.1.1")
+
     def test_blob_sha_known(self):
         # git hash-object of an empty file and of "hello\n"
         self.assertEqual(g.blob_sha(b""), "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391")
@@ -70,6 +75,29 @@ class TestSelect(unittest.TestCase):
         self.assertEqual(len(p2), 3)
         p3 = g.select(rows, "post", metric="D")
         self.assertEqual([x["v"] for x in p3], [0.01, 0.01, 0.01])  # nan D_c310 row has D = 0.01
+
+    def test_array_case(self):
+        # 0.1.1: the pinned table writes "yka"; any case of YKA is kept, ILAR in any case is not.
+        rows = [row(array="yka"), row(array=" YKA "), row(array="Yka"),
+                row(array="ilar"), row(array="ILAR"), row(array="")]
+        self.assertEqual(len(g.select(rows, "post")), 3)
+        self.assertEqual(len(g.select([row(array="yka", t1="2005.0", t2="2007.0")], "cal")), 1)
+
+    def test_real_table_format(self):
+        # Exact header of results/h13-v1/h13_pairs_scored.csv, lower-case array, CRLF line ends,
+        # synthetic values. Row 2 is M03-24. Row 3 is a calibration pair (2005-2007, dt 2.0).
+        text = ("array,mult,ev1,ev2,t1,t2,dB,dM,cross,m0324,D,D_c310,sep_km,S,n_st\r\n"
+                "yka,Y900,e1,e2,2021.0,2023.0,0.8,2.0,False,False,0.01,0.05,5.0,0.2,3\r\n"
+                "yka,Y900,e1,e3,2021.0,2024.0,1.2,3.0,False,True,0.01,0.05,5.0,0.2,3\r\n"
+                "yka,Y901,e4,e5,2005.0,2007.0,0.8,2.0,False,False,0.01,0.07,5.0,0.1,4\r\n")
+        rows = list(csv.DictReader(io.StringIO(text)))
+        self.assertEqual(len(g.select(rows, "post")), 1)
+        self.assertEqual(len(g.select(rows, "post", include_m0324=True)), 2)
+        c = g.select(rows, "cal")
+        self.assertEqual(len(c), 1)
+        self.assertAlmostEqual(c[0]["v"], 0.07)
+        self.assertAlmostEqual(c[0]["dt"], 2.0)
+        self.assertEqual(sum(1 for r in rows if g.is_yka(r)), 3)
 
     def test_cal_filters(self):
         rows = [
@@ -128,17 +156,18 @@ class TestGrade(unittest.TestCase):
         self.assertEqual(g.headline(self._P(rho=0.3, f_pos=0.94, boot_p95=0.5), self._C()), "unresolved")
 
     def test_grade_all_end_to_end(self):
-        rows = []
-        for p in monotone_pairs(5, per_fam=5):  # 25 post pairs, dt 0.1 .. 4.5, rho 1
-            # t1 = 2022.5 is after era 2 ends (2022.2466), so no pair touches it
-            rows.append(row(mult=p["mult"], ev1=p["ev1"], ev2=p["ev2"], t1=2022.5,
-                            t2=2022.5 + p["dt"], D_c310=p["v"]))
-        r = g.grade_all(rows, nboot=100)
-        self.assertEqual(r["post"]["n"], 25)
-        self.assertTrue(r["testable_post"])
-        self.assertEqual(r["headline"], "still-changing")
-        self.assertEqual(r["cal"]["n"], 0)
-        self.assertFalse(r["calibrated"])
+        for arr in ("YKA", "yka"):
+            rows = []
+            for p in monotone_pairs(5, per_fam=5):  # 25 post pairs, dt 0.1 .. 4.5, rho 1
+                # t1 = 2022.5 is after era 2 ends (2022.2466), so no pair touches it
+                rows.append(row(array=arr, mult=p["mult"], ev1=p["ev1"], ev2=p["ev2"], t1=2022.5,
+                                t2=2022.5 + p["dt"], D_c310=p["v"]))
+            r = g.grade_all(rows, nboot=100)
+            self.assertEqual(r["post"]["n"], 25)
+            self.assertTrue(r["testable_post"])
+            self.assertEqual(r["headline"], "still-changing")
+            self.assertEqual(r["cal"]["n"], 0)
+            self.assertFalse(r["calibrated"])
 
     def test_perm_p_range(self):
         p = g.perm_p(monotone_pairs(4), nperm=50, seed=0)

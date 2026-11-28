@@ -2,11 +2,17 @@
 # Copyright 2026 MV2, Munim, Inc.
 # Licensed under the Apache License, Version 2.0 (Apache-2.0). See LICENSE.
 # Made with AI agents working in MV2's name; no human expert has checked it.
-"""gradeq40.py 0.1.0 - pre-registration 40: has the inner-core coda kept changing since 2020?
+"""gradeq40.py 0.1.1 - pre-registration 40: has the inner-core coda kept changing since 2020?
 
 Part of inner-core-repeaters by MV2, Munim, Inc. (mv2@munimtech.com). Licence: Apache-2.0.
 Pre-registered in findings/2026-11-28-prereg40-post2020-plan.md, written before any row of the
 input table with both events after 2020-04-08 was looked at for this question.
+
+0.1.1 (2026-11-28, addendum 2, findings/2026-11-28-prereg40-addendum2-array-case-fix.md): the
+pinned table writes the array as "yka" (lower case) while 0.1.0 kept only rows equal to "YKA",
+so 0.1.0 would have selected no pairs at all. The array name is now compared case-insensitively.
+Nothing else changed: same sets, thresholds, seeds and input blob. The grader also waits for the
+addendum to be public, not only the plan.
 
 Input: results/h13-v1/h13_pairs_scored.csv at commit 4c44a95 (pre-registration 13, 2026-11-19),
 checked against its git blob SHA-1. It holds YKA late-coda differences (D_c310) and a mantle-P
@@ -33,13 +39,14 @@ import sys
 import time
 import urllib.request
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 COMMIT = "4c44a952299eb29882930de2373c1aa16133e0ef"
 IN_PATH = "results/h13-v1/h13_pairs_scored.csv"
 IN_BLOB = "3bc1eacff2ce851426e9112083f98ae58afd9722"
 RAW = "https://raw.githubusercontent.com/munimtechnologies/inner-core-repeaters/"
 IN_URL = RAW + COMMIT + "/" + IN_PATH
 PREREG_URL = RAW + "main/findings/2026-11-28-prereg40-post2020-plan.md"
+ADDENDUM_URL = RAW + "main/findings/2026-11-28-prereg40-addendum2-array-case-fix.md"
 UA = {"User-Agent": "inner-core-repeaters (MV2, Munim, Inc.)"}
 NAN = float("nan")
 
@@ -93,6 +100,11 @@ def isf(x):
 
 def truthy(x):
     return x is True or str(x).strip().lower() in ("true", "1", "yes")
+
+
+def is_yka(r):
+    """0.1.1: the pinned table writes 'yka'; compare case-insensitively."""
+    return str(r.get("array", "")).strip().upper() == "YKA"
 
 
 def ranks(v):
@@ -154,7 +166,7 @@ def select(rows, which, metric="D_c310", include_m0324=False):
     """Rows of the h13 table -> list of pair dicts for set 'post' or 'cal'."""
     out = []
     for r in rows:
-        if str(r.get("array", "")).strip() != "YKA":
+        if not is_yka(r):
             continue
         if truthy(r.get("m0324")) and not include_m0324:
             continue
@@ -293,11 +305,11 @@ def fetch(url, tries=4):
     return None
 
 
-def wait_prereg(max_min):
-    """The plan must be public on main before grading; poll every 2 minutes."""
+def wait_prereg(max_min, urls=(PREREG_URL, ADDENDUM_URL)):
+    """The plan and addendum 2 must be public on main before grading; poll every 2 minutes."""
     t0 = time.time()
     while True:
-        if fetch(PREREG_URL, tries=1) is not None:
+        if all(fetch(u, tries=1) is not None for u in urls):
             return True, round((time.time() - t0) / 60.0, 1)
         if time.time() - t0 > max_min * 60:
             return False, round((time.time() - t0) / 60.0, 1)
@@ -328,11 +340,11 @@ def main(argv=None):
     s["checks_ok"] = bool(pub and got == IN_BLOB)
     if not s["checks_ok"]:
         s["result"] = dict(headline="not graded",
-                           reason="plan not public" if not pub else "input missing or blob mismatch")
+                           reason="plan or addendum not public" if not pub else "input missing or blob mismatch")
     else:
         rows = list(csv.DictReader(io.StringIO(body.decode("utf-8"))))
         s["n_rows"] = len(rows)
-        s["n_rows_yka"] = sum(1 for r in rows if str(r.get("array", "")).strip() == "YKA")
+        s["n_rows_yka"] = sum(1 for r in rows if is_yka(r))
         s["result"] = grade_all(rows)
         post = select(rows, "post")
         s["report_only"] = dict(
