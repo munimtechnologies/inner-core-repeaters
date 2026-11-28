@@ -1,0 +1,304 @@
+{
+ "version": "0.1.0",
+ "closure35_version": "0.1.0",
+ "started": "2026-11-28T01:22:57Z",
+ "constants": {
+  "fs": 40.0,
+  "band": [
+   1.0,
+   2.0
+  ],
+  "bands_report": [
+   [
+    0.5,
+    2.0
+   ]
+  ],
+  "direct": [
+   -0.3,
+   0.9
+  ],
+  "windows": {
+   "D_c310": [
+    3.0,
+    10.0
+   ],
+   "D_c16": [
+    1.0,
+    6.0
+   ],
+   "D_c13": [
+    1.0,
+    3.0
+   ]
+  },
+  "primary": "D_c310",
+  "noise": [
+   -35.0,
+   -5.0
+  ],
+  "pair_cc_min": 0.9,
+  "snr_direct_min": 5.0,
+  "snr_coda_min": 2.0,
+  "min_common": 6,
+  "recovery_ratio_max": 0.67,
+  "same_max_ratio": 2.0,
+  "changed_min_ratio": 3.0,
+  "floor_min": 0.005
+ },
+ "prereg_public_at_start": true,
+ "zenodo_api_ok": true,
+ "zips": {
+  "Data_YKAR.zip": {
+   "path": "/data/zw33/Data_YKAR.zip",
+   "md5_expected": "9bc6209fc4c2771e585596224cfb02a1",
+   "md5_ok": true
+  },
+  "Data_ILAR.zip": {
+   "path": "/data/zw33/Data_ILAR.zip",
+   "md5_expected": "4142b7b145bdc7685b31ced8de711ac8",
+   "md5_ok": true
+  },
+  "Data_multiF.zip": {
+   "path": "/data/zw33/Data_multiF.zip",
+   "md5_expected": "aeddd4c92744c3090bdecc6a449d7509",
+   "md5_ok": true
+  }
+ },
+ "event_folders": {
+  "Data_YKAR.zip": [
+   "2003-03-21",
+   "2008-02-17",
+   "2011-02-20",
+   "2020-07-11",
+   "2022-03-07",
+   "2024-03-21"
+  ],
+  "Data_ILAR.zip": [
+   "2003-03-21",
+   "2008-02-17",
+   "2011-02-20",
+   "2020-07-11",
+   "2022-03-07",
+   "2024-03-21"
+  ],
+  "Data_multiF.zip": [
+   "2005-06-10",
+   "2012-12-03",
+   "2022-05-19"
+  ]
+ },
+ "results": {
+  "D_c310": {
+   "graded": true,
+   "E1": {
+    "n_graded": 8,
+    "n_agree": 0,
+    "n_disagree": 0,
+    "n_nd": 8,
+    "headline": "inconclusive"
+   },
+   "P35": {
+    "G2": "not run in zw33-v1; separate job under the rule fixed in pre-registration 35",
+    "YKA_2005-06-10_present": true,
+    "YKA_2012-12-03_present": true,
+    "YKA_2022-05-19_present": true,
+    "ILAR_2005-06-10_present": true,
+    "ILAR_2012-12-03_present": true,
+    "ILAR_2022-05-19_present": true,
+    "yka_ab": "changed",
+    "yka_ac": "nd",
+    "yka_bc": "changed",
+    "ilar_ab": "nd",
+    "ilar_ac": "nd",
+    "ilar_bc": "nd",
+    "G1": false,
+    "grade": "untestable",
+    "reason": "G1: YKA recovery not reproduced"
+   },
+   "closure_F": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   },
+   "P35b_closure_M0324": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   }
+  },
+  "D_c16": {
+   "graded": false,
+   "E1": {
+    "n_graded": 8,
+    "n_agree": 0,
+    "n_disagree": 0,
+    "n_nd": 8,
+    "headline": "inconclusive"
+   },
+   "P35": {
+    "G2": "not run in zw33-v1; separate job under the rule fixed in pre-registration 35",
+    "YKA_2005-06-10_present": true,
+    "YKA_2012-12-03_present": true,
+    "YKA_2022-05-19_present": true,
+    "ILAR_2005-06-10_present": true,
+    "ILAR_2012-12-03_present": true,
+    "ILAR_2022-05-19_present": true,
+    "yka_ab": "changed",
+    "yka_ac": "changed",
+    "yka_bc": "changed",
+    "ilar_ab": "nd",
+    "ilar_ac": "nd",
+    "ilar_bc": "nd",
+    "G1": false,
+    "grade": "untestable",
+    "reason": "G1: YKA recovery not reproduced"
+   },
+   "closure_F": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   },
+   "P35b_closure_M0324": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   }
+  },
+  "D_c13": {
+   "graded": false,
+   "E1": {
+    "n_graded": 8,
+    "n_agree": 0,
+    "n_disagree": 0,
+    "n_nd": 8,
+    "headline": "inconclusive"
+   },
+   "P35": {
+    "G2": "not run in zw33-v1; separate job under the rule fixed in pre-registration 35",
+    "YKA_2005-06-10_present": true,
+    "YKA_2012-12-03_present": true,
+    "YKA_2022-05-19_present": true,
+    "ILAR_2005-06-10_present": true,
+    "ILAR_2012-12-03_present": true,
+    "ILAR_2022-05-19_present": true,
+    "yka_ab": "changed",
+    "yka_ac": "changed",
+    "yka_bc": "changed",
+    "ilar_ab": "nd",
+    "ilar_ac": "nd",
+    "ilar_bc": "nd",
+    "G1": false,
+    "grade": "untestable",
+    "reason": "G1: YKA recovery not reproduced"
+   },
+   "closure_F": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   },
+   "P35b_closure_M0324": {
+    "version": "0.1.0",
+    "n_channels": 2,
+    "n_triples": 0,
+    "triples_violated": 0,
+    "triples_holds": 0,
+    "triples_mixed": 0,
+    "triples_violated_implied": 0,
+    "headline": "untestable",
+    "rule": {
+     "same_max_ratio": 2.0,
+     "changed_min_ratio": 3.0,
+     "floor_min": 0.005
+    }
+   }
+  }
+ },
+ "report_only_bands": {
+  "0.5-2.0": {
+   "E1": {
+    "n_graded": 8,
+    "n_agree": 1,
+    "n_disagree": 0,
+    "n_nd": 7,
+    "headline": "inconclusive"
+   },
+   "P35": {
+    "G2": "not run in zw33-v1; separate job under the rule fixed in pre-registration 35",
+    "YKA_2005-06-10_present": true,
+    "YKA_2012-12-03_present": true,
+    "YKA_2022-05-19_present": true,
+    "ILAR_2005-06-10_present": true,
+    "ILAR_2012-12-03_present": true,
+    "ILAR_2022-05-19_present": true,
+    "yka_ab": "nd",
+    "yka_ac": "nd",
+    "yka_bc": "nd",
+    "ilar_ab": "nd",
+    "ilar_ac": "nd",
+    "ilar_bc": "nd",
+    "G1": false,
+    "grade": "untestable",
+    "reason": "G1: YKA recovery not reproduced"
+   }
+  }
+ },
+ "headline": {
+  "E1": "inconclusive",
+  "P35": "untestable",
+  "P35b": "untestable"
+ },
+ "n_pairs": 72,
+ "minutes": 1.2,
+ "finished": "2026-11-28T01:24:07Z"
+}

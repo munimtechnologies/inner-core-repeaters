@@ -1,0 +1,11 @@
+kind,array,a,b,c,expected,measured,ratio,result
+label,YKA,2003-03-21,2008-02-17,,changed,nd,,nd
+label,YKA,2008-02-17,2011-02-20,,changed,nd,,nd
+label,YKA,2011-02-20,2022-03-07,,changed,nd,,nd
+label,ILAR,2003-03-21,2008-02-17,,changed,nd,,nd
+label,ILAR,2008-02-17,2011-02-20,,same,nd,,nd
+label,ILAR,2011-02-20,2022-03-07,,changed,nd,,nd
+recovery,YKA,2003-03-21,2011-02-20,2022-03-07,recovery,"D(a,c)/D(a,b)",,nd
+recovery,ILAR,2003-03-21,2011-02-20,2022-03-07,recovery,"D(a,c)/D(a,b)",,nd
+report-only,YKA,2022-03-07,2024-03-21,,same,same,,agree
+report-only,ILAR,2022-03-07,2024-03-21,,same,nd,,nd
