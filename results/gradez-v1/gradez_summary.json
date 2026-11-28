@@ -1,0 +1,47 @@
+{
+ "version": "0.1.0",
+ "seed": 40,
+ "n_shuffles": 500,
+ "arrays": {
+  "YKA": {
+   "n_pairs": 12,
+   "n_comp": 20,
+   "Z1": "untestable",
+   "headline": "untestable"
+  },
+  "ILAR": {
+   "n_pairs": 12,
+   "n_comp": 22,
+   "Z1": "untestable",
+   "headline": "untestable"
+  }
+ },
+ "report_only": {},
+ "checks": {
+  "n_pairs_YKA": 12,
+  "n_comp_YKA": 20,
+  "n_pairs_ILAR": 12,
+  "n_comp_ILAR": 22
+ },
+ "expected": {
+  "n_pairs_YKA": 12,
+  "n_comp_YKA": 20,
+  "n_pairs_ILAR": 12,
+  "n_comp_ILAR": 22
+ },
+ "checks_ok": true,
+ "Z5": {
+  "YKA": {
+   "n_shared_binary": 8,
+   "n_agree": 5,
+   "n_shared_any": 10,
+   "grade": "mixed"
+  },
+  "ILAR": {
+   "n_shared_binary": 8,
+   "n_agree": 7,
+   "n_shared_any": 10,
+   "grade": "agree"
+  }
+ }
+}
